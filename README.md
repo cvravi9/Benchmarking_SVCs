@@ -1,4 +1,4 @@
-# variant-analysis
+# Variant Analysis
 Performing variant analysis and reporting the differences.
 
 ## Getting a Workflow to get VCF files
@@ -16,4 +16,4 @@ The to be compared vcf files obtained in the workflow are downloaded from https:
 Therefore using bgzip, the format is changed from "vcf" to "vcf.gz". The command used is **"bgzip -c file.vcf > file.vcf.gz"** and the outcome is then used with bcftools for the comparision. The command for the bcftools is **"bcftools stats file1 file2 > output.txt"** and the outcome is a text file explaning the differences betweeen two vcf files in statistical data.
 
 ## Plotting Comparision of VCF files
-With the text output, the next goal would be to plot the data and for this plot-vcfstats is helpful. The command is **"plot-vcfstats -p venn output.txt"**. Install matplotlib, plot-vcfstats -p venn/ output.txt 
+With the textual output, the next goal would be to plot the data and for this "plot-vcfstats" is helpful. The command is **"plot-vcfstats -p venn output.txt"**. However, plotting would need installation of "matplotlib" using **"pip3 install matplotlib"** and "pdflatex".
