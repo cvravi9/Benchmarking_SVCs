@@ -8,7 +8,7 @@ Using this yaml file, the process of generating a vcf file can be automated usin
 
 
 ## Obtaining two VCF files
-In order to compare, two varied vcf files are needed. These varied files could be obtained by modifying the yaml file input parameters. For example by changing the "Tumor Purity Estimate" from its considered value of "0.7" to "0.5", two varied vcf files could be obtained. For convenience, two yaml files have been taken instead of one.
+In order to compare, two varied vcf files are needed. These varied files could be obtained by modifying the yaml file input parameters. For example by changing the "Tumor Purity Estimate" from its considered value of "0.7" to "0.5", two varied vcf files could be obtained. For convenience, two yaml files have been taken instead of modifying one file.
 
 ## Comparing two VCF files
 The vcf files obtained in the workflow are downloaded to be compared. However, the format in which they are wouldn't help in comparision. So "tabix" 
