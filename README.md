@@ -1,7 +1,7 @@
 # variant-analysis
 Performing variant analysis and reporting the differences.
 
-## Getting Workflows to get VCF files
-Taking a workflow from MIRACUM-Pipe-Galaxy i.e. Galaxy_Workflow_MIRACUM_main.ga which is given normal and tumor sample an vcf files could be obtained. To automate the process of executing the workflow, a yml file created as Galaxy_Workflow_MIRACUM_main.yml is used along with planemo.
+## Getting a Workflow to get VCF files
+To obtain vcf files from a workflow, "Galaxy_Workflow_MIRACUM_main.ga" of MIRACUM-Pipe-Galaxy is considered. By constructing a yml as "Galaxy_Workflow_MIRACUM_main.yml" and giving inputs such as is Normal sample name, Normal sample name, Normal purity estimate, Tumor sample name, Tumor purity estimate, NORMAL forward reads, NORMAL reverse reads, TUMOR forward reads, TUMOR reverse reads, & Capture regions. 
 
-The command used is 
+With the yml files created, the process of generating a vcf file can be automated using planemo. The command used is 
