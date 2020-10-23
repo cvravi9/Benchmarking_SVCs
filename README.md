@@ -25,12 +25,15 @@ Extracting just the first 5 columns of a VCF file: Chrom, POS, ID, REF, ALT
 If all the elements in a row are exactly the same (i.e, all files being compared share the same Chrom,Pos,ID,REF,and ALT), then hide that row in the summary table.
 
 
-
-
 | Chrom-Position | First.vcf | Second.vcf | Third.vcf | .... |
 |----------------|-----------|------------|-----------|------|
 | chr3:123456    |                | . REF=A, ALT=T | rs123 REF=A ALT=T  | ---- |
 | chr3:555555    | . REF=T, ALT=G | . REF=A ALT=G  | rs421 REF=T, ALT=G | ---- |
+
+
+##### OR Using vcftoolz
+
+VCFToolZ already groups files in nice headers, and produces Venn diagrams (up to 6 files). It would be cool to see these headers in a HTML document, and with the Venn diagrams included.
 
 
 
