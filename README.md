@@ -18,5 +18,18 @@ The to be compared vcf files obtained in the workflow are downloaded from https:
 
 Therefore using bgzip, the format is changed from "vcf" to "vcf.gz". The command used is **"bgzip -c file.vcf > file.vcf.gz"** and the outcome is then used with bcftools for the comparision. The command for the bcftools is **"bcftools stats file1 file2 > output.txt"** and the outcome is a text file explaning the differences betweeen two vcf files in statistical data.
 
+#### Example Comparison Table
+
+| Chrom-Position | First.vcf | Second.vcf | Third.vcf | .... |
+|----------------|-----------|------------|-----------|------|
+| chr3:123456    |           | . REF=A, ALT=T | . REF=A ALT=G | rs123 REF=A, ALT=T | ---- |
+| chr3:555555    | . REF=T, ALT=G | . REF=A ALT=G | rs421 REF=T, ALT=G | . REF=T ALT=C | ---- |
+
+
+
+
 ### 1.4. Plotting Comparision of VCF files
 With the textual output, the next goal would be to plot the data and for this "plot-vcfstats" is helpful. The command is **"plot-vcfstats -p venn output.txt"**. However, plotting would need installation of "matplotlib" using **"pip3 install matplotlib"** and "pdflatex".
+
+
+
