@@ -2,7 +2,7 @@
 Performing variant analysis and reporting the differences.
 
 ## 1. Comparing and Plotting two VCF files
-Given below are the steps involved in obtaining, comparing and plotting two VCF files.
+Given below are the steps involved in obtaining, comparing and plotting two VCF files on Sample Data.
 
 ### 1.1. Getting a Workflow to get VCF files
 To obtain vcf files from a workflow, "Galaxy_Workflow_MIRACUM_main.ga" of MIRACUM-Pipe-Galaxy is considered. By constructing a yaml as "Galaxy_Workflow_MIRACUM_main.yml" and giving inputs such as is Normal sample name, Normal purity estimate, Tumor sample name, Tumor purity estimate, NORMAL forward reads, NORMAL reverse reads, TUMOR forward reads, TUMOR reverse reads, & Capture regions a vcf file can be obtained. 
