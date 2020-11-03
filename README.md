@@ -39,5 +39,5 @@ VCFToolZ already groups files in nice headers, and produces Venn diagrams (up to
 With the textual output, the next goal would be to plot the data and for this "plot-vcfstats" is helpful. The command is **"plot-vcfstats -p venn output.txt"**. However, plotting would need installation of "matplotlib" using **"pip3 install matplotlib"** and "pdflatex".
 
 ### 1.5. Filtering VCF File based on Somantic Status of Variant
-With respect to the comparision of the vcf files division of the base vcf file is divided into three categories based on Germline, Somatic and LOH. The command is **"bcftools view -i 'SS ~ "2"' vcf-file"**.
+With respect to the comparision of the vcf files division of the base vcf file is divided into three categories based on Germline, Somatic and LOH. The command is **"bcftools view -i 'SS ~"2"' vcf-file"**.
 
