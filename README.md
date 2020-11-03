@@ -33,7 +33,7 @@ If all the elements in a row are exactly the same (i.e, all files being compared
 
 ##### OR Using vcftoolz
 
-VCFToolZ already groups files in nice headers, and produces Venn diagrams (up to 6 files). It would be cool to see these headers in a HTML document, and with the Venn diagrams included.
+VCFToolZ already groups files in nice headers, and produces Venn diagrams (up to 6 files). It would be cool to see these headers in a HTML document, and with the Venn diagrams included. The command is **"vcftoolz compare first-vcf second-vcf"**
 
 ### 1.4. Plotting Comparision of VCF files
 With the textual output, the next goal would be to plot the data and for this "plot-vcfstats" is helpful. The command is **"plot-vcfstats -p venn output.txt"**. However, plotting would need installation of "matplotlib" using **"pip3 install matplotlib"** and "pdflatex".
