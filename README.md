@@ -31,7 +31,7 @@ If all the elements in a row are exactly the same (i.e, all files being compared
 | chr3:555555    | . REF=T, ALT=G | . REF=A ALT=G  | rs421 REF=T, ALT=G | ---- |
 
 
-##### OR Using vcftoolz
+##### 1.3.1 Using vcftoolz
 
 VCFToolZ already groups files in nice headers, and produces Venn diagrams (up to 6 files). It would be cool to see these headers in a HTML document, and with the Venn diagrams included. The command is **"vcftoolz compare first-vcf second-vcf"**
 
