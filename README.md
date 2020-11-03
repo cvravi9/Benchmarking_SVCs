@@ -35,11 +35,9 @@ If all the elements in a row are exactly the same (i.e, all files being compared
 
 VCFToolZ already groups files in nice headers, and produces Venn diagrams (up to 6 files). It would be cool to see these headers in a HTML document, and with the Venn diagrams included.
 
-
-
-
 ### 1.4. Plotting Comparision of VCF files
 With the textual output, the next goal would be to plot the data and for this "plot-vcfstats" is helpful. The command is **"plot-vcfstats -p venn output.txt"**. However, plotting would need installation of "matplotlib" using **"pip3 install matplotlib"** and "pdflatex".
 
-
+### 1.5. Filtering VCF File based on Somantic Status of Variant
+With respect to the comparision of the vcf files division of the base vcf file is divided into three categories based on Germline, Somatic and LOH. The command is **"bcftools view -i 'SS ~ "2"' vcf-file"**.
 
