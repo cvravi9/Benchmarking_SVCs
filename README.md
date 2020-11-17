@@ -41,3 +41,11 @@ With the textual output, the next goal would be to plot the data and for this "p
 ### 1.5. Filtering VCF File based on Somantic Status of Variant
 With respect to the comparision of the vcf files division of the base vcf file is divided into three categories based on Germline, Somatic and LOH. The command is **"bcftools view -i 'SS ~"2"' vcf-file"**.
 
+
+##### Meeting - 17-11-20
+
+* Subset Data
+  * Filter BAM file using BED target capture regions, extract the IDs, and filter the FASTQ for pairs.
+
+* Future Ideas:
+  * Plot False-Positive Rate against False-Negative Rate, see if there is an optimal crossover point, given changing workflow parameters
