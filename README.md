@@ -27,12 +27,14 @@ Through bcftools compairison, the outcome of two vcf files is added into a text 
 With the textual output, the next goal would be to plot the data and for this "plot-vcfstats" is helpful. The command is **"plot-vcfstats -p venn output.txt"**. However, plotting would need installation of "matplotlib" using **"pip3 install matplotlib"** and "pdflatex" to create the final pdf outcome.
 
 #### 1.4.2. Comparision by vcftoolz
-Another tool to compare two vcf files is the "VCF Toolz" and the command is **"vcftoolz compare first-vcf second-vcf"**. With this tool, textual outcome along with the venn diagrams comparing snps and positions are obtained.
+Another tool to compare two vcf files is the "VCF Toolz" and the command is **"vcftoolz compare first-vcf second-vcf"**. With this tool, along with the textual outcome, there are venn diagrams comparing the snps and positions in both the vcf files.
 
 ### 1.5. Filtering VCF File
-Each vcf file has five somatic status and for the comparisions, the main vcf file is divided into three sub-vcf files based on the somantic status division. The three categories of divisons are Germline, Somatic and LOH for which SS is 1, 2 & 3 respectively. To do this division, the command used is **"bcftools view -i 'SS ~"2"' vcf-file"**. After the sub-vcf files are obtained, comparision of the vcf files is achieved using vcftoolz.
+Post comparisions of the entire file, Each vcf file has five somatic status and for the comparisions, the main vcf file is divided into three sub-vcf files based on the somantic status division. The three categories of divisons are Germline, Somatic and LOH for which SS is 1, 2 & 3 respectively. To do this division, the command used is **"bcftools view -i 'SS ~"2"' vcf-file"**. After the sub-vcf files are obtained, comparision of the vcf files is achieved using vcftoolz.
 
-##### Meeting - 17-11-20
+# Meeting Notes
+
+## 17th November 2020
 
 * Subset Data
   * Filter BAM file using BED target capture regions, extract the IDs, and filter the FASTQ for pairs.
