@@ -27,7 +27,7 @@ Through bcftools compairison, the outcome of two vcf files is added into a text 
 With the textual output, the next goal would be to plot the data and for this "plot-vcfstats" is helpful. The command is **"plot-vcfstats -p venn output.txt"**. However, plotting would need installation of "matplotlib" using **"pip3 install matplotlib"** and "pdflatex" to create the final pdf outcome.
 
 #### 1.4.2. Comparision by vcftoolz
-Another tool to compare two vcf files is the "VCF Toolz". The command is **"vcftoolz compare first-vcf second-vcf"** and using this command both the textual outcome along with the venn diagrams comparing snps and positions are obtained.
+Another tool to compare two vcf files is the "VCF Toolz" and the command is **"vcftoolz compare first-vcf second-vcf"**. With this tool, textual outcome along with the venn diagrams comparing snps and positions are obtained.
 
 ### 1.5. Filtering VCF File based on Somantic Status of Variant
 With respect to the comparision of the vcf files division of the base vcf file is divided into three categories based on Germline, Somatic and LOH. The command is **"bcftools view -i 'SS ~"2"' vcf-file"**.
