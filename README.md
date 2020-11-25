@@ -14,22 +14,12 @@ Using this yaml file, the process of generating a vcf file can be automated usin
 In order to compare, two varied vcf files are needed. These varied files could be obtained by modifying the yaml file input parameters. For example by changing the "Tumor Purity Estimate" from its considered value of "0.7" to "0.5", two varied vcf files could be obtained. For convenience, two yaml files have been taken instead of modifying one file.
 
 ### 1.3. Comparing two VCF files
-The to be compared vcf files obtained in the workflow are downloaded from https://usegalaxy.eu/. However, the vcf files aren't indexed and comparision wouldn't be possible. So using "tabix" they are indexed. The command used is **"tabix -p vcf vcf_file"**. The output of the tabix is in vcf extension and to compare two files, the format should be of vcf.gz. 
+The to be compared vcf files obtained in after executing the "Galaxy_Workflow_MIRACUM_main.ga" workflow of MIRACUM-Pipe-Galaxy and could be downloaded from the https://usegalaxy.eu/ into the required file using wget. However, the vcf files aren't indexed and a comparision wouldn't be possible. So using the "tabix" command i.e. **"tabix -p vcf vcf_filename"**, the vcf files could be indexed. The output of the tabix command is in vcf extension and to compare two files, the format should be of vcf.gz. 
 
-Therefore using bgzip, the format is changed from "vcf" to "vcf.gz". The command used is **"bgzip -c file.vcf > file.vcf.gz"** and the outcome is then used with bcftools for the comparision. The command for the bcftools is **"bcftools stats file1 file2 > output.txt"** and the outcome is a text file explaning the differences betweeen two vcf files in statistical data.
+Therefore, to change this extension, bgzip command is used i.e. **"bgzip -c file.vcf > file.vcf.gz"** and this changes the extensions of the vcf file from "vcf" to "vcf.gz" and this outcome could be used for the comparision. 
 
-#### Example Comparison Table
-
-Extracting just the first 5 columns of a VCF file: Chrom, POS, ID, REF, ALT
-
-If all the elements in a row are exactly the same (i.e, all files being compared share the same Chrom,Pos,ID,REF,and ALT), then hide that row in the summary table.
-
-
-| Chrom-Position | First.vcf | Second.vcf | Third.vcf | .... |
-|----------------|-----------|------------|-----------|------|
-| chr3:123456    |                | . REF=A, ALT=T | rs123 REF=A ALT=T  | ---- |
-| chr3:555555    | . REF=T, ALT=G | . REF=A ALT=G  | rs421 REF=T, ALT=G | ---- |
-
+##### 1.3.1. Using bcftools
+One way to compare two vcf files is by using bcftools and taking the comparision output into a text file. The command for the bcftools is **"bcftools stats vcf_file1 vcf_file2 > output.txt"** and this obtains an outcome text file explaning the differences betweeen two vcf files in statistical data.
 
 ##### 1.3.1 Using vcftoolz
 
