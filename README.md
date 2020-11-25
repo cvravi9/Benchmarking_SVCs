@@ -21,12 +21,12 @@ Therefore, to change this extension, bgzip command is used i.e. **"bgzip -c file
 ### 1.4. Comparing VCF files
 With the vcf files indexed and in vcf.gz extension, there are two ways to compare them. The first of the two ways is using bcftools and the second tool that could be used is the vcftoolz. The difference is that in bcftools another command is needed for visulization while for vcftoolz completes the comparision and visualization by venn diagrams.
 
-With the textual output, the next goal would be to plot the data and for this "plot-vcfstats" is helpful. The command is **"plot-vcfstats -p venn output.txt"**. However, plotting would need installation of "matplotlib" using **"pip3 install matplotlib"** and "pdflatex".
-
 #### 1.4.1. Comparision by bcftools
 One way to compare two vcf files is by using bcftools and taking the comparision output into a text file. The command for the bcftools is **"bcftools stats vcf_file1 vcf_file2 > output.txt"** and this obtains an outcome text file explaning the differences betweeen two vcf files in statistical data.
 
-##### 1.4.2. Comparision by vcftoolz
+With the textual output, the next goal would be to plot the data and for this "plot-vcfstats" is helpful. The command is **"plot-vcfstats -p venn output.txt"**. However, plotting would need installation of "matplotlib" using **"pip3 install matplotlib"** and "pdflatex".
+
+#### 1.4.2. Comparision by vcftoolz
 Another tool to compare two vcf files is the "VCFToolZ".  already groups files in nice headers, and produces Venn diagrams (up to 6 files). It would be cool to see these headers in a HTML document, and with the Venn diagrams included. The command is **"vcftoolz compare first-vcf second-vcf"**
 
 ### 1.5. Filtering VCF File based on Somantic Status of Variant
