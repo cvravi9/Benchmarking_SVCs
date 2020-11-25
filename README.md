@@ -30,8 +30,7 @@ With the textual output, the next goal would be to plot the data and for this "p
 Another tool to compare two vcf files is the "VCF Toolz" and the command is **"vcftoolz compare first-vcf second-vcf"**. With this tool, textual outcome along with the venn diagrams comparing snps and positions are obtained.
 
 ### 1.5. Filtering VCF File
-Each vcf file has five somatic status and for the comparisions, the main vcf file is divided into three sub-vcf files based on the somantic status division. The three categories of divisons are Germline, Somatic and LOH for which SS is 1, 2 & 3 respectively. To do this division, the command used is **"bcftools view -i 'SS ~"2"' vcf-file"**.
-
+Each vcf file has five somatic status and for the comparisions, the main vcf file is divided into three sub-vcf files based on the somantic status division. The three categories of divisons are Germline, Somatic and LOH for which SS is 1, 2 & 3 respectively. To do this division, the command used is **"bcftools view -i 'SS ~"2"' vcf-file"**. After the sub-vcf files are obtained, comparision of the vcf files is achieved using vcftoolz.
 
 ##### Meeting - 17-11-20
 
