@@ -33,7 +33,7 @@ Another tool to compare two vcf files is the "VCF Toolz" and the command is **"v
 Post comparisions of the entire file, the vcf file could be divided in five sub files based on the somatic status. Out of the five of them, three divisions are taken as a seperate sub-vcf files namely Germline, Somatic and LOH. For these divisions, the somatic status also referred to as SS is 1, 2 & 3 respectively. In order to obtain the sub-files, the command used is **"bcftools view -i 'SS ~"2"' vcf-file"**.
 
 #### 1.5.1. Chr Comparisions
-When comparing two vcf files, a point to be noted is that ##contig=<ID=chr9, length=23,assembly=b73> and ##contig=<ID=9, length=23,assembly=b73> cannot be compared. So a small command would ensure that chr is added.
+When comparing two vcf files, a point to be noted is that ##contig=<ID=chr9, length=23,assembly=b73> and ##contig=<ID=9, length=23,assembly=b73> cannot be compared. So a small command would ensure that chr is added in the second vcf file.
 
 ```
 awk '{if($0 !~ /^#/) print "chr"$0; else if(match($0,/(##contig=<ID=)(.*)/,m)) print m[1]"chr"m[2]; else print $0}' 
