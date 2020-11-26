@@ -36,12 +36,8 @@ Post comparisions of the entire file, the vcf file could be divided in five sub 
 When comparing two vcf files, a point to be noted is that ##contig=<ID=chr9, length=23,assembly=b73> and ##contig=<ID=9, length=23,assembly=b73> cannot be compared. So a small command would ensure that chr is added.
 
 ```
-awk '{if($0 !~ /^#/) 
-      print "chr"$0;
-      else if(match($0,/(##contig=<ID=)(.*)/,m))
-      print m[1]"chr"m[2];
-      else print $0 
-      }' basic.vcf > modified.vcf
+awk '{if($0 !~ /^#/) print "chr"$0; else if(match($0,/(##contig=<ID=)(.*)/,m)) print m[1]"chr"m[2]; else print $0}' 
+      basic.vcf > modified.vcf
 ```
 
 # Meeting Notes
