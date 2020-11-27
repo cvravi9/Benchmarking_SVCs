@@ -44,6 +44,9 @@ awk '{if($0 !~ /^#/)
       basic.vcf > modified.vcf
 ```
 
+# Original Data
+The comparisions of the original vcf files.
+
 # Meeting Notes
 
 ## 17th November 2020
