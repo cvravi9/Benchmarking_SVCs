@@ -47,6 +47,12 @@ awk '{if($0 !~ /^#/)
 ## 2. Original Data
 The comparisions of the original vcf files.
 
+# Goals
+
+* Setting up yaml file for MIRACUM Workflow.
+* Executing MIRACUM Workflow for Tumor and Normal Sample.
+* Two VCF Files with 0.7 and 0.5 Tumor Purity Sample.
+
 # Meeting Notes
 
 ## 17th November 2020
