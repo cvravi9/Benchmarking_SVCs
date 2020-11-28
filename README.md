@@ -52,6 +52,12 @@ The comparisions of the original vcf files.
 * Setting up yaml file for MIRACUM Workflow.
 * Executing MIRACUM Workflow for Tumor and Normal Sample.
 * Two VCF Files with 0.7 and 0.5 Tumor Purity Sample.
+* Comparision of VCF Files.
+* Visual Image of VCF Differences.
+* Real Data with new Capture Regions.
+* Modified Workflow of MIRACUM
+* Creating a Sub-Normal Workflow.
+* Adding chr to the VCF Files.
 
 # Meeting Notes
 
