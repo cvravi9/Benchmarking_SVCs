@@ -44,8 +44,14 @@ awk '{if($0 !~ /^#/)
       basic.vcf > modified.vcf
 ```
 
-## 2. Original Data
+## 2. Original Data with Tumor Purity Estimate Variation
 The comparisions of the original vcf files.
+
+### 2.1. Modified Workflow 
+Generating VCF file using a modified workflow.
+
+## 3. Original Data with Truth Data
+Considering the truth values given at ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_NA24385_mixture_10052016/.
 
 # Goals
 
