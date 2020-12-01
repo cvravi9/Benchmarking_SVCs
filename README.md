@@ -10,7 +10,8 @@ To obtain vcf files from a workflow, "Galaxy_Workflow_MIRACUM_main.ga" of MIRACU
 Using this yaml file, the process of generating a vcf file can be automated using planemo in the terminal. The command used to generate a vcf file is
 
 ```
-planemo run workflow_name yaml_name --galaxy_url https://usegalaxy.eu/ --galaxy_user_key key_number --engine external_galaxy --no_shed_install
+planemo run workflow_name yaml_name --galaxy_url https://usegalaxy.eu/ 
+--galaxy_user_key key_number --engine external_galaxy --no_shed_install
 ```
 
 ### 1.2. Obtaining two VCF files
