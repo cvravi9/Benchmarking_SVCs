@@ -34,3 +34,5 @@
 ```
 vcftoolz compare First.vcf Second.vcf
 ```
+
+* The output is stored in a text file and two venn diagrams showing snps and positions are presented.
