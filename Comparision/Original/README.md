@@ -14,9 +14,15 @@
 
 * The workflow used is https://usegalaxy.eu/datasets/11ac94870d0bb33adbf1403255975200/display?to_ext=fastqsanger.gz
 
-### 1.3. Purity Score
+### 1.3. Data Name
+
+* Normal Sample Name is Normal.
+* Tumor Sample Name is Tumor.
+
+### 1.4. Purity Score
 
 * The first vcf fiel is obtained with the normal sample purity of 1.0.
 * The first vcf file is obtained with the tumor sample purity of 0.7.
+
 * The second vcf file is obtained with the normal sample purity of 1.0.
 * The second vcf file is obtained with the tumor sample purity of 0.4.
