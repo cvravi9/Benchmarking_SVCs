@@ -25,3 +25,8 @@
 * The first vcf file is obtained with the tumor sample purity of 0.7.
 * The second vcf file is obtained with the normal sample purity of 1.0.
 * The second vcf file is obtained with the tumor sample purity of 0.4.
+
+## 2. Comparision
+
+* When both the workflows are completed, two vcf files are downloaded from the galaxy and are named First.vcf and Second.vcf.
+* Both the vcf files are compared using the command.
