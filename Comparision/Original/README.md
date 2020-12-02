@@ -30,3 +30,7 @@
 
 * When both the workflows are completed, two vcf files are downloaded from the galaxy and are named First.vcf and Second.vcf.
 * Both the vcf files are compared using the command.
+
+```
+vcftoolz compare First.vcf Second.vcf
+```
