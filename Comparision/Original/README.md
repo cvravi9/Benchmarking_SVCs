@@ -21,8 +21,7 @@
 
 ### 1.4. Purity Score
 
-* The first vcf fiel is obtained with the normal sample purity of 1.0.
+* The first vcf file is obtained with the normal sample purity of 1.0.
 * The first vcf file is obtained with the tumor sample purity of 0.7.
-
 * The second vcf file is obtained with the normal sample purity of 1.0.
 * The second vcf file is obtained with the tumor sample purity of 0.4.
