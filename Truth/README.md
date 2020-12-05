@@ -1,3 +1,14 @@
+# Truth Data Comparision
+
+## Inputs
+
+## Constrains
+
+## Procedure
+
+## Outputs
+
+
 The following steps are taken in preparing Somatic Truth data:
 
 1. Download the source file from "ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_NA24385_mixture_10052016/na12878-na24385-somatic-truth.vcf.gz".
