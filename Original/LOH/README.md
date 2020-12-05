@@ -1,4 +1,4 @@
-# Original Loss of Heterozygoisty Data Comparision
+# Original LOH Data Comparision
 
 ## Inputs
 
