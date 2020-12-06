@@ -1,0 +1,15 @@
+Gene-level Report:
+  class: File
+  location: https://zenodo.org/record/582600/files/mutant_R1.fastq
+
+UniProt Cancer Genes:
+  class: File
+  location: https://zenodo.org/record/2581881/files/Uniprot_Cancer_Genes.13Feb2019.txt
+
+CGI Genes:
+  class: File
+  location: https://zenodo.org/record/2581881/files/cgi_genes.txt
+
+CIViC Gene Summaries:
+  class: File
+  location: https://zenodo.org/record/2581881/files/01-Feb-2019-GeneSummaries.tsv
