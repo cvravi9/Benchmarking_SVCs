@@ -4,15 +4,15 @@ In this comparision, the germline vcf files created from the original vcf files 
 
 ## 1. Inputs
 
-* The two input vcf files are the Original-Data-Comparision VCF files.
+* The two input vcf files are the Original_Data_Comparision VCF files.
 
-* The first original vcf file with tumor sample purity of 0.7 is named *First-Original.vcf*
+* The first original vcf file with Tumor Sample Purity of 0.7 is named *First-Original.vcf*
 
-* The second original vcf file with the tumor sample purity of 0.4 is named *Second-Original.vcf*
+* The second original vcf file with the Tumor Sample Purity of 0.4 is named *Second-Original.vcf*
 
 ## 2. Procedure
 
-* From the input vcf files, the germline vcf file is obtained using the command
+* From the input vcf files, the Germline VCF files are obtained using the command
 
 ```
 bcftools view -i 'SS ~"1"' First-Original.vcf > First-Germline.vcf
