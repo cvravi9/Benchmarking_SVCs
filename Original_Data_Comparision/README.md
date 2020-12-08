@@ -13,7 +13,7 @@ ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_
 ```
 https://usegalaxy.eu/u/wolfgang-maier/h/miracum-annotation-data
 ```
-
+abd the file name is *capture_targets_chr5_12_17.bed*
 
 ## 2. Constrains
 
