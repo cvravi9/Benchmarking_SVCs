@@ -35,7 +35,7 @@ planemo run workflow_name yaml_name --galaxy_url https://usegalaxy.eu/ --galaxy_
 * Then these vcf files are compared using the command
 
 ```
-vcftoolz compare first-vcf-file second-vcf-file
+vcftoolz compare first-vcf-file second-vcf-file > Output.txt
 ```
 
 ### 2.1. Alternate Workflow
