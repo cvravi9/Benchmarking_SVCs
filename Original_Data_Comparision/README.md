@@ -16,7 +16,11 @@ ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_
 https://usegalaxy.eu/u/wolfgang-maier/h/miracum-annotation-data
 ```
 
-* The workflow used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.ga*.
+* The workflow used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.ga* and the workflow has been downloaded from
+
+```
+https://github.com/AG-Boerries/MIRACUM-Pipe-Galaxy
+```
 
 * The yaml file used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.yml*
 
