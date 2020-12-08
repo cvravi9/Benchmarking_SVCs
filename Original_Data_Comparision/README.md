@@ -25,7 +25,7 @@ https://usegalaxy.eu/u/wolfgang-maier/h/miracum-annotation-data
 planemo run workflow_name yaml_name --galaxy_url https://usegalaxy.eu/ --galaxy_user_key key_number --engine external_galaxy --no_shed_install
 ```
 
-* Ensure that there are two yaml files with different tumor sample purity.
+* Ensure that there are two yaml files with different tumor sample purity i.e. 0.7 and 0.4.
 
 * After the workflows are completed, the vcf files are downloaded from *https://usegalaxy.eu/* using *wget*.
 
@@ -41,11 +41,14 @@ vcftoolz compare first-vcf-file second-vcf-file
 
 * So a modified workflow with the name *Galaxy_Workflow_Cut_of_MIRACUM_main.ga* has been created.
 
-* This workflow however cannot be run from the terminal and needs to be executed in *https://usegalaxy.eu/*.
+* This workflow however cannot be run from the terminal and needs to be executed in *https://usegalaxy.eu/*
 
-## 3. Constrains
+### 2.2. Purity Sample Values
 
-## 4. Outputs
+* The first vcf file is created with the normal sample purity of 1.0 and tumor sample purity of 0.7.
 
-The first vcf file is obtained with the tumor sample purity of 0.7.
-The second vcf file is obtained with the tumor sample purity of 0.4.
+* The second vcf file is created with the normal sample purity of 1.0 and tumor sample purity of 0.4.
+
+## 3. Outputs
+
+
