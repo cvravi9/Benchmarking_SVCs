@@ -1,11 +1,8 @@
 # Original Data Comparision
-In this comparision, the original data for the Normal and Tumor Data are considered. Given below is the detailed information.
+In this comparision, the original vcf files created with a specific input data that comprises of the original data are compared. Given below is the information as to how this task is accomplished.
 
 ## 1. Inputs
-In this section, input data, workflows, yaml files for this comparision are mentioned.
-
-### 1.1. Data
-The forward and reverse reads for the Normal Data and for the Tumor Data can be downloaded from 
+The input data for the forward and reverse reads for the Normaland Tumor Data have been downloaded from 
 
 ```
 ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_NA24385_mixture_10052016/
