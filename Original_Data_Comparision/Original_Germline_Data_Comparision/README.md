@@ -1,12 +1,12 @@
 # Original Germline Data Comparision
 
-## Inputs
+In this comparision, the germline vcf files created from the original vcf files are used. Given below is the detailed information.
 
-## Constrains
+## 1. Inputs
 
-## Procedure
+## 2. Procedure
 
-## Outputs
+## 3. Outputs
 
 
 The first vcf file is filtered germline vcf file with the tumor sample purity of 0.7.
