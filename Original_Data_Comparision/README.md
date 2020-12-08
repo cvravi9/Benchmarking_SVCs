@@ -35,11 +35,17 @@ planemo run workflow_name yaml_name --galaxy_url https://usegalaxy.eu/ --galaxy_
 vcftoolz compare first-vcf-file second-vcf-file
 ```
 
-## 3. Alternate Workflow
-*
-## 4. Constrains
+### 2.1. Alternate Workflow
 
-## 5. Outputs
+* Generating the entire workflow with the original data has consumed a lot of time and space.
+
+* So a modified workflow with the name *Galaxy_Workflow_Cut_of_MIRACUM_main.ga* has been created.
+
+* This workflow however cannot be run from the terminal and needs to be executed in *https://usegalaxy.eu/*.
+
+## 3. Constrains
+
+## 4. Outputs
 
 The first vcf file is obtained with the tumor sample purity of 0.7.
 The second vcf file is obtained with the tumor sample purity of 0.4.
