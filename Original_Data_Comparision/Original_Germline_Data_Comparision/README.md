@@ -12,6 +12,22 @@ In this comparision, the germline vcf files created from the original vcf files 
 
 ## 2. Procedure
 
+* From the input vcf files, the germline vcf file is obtained using the command
+
+```
+bcftools view -i 'SS ~"1"' First-Original.vcf > First-Germline.vcf
+```
+
+* The value for SS is 1 because the Somatic Status value for Germline is 1.
+
+* By executing this command, two germline vcf files from the Original VCF files can be obtained.
+
+* These vcf files are then compared using the command
+
+```
+vcftoolz compare First-Germline.vcf Second-Germline.vcf > Output.txt
+```
+
 ## 3. Outputs
 
 * After the vcftoolz comparision, an output text file along with two pdfs are obtained.
