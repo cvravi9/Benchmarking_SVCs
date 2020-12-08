@@ -18,11 +18,13 @@ https://usegalaxy.eu/u/wolfgang-maier/h/miracum-annotation-data
 
 * The yaml file used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.yml*
 
-## 2. Constrains
+## 2. Commands
 
-## 3. Procedure
+## 3. Constrains
 
-## 4. Outputs
+## 4. Procedure
+
+## 5. Outputs
 
 The first vcf file is obtained with the tumor sample purity of 0.7.
 The second vcf file is obtained with the tumor sample purity of 0.4.
