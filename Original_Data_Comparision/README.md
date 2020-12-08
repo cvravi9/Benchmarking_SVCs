@@ -10,9 +10,9 @@ ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_
 
 * The input for the Capture Regions have been downloaded from
 
+```
 https://usegalaxy.eu/u/wolfgang-maier/h/miracum-annotation-data
-
-
+```
 
 
 ## 2. Constrains
