@@ -48,9 +48,9 @@ vcftoolz compare first-vcf-file second-vcf-file > Output.txt
 
 ### 2.2. Purity Sample Values
 
-* The first vcf file is created with the normal sample purity of 1.0 and tumor sample purity of 0.7.
+* The first vcf file is created with the Normal Sample Purity of 1.0 and Tumor Sample Purity of 0.7.
 
-* The second vcf file is created with the normal sample purity of 1.0 and tumor sample purity of 0.4.
+* The second vcf file is created with the Normal Sample Purity of 1.0 and Tumor Sample Purity of 0.4.
 
 ## 3. Outputs
 
