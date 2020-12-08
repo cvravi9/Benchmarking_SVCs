@@ -8,12 +8,15 @@ In this comparision, the original vcf files created with a specific input data t
 ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_NA24385_mixture_10052016/
 ```
 
-* The input for the Capture Regions have been downloaded from
+* The input for the Capture Regions file name is *capture_targets_chr5_12_17.bed* and it can be downloaded from
 
 ```
 https://usegalaxy.eu/u/wolfgang-maier/h/miracum-annotation-data
 ```
-abd the file name is *capture_targets_chr5_12_17.bed*
+
+* The workflow used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.ga*.
+
+* The yaml file used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.yml*
 
 ## 2. Constrains
 
