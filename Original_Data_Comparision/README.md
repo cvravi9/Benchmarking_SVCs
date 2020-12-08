@@ -1,7 +1,9 @@
 # Original Data Comparision
+
 In this comparision, the vcf files created with the original data are used. Given below is the detailed information.
 
 ## 1. Inputs
+
 * The forward and reverse reads for the Normal and Tumor Sample have been downloaded from 
 
 ```
@@ -19,6 +21,7 @@ https://usegalaxy.eu/u/wolfgang-maier/h/miracum-annotation-data
 * The yaml file used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.yml*
 
 ## 2. Procedure
+
 * To generate the vcf files from the terminal, use this command while ensuring the inputs are in the same folder
 
 ```
@@ -51,4 +54,8 @@ vcftoolz compare first-vcf-file second-vcf-file
 
 ## 3. Outputs
 
+* After the *vcftoolz* comparision, an output text file along with two pdfs are obtained.
 
+* The first pdf has snps represented in a venn diagram with the file name *venn2.snps.pdf*.
+
+* The second pdf has positions represented in a venn diagram with the file name *venn2.positions.pdf*.
