@@ -4,7 +4,7 @@ In this comparision, the germline vcf files created from the original vcf files 
 
 ## 1. Inputs
 
-* The inputs for Germline Data Comparision is the Original VCF files.
+* The two input vcf files are the Original-Data-Comparision VCF files.
 
 * The first original vcf file with tumor sample purity of 0.7 is named *First-Original.vcf*
 
