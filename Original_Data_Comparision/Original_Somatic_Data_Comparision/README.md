@@ -1,6 +1,6 @@
 # Original Somatic Data Comparision
 
-In this comparision, the germline vcf files created from the original vcf files are used. Given below is the detailed information.
+In this comparision, the somatic vcf files created from the original vcf files are used. Given below is the detailed information.
 
 ## 1. Inputs
 
