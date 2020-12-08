@@ -1,5 +1,5 @@
 # Original Data Comparision
-In this comparision, the original vcf files created with an original data are compared. Given below is the information as to how this task has been accomplished.
+In this comparision, the vcf files created with the original data are compared. Given below is the detailed information.
 
 ## 1. Inputs
 * The forward and reverse reads for the Normal and Tumor Sample have been downloaded from 
