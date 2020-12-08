@@ -25,14 +25,14 @@ https://usegalaxy.eu/u/wolfgang-maier/h/miracum-annotation-data
 planemo run workflow_name yaml_name --galaxy_url https://usegalaxy.eu/ --galaxy_user_key key_number --engine external_galaxy --no_shed_install
 ```
 
-* Ensure there are two yaml files with different tumor sample purity.
+* Ensure that there are two yaml files with different tumor sample purity.
 
 * After the workflows are completed, the vcf files are downloaded from *https://usegalaxy.eu/* using *wget*.
 
-* The vcf files are compared using the command
+* Then these vcf files are compared using the command
 
 ```
-vcftoolz compare first-vcf-file second-vcf-file
+** vcftoolz compare first-vcf-file second-vcf-file
 ```
 
 ## 3. Alternate Workflow
