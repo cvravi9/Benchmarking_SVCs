@@ -28,7 +28,7 @@ https://usegalaxy.eu/u/wolfgang-maier/h/miracum-annotation-data
 planemo run workflow_name yaml_name --galaxy_url https://usegalaxy.eu/ --galaxy_user_key key_number --engine external_galaxy --no_shed_install
 ```
 
-* Ensure that there are two yaml files with different tumor sample purity i.e. 0.7 and 0.4.
+* Ensure that there are two yaml files with different Tumor Sample Purity i.e. 0.7 and 0.4.
 
 * After the workflows are completed, the vcf files are downloaded from *https://usegalaxy.eu/* using *wget*.
 
