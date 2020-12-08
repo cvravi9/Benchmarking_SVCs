@@ -18,9 +18,9 @@ In this comparision, the germline vcf files created from the original vcf files 
 bcftools view -i 'SS ~"2"' First-Original.vcf > First-Somatic.vcf
 ```
 
-* The value for SS is 2 because the Somatic Status value for Germline is 2.
+* The value for SS is 2 because the Somatic Status value for Somatic is 2.
 
-* By executing this command, two Germline VCF files from the Original VCF files can be obtained.
+* By executing this command, two Somatic VCF files from the Original VCF files can be obtained.
 
 * These vcf files are then compared using the command
 
