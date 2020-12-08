@@ -16,6 +16,6 @@ In this comparision, the germline vcf files created from the original vcf files 
 
 * After the vcftoolz comparision, an output text file along with two pdfs are obtained.
 
-* The first pdf has snps represented in a venn diagram with the file name venn2.snps.pdf.
+* The first pdf has snps represented in a venn diagram with the file name *venn2.snps.pdf*.
 
-* The second pdf has positions represented in a venn diagram with the file name venn2.positions.pdf.
+* The second pdf has positions represented in a venn diagram with the file name *venn2.positions.pdf*.
