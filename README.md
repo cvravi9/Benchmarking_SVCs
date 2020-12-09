@@ -126,6 +126,21 @@ ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_
 
 # Meeting Notes
 
+## 9th December 2020
+
+* Compare variant types found in one workflow comapred to another
+  * Compare the same for variants only for WF 1, only for WF2, and finally between both
+  * E,g, low frequency, or low covereage, depth,
+  * Generate plots to represent these
+   * Boxplots and violin plots
+
+* Compare varscan somatic against Stryker -- use Ravi's test to quantify those
+  * Why the subsampling doesnt work for the Tumor data, why it doesn't work for this dataset
+  * It runs fine
+
+* Galaxy wrapper
+  * Take BAM and VCF as input in a workflow, run our tool, get the nice plots
+
 ## 17th November 2020
 
 * Subset Data
