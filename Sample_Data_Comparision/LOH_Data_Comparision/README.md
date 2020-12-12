@@ -1,7 +1,5 @@
 # Sample Loss of Heterozygoisty Data Comparision
 
-# Sample Loss of Heterozygoisty Data Comparision
-
 In this comparision, the LOH VCF files created from the Sample VCF files are used. Given below is the detailed information.
 
 ## 1. Inputs
