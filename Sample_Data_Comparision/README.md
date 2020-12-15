@@ -7,13 +7,13 @@ In this comparision, the vcf files created with the sample data are used. Given 
 * The forward and reverse reads for the Normal and Tumor Sample have been downloaded from 
 
 ```
-Yet to be updated
+https://zenodo.org/record/2582555/files/SLGFSK-N_231335_r1_chr5_12_17.fastq.gz
 ```
 
 * The input for the Capture Regions file name is *capture_targets_chr5_12_17.bed* and it can be downloaded from
 
 ```
-Yet to be updated.
+https://zenodo.org/record/2582555/files/SLGFSK-N_231335_r2_chr5_12_17.fastq.gz
 ```
 
 * The workflow used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.ga* and the workflow has been downloaded from
