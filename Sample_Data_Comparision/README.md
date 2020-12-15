@@ -4,22 +4,40 @@ In this comparision, the vcf files created with the sample data are used. Given 
 
 ## 1. Inputs
 
-* The forward and reverse reads for the Normal and Tumor Sample have been downloaded from 
+* The forward Normal Sample has been downloaded from 
 
 ```
 https://zenodo.org/record/2582555/files/SLGFSK-N_231335_r1_chr5_12_17.fastq.gz
 ```
 
-* The input for the Capture Regions file name is *capture_targets_chr5_12_17.bed* and it can be downloaded from
+* The reverse Normal Sample has been downloaded from 
 
 ```
 https://zenodo.org/record/2582555/files/SLGFSK-N_231335_r2_chr5_12_17.fastq.gz
 ```
 
+* The forward Tumor Sample has been downloaded from 
+
+```
+https://zenodo.org/record/2582555/files/SLGFSK-T_231336_r1_chr5_12_17.fastq.gz
+```
+
+* The reverse Turmor Sample has been downloaded from 
+
+```
+https://zenodo.org/record/2582555/files/SLGFSK-T_231336_r2_chr5_12_17.fastq.gz
+```
+
+* The input for the Capture Regions file name is *Capture_Targets.bed* and it can be downloaded from
+
+```
+https://usegalaxy.eu/datasets/11ac94870d0bb33a95805d5640ce736f/display?to_ext=bed
+```
+
 * The workflow used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.ga* and the workflow has been downloaded from
 
 ```
-Yet to be updated.
+https://github.com/AG-Boerries/MIRACUM-Pipe-Galaxy
 ```
 
 * The yaml file used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.yml*
