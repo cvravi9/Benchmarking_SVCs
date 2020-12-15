@@ -40,7 +40,7 @@ https://usegalaxy.eu/datasets/11ac94870d0bb33a95805d5640ce736f/display?to_ext=be
 https://github.com/AG-Boerries/MIRACUM-Pipe-Galaxy
 ```
 
-* The yaml file used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.yml*
+* The yaml file used to generate the vcf files are *Galaxy_Workflow_MIRACUM_main.yml* & *Galaxy_Workflow_MIRACUM_main_second.yml*
 
 ## 2. Procedure
 
