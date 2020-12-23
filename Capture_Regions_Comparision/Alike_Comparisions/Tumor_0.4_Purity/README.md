@@ -1,4 +1,4 @@
-# Capture Regions Alike Comparisions - Tumor 0.4 Purity
+# Capture Regions Alike Comparisions - Tumor Purity - 0.4
 
 ## 1. Inputs
 
