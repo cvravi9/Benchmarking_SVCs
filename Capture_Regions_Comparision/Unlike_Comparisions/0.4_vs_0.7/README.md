@@ -1,4 +1,4 @@
-# Capture Regions Unlike Comparisions: 0.4 vs 0.7 
+# Capture Regions Unlike Comparisions - Tumor Purity - 0.4 vs 0.7 
 
 ## 1. Inputs
 
