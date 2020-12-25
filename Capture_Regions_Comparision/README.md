@@ -22,6 +22,8 @@ ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_
 https://github.com/AG-Boerries/MIRACUM-Pipe-Galaxy
 ```
 
+* The inputs for the *Galaxy_Workflow_MIRACUM_main.ga* workflow are mapped normal and tumor samples generated through *Sub_Sampled_Data_Workflow.ga* workflow and *capture_targets_chr5_12_17.bed* captured regions.
+
 ## 2. Procedure
 
 ## 3. Outputs
