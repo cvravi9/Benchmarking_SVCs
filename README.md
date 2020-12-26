@@ -10,7 +10,7 @@
 
 ## 4. Test Data
 
-## 6. Truth Data
+## 5. Truth Data
 
 # Goals
 
