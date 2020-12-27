@@ -24,6 +24,12 @@ https://github.com/AG-Boerries/MIRACUM-Pipe-Galaxy
 
 * The workflow used to generate mapped normal and tumor samples is *Workflow_Filter_FASTQ_on_BAM_File_Capture_Regions.ga*.
 
+* The forward and reverse reads for the Orginal Normal and Tumor Sample have been downloaded from 
+
+```
+ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_NA24385_mixture_10052016/
+```
+
 ## 2. Procedure
 
 ## 3. Outputs
