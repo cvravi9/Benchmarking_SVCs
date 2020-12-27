@@ -4,7 +4,7 @@ In this comparision, vcf files with Tumor Purity Estimate of 0.4 are visualized 
 
 ## 1. Inputs
 
-* The two input vcf files namely Miracum_0.4.vcf & Somatic_0.4.vcf.
+* The two input vcf files to be compared are named *Miracum_0.4.vcf* & *Somatic_0.4.vcf*.
 
 * Both these files are with Tumor Sample Purity of 0.4.
 
