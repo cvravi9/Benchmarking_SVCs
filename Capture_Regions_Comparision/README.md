@@ -42,3 +42,11 @@ ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/use_cases/mixtures/UMCUTRECHT_NA12878_
 
 ## 3. Outputs
 
+* The first vcf is with the tumor purity estimate of 0.4 with MIRACUM Capture Regions named *Miracum_0.4.vcf*.
+
+* The second vcf is with the tumor purity estimate of 0.7 with MIRACUM Capture Regions named *Miracum_0.7.vcf*.
+
+* The first vcf is with the tumor purity estimate of 0.4 with Somatic Truth Capture Regions named *Somatic_0.4.vcf*.
+
+* The first vcf is with the tumor purity estimate of 0.7 with Somatic Truth Capture Regions named *Somatic_0.7.vcf*.
+
