@@ -1,5 +1,4 @@
 # Capture Regions Unlike Comparisions
-# Capture Regions Alike Comparisions
 
 In this comparision, vcf files with Unlike Tumor Purity Estimate are visualized through vcftoolz.
 
