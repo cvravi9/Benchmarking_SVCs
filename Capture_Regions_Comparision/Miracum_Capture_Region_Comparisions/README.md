@@ -4,11 +4,11 @@ In this comparision, vcf files generated using Miracum Capture Regions are visua
 
 ## 1. Inputs
 
-* The two input vcf files namely Miracum_0.4.vcf & Miracum_0.7.vcf.
+* The two input vcf files namely *Miracum_0.4.vcf* & *Miracum_0.7.vcf*.
 
-* The file with Miracum_0.4.vcf is with Tumor Sample Purity of 0.4 
+* The file with *Miracum_0.4.vcf* is with Tumor Sample Purity of 0.4. 
 
-* The file with Miracum_0.7.vcf is with Tumor Sample Purity of 0.7.
+* The file with *Miracum_0.7.vcf* is with Tumor Sample Purity of 0.7.
 
 ## 2. Procedure
 
