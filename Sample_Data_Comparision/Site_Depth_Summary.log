@@ -1,0 +1,14 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf Second.vcf
+	--max-missing 1
+	--out Site_Depth_Summary
+	--site-depth
+
+After filtering, kept 2 out of 2 Individuals
+Outputting Depth for Each Site
+After filtering, kept 19390 out of a possible 19390 Sites
+Run Time = 0.00 seconds

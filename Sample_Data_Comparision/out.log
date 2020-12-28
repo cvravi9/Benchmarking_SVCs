@@ -1,0 +1,13 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf Second.vcf
+	--depth
+	--stdout
+
+After filtering, kept 2 out of 2 Individuals
+Outputting Mean Depth by Individual
+After filtering, kept 19390 out of a possible 19390 Sites
+Run Time = 0.00 seconds
