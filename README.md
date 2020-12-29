@@ -1,17 +1,5 @@
 # Variant Analysis
 
-## 1. Capture Regions
-
-## 2. Original Data 
-
-## 3. Sample Data 
-
-## 4. Sub-Sampled Data
-
-## 4. Test Data
-
-## 5. Truth Data
-
 # Goals
 
 * Setting up yaml file for MIRACUM Workflow.
