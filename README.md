@@ -1,5 +1,3 @@
-# Variant Analysis
-
 # Goals
 
 * Setting up yaml file for MIRACUM Workflow.
