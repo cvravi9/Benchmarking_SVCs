@@ -9,6 +9,9 @@
 * Modified Workflow of MIRACUM
 * Creating a Sub-Normal Workflow.
 * Adding chr to the VCF Files.
+* Obtaining Allele Frequency from VCF Files.
+* Obtaning Sequencing Depth Information from VCF Files.
+* Plotting Allele Frequency & Sequencing Depth Information.
 
 # Meeting Notes
 
