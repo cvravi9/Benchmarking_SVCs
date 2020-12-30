@@ -66,6 +66,13 @@ vcftoolz compare first-vcf-file second-vcf-file > Output.txt
 vcftools --vcf input.vcf --freq --out output
 ```
 
+* Getting sequencing depth information
+
+```
+vcftools --vcf input_data.vcf --depth -c > depth_summary.txt
+vcftools --vcf input_data.vcf --site-depth --max-missing 1.0 --out
+```
+
 ### 2.1. Purity Sample Values
 
 * The first vcf file is created with the Normal Sample Purity of 1.0 and Tumor Sample Purity of 0.7.
