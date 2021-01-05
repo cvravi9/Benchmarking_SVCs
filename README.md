@@ -15,6 +15,15 @@
 
 # Meeting Notes
 
+## 5th January 2021
+
+* Allele frequencies for each VCF file was shown. We just need a comparison.
+  * Extract the CHROM and POS lines from each frequency file and merge them into a unique ID (e.g. "chr4:123456"), and extract just the reference allele, which from testing a few alleles we saw it was the first allele mentioned in the allele frequencies.
+  * For each chrom:pos ID across your VCF allele frequency files, check that they all have the same REF allele, and print a message if they don't.
+  * Extra: take this further, and compare the REF frequencies to see if it is the same across all files.
+  * The pandas python library might be very helpful here.
+
+
 ## 9th December 2020
 
 * Compare variant types found in one workflow comapred to another
