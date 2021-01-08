@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 dff = pd.read_csv("Miracum_0.4_Allele_Frequency.frq", sep = '\t', index_col= False)
@@ -23,7 +24,10 @@ dff1 = dff1[cols]
 print(dff1)
 
 result = pd.merge(dff, dff1, on="CHROM-POS")
-result.columns = ['CHROM-POS', 'AF-0.4', 'AF-0.7']
+result.columns = ['CHROM-POS', 'AF_0.4_REF', 'AF_0.7_REF']
+print(result)
+
+result["REF_Comparision"] = result["AF_0.4_REF"].equals(result["AF_0.4_REF"])
 print(result)
 
 result.to_csv('Miracum_AF_Comparision.csv', sep='\t', index = None)
