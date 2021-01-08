@@ -26,4 +26,4 @@ result = pd.merge(dff, dff1, on="CHROM-POS")
 result.columns = ['CHROM-POS', 'AF-0.4', 'AF-0.7']
 print(result)
 
-result.to_csv('Miracum_AF_Comparision.csv', index = None)
+result.to_csv('Miracum_AF_Comparision.csv', sep='\t', index = None)
