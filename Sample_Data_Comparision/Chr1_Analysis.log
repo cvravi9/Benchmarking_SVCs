@@ -1,0 +1,13 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--gzvcf Second_Allele_Frequency.frq
+	--chr 1
+	--freq
+	--out Chr1_Analysis
+
+Using zlib version: 1.2.11
+After filtering, kept 0 out of 0 Individuals
+Error: Require Genotypes in VCF file in order to output Frequency Statistics.
