@@ -1,0 +1,13 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf Miracum_0.4.vcf
+	--out Miracum_DS_0.4
+	--site-depth
+
+After filtering, kept 2 out of 2 Individuals
+Outputting Depth for Each Site
+After filtering, kept 29315 out of a possible 29315 Sites
+Run Time = 1.00 seconds
