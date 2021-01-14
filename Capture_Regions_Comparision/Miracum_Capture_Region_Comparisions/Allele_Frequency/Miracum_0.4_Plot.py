@@ -1,26 +1,23 @@
+# Importing the needed packages.
 import matplotlib.pyplot as plt
 import pandas as pd
 import csv
 
-# x = []
-# y = []
 
-# with open('Miracum_0.4_AF_Plot.csv','r') as csvfile:
-#        plots = csv.reader(csvfile, delimiter='\t')
-#        for row in plots:
-#                x.append(int())
-#                y.append(int())
-
+# Mentioning the column names and inputing the csv file.
 column_names = ["POS", "ALLELE"]
 df = pd.read_csv("Miracum_0.4_AF_Plot.csv", sep= "\t", names=column_names)
+
+# Converting the column into a list.
 POS_List = df.POS.to_list()
 FREQ_List = df.ALLELE.to_list()
+
+# Printing the list.
 print(POS_List)
 print(FREQ_List)
 
-plt.plot(POS_List, FREQ_List, label='Loaded from file!')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.title('Interesting Graph\nCheck it out')
-# plt.legend()
+
+# Showing the output and saving it into a PDF.
+plt.plot(POS_List, FREQ_List, label='Postions vs Allele Frequency')
 plt.show()
+plt.savefig('Miracum_0.4_Plot.pdf')
