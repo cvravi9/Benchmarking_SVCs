@@ -15,6 +15,13 @@
 
 # Meeting Notes
 
+## 13th January 2021
+
+* Extracting the DP from the VCF File for Normal and Tumor Samples.
+* Plotting DP values against their positions.
+* Removing the comparision between the AF Values.
+
+
 ## 5th January 2021
 
 * Allele frequencies for each VCF file was shown. We just need a comparison.
