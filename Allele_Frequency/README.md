@@ -29,3 +29,5 @@ vcftools --vcf input.vcf --freq --out output
 * The first set of output allele frequency files are Miracum_0.4.frq, Miracum_0.7.frq, Somatic_0.4.frq, & Somatic_0.7.frq.
 
 * The second set of output allele frequency files are Miracum_0.4.log, Miracum_0.7.log, Somatic_0.4.log, & Somatic_0.7.log.
+
+* The third outcome is 'Allele_Frequency_Values.csv' which comprises all of the 'ALLELE:FREQ' values.
