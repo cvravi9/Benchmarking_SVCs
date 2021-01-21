@@ -22,7 +22,7 @@ vcftools --vcf input.vcf --freq --out output
 
 * Using the code at 'Allele_Frequency.py', two columns namely 'N_ALLELES', 'N_CHR' are dropped.
 
-* Using the code at 'Allele_Frequency.py', all 'ALLELE:FREQ' are combined into one file.
+* Using the code at 'Allele_Frequency.py', all 'ALLELE:FREQ' are combined into one file along with 'CHROM-POS'.
 
 ## 3. Outputs
 
