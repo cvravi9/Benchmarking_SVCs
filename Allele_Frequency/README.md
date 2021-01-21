@@ -26,8 +26,6 @@ vcftools --vcf input.vcf --freq --out output
 
 ## 3. Outputs
 
-* After the *vcftoolz* comparision, an output text file along with two pdfs are obtained.
+* The first set of output allele frequency files are Miracum_0.4.frq, Miracum_0.7.frq, Somatic_0.4.frq, Somatic_0.7.frq.
 
-* The first pdf has snps represented in a venn diagram with the file name *venn2.snps.pdf*.
-
-* The second pdf has positions represented in a venn diagram with the file name *venn2.positions.pdf*.
+* The second set of output allele frequency files are Miracum_0.4.log, Miracum_0.7.log, Somatic_0.4.log, Somatic_0.7.log.
