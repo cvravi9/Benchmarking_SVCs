@@ -1,6 +1,6 @@
 # Allele Frequency
 
-In this section, Allele Frequency for the vcf files are filtered and then visualized through two tools.
+In this section, Allele Frequency for the vcf files are filtered and then visualized through three tools.
 
 ## 1. Inputs
 
