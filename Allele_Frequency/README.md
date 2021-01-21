@@ -10,21 +10,19 @@ In this section, Allele Frequency for the vcf files are filtered and then visual
 
 ## 2. Procedure
 
-* Group the vcf files based on their Tumor Purity Estimate of either 0.7 and 0.4.
-
-* The folder names are *Tumor_0.4_Purity* & *Tumor_0.7_Purity*.
-
-* Then these vcf files are compared using the command
-
-```
-vcftoolz compare first-vcf-file second-vcf-file > Output.txt
-```
-
-* Getting allele frequency command
+* The allele frequency for each of the input files are obtained using the command
 
 ```
 vcftools --vcf input.vcf --freq --out output
 ```
+
+* The outcome files for allele frequency have five columns namely 'CHROM', 'POS', 'N_ALLELES', 'N_CHR', 'ALLELE:FREQ'.
+
+* Using the code at 'Allele_Frequency.py', 'CHROM', 'POS' are concatenated into 'CHROM-POS'.
+
+* Using the code at 'Allele_Frequency.py', two columns namely 'N_ALLELES', 'N_CHR' are dropped.
+
+* Using the code at 'Allele_Frequency.py', all 'ALLELE:FREQ' are combined into one file.
 
 ## 3. Outputs
 
