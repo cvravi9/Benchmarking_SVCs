@@ -1,6 +1,6 @@
 # Allele Frequency - afplots
 
-In this section, Allele Frequency for the vcf files are visualized through afplots.
+In this section, Allele Frequency for the vcf files are visualized using afplot tool.
 
 ## 1. Inputs
 
