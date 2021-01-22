@@ -29,5 +29,5 @@ vcfstats --vcf example.vcf --formula 'COUNT(1, group=GTTYPEs[HET,HOM_ALT]{0}) ~ 
 
 ## 3. Outputs
 
-* For each input vcf file there are 'Overall allele frequency distribution', 'Number of Variants on Each Chromosome', & 'Counting Type of Mutant Genotypes for each Chromosome'.
+* For each input vcf file there are 'Overall allele frequency distribution', 'Number of Variants on Each Chromosome', & 'Counting Type of Mutant Genotypes for each Chromosome' in a new directory namely 'Miracum_0.4', 'Miracum_0.7', 'Somatic_0.4' & 'Somatic_0.7'.
 
