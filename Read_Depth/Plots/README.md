@@ -24,7 +24,9 @@ sed '/^#/d' Updated-VCF-File > Final-VCF-File
 
 * In the third step, 'CHROM', 'POS' are concatenated into 'CHROM-POS'.
 
-* In the fourth step, the format column is split based on ':' at 'GT:GQ:DP:AD:ADF:ADR' and the columns are named 'Normal-GT', 'Normal-GQ', 'Normal_DP', 'Normal-AD', 'Normal-ADF', 'Normal-ADR', 'Tumor-GT', 'Tumor-GQ', 'Tumor_DP', 'Tumor-AD', 'Tumor-ADF' & 'Tumor-ADR'.
+* In the fourth step, the format column is split based on ':' at 'GT:GQ:DP:AD:ADF:ADR'.
+
+* The columns are named 'Normal-GT', 'Normal-GQ', 'Normal_DP', 'Normal-AD', 'Normal-ADF', 'Normal-ADR', 'Tumor-GT', 'Tumor-GQ', 'Tumor_DP', 'Tumor-AD', 'Tumor-ADF' & 'Tumor-ADR'.
 
 * In the fifth step, 'Normal-GT', 'Normal-GQ', 'Normal-AD', 'Normal-ADF', 'Normal-ADR', 'Tumor-GT', 'Tumor-GQ', 'Tumor-AD', 'Tumor-ADF' & 'Tumor-ADR' are dropped.
 
