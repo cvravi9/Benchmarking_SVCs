@@ -23,4 +23,4 @@ vcftools --vcf input.vcf --site-depth --max-missing 1.0 --out
 
 * In the plots, the output files are csv files with the selected columns and the pdfs with mathplotlib plots.
 
-* In the vcftools. the output files are Miracum_DP_0.4.ldepth, Miracum_DP_0.7.ldepth, Somatic_DP_0.4.ldepth, Somatic_DP_0.7.ldepth and Miracum_DP_0.4.log, Miracum_DP_0.7.log, Somatic_DP_0.4.log, Somatic_DP_0.7.log.
+* In the vcftools. the output files are four ldepth files and four log files.
