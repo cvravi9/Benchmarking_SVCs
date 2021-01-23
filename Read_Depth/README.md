@@ -1,6 +1,6 @@
 # Read Depth
 
-In this section, Read Depth for the vcf files are filtered and then visualized through two ways.
+In this section, Read Depth for the vcf files are visualized through two ways.
 
 ## 1. Inputs
 
