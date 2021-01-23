@@ -22,8 +22,14 @@ cut -f 1-2, 9-11 Input-VCF-File > Updated-VCF-File
 sed '/^#/d' Updated-VCF-File > Final-VCF-File
 ```
 
+* In the third step, 'CHROM', 'POS' are concatenated into 'CHROM-POS'.
+
+* In the fourth step, the format column is split based on ':' at 'GT:GQ:DP:AD:ADF:ADR' and the columns are named 'Normal-GT', 'Normal-GQ', 'Normal_DP', 'Normal-AD', 'Normal-ADF', 'Normal-ADR', 'Tumor-GT', 'Tumor-GQ', 'Tumor_DP', 'Tumor-AD', 'Tumor-ADF' & 'Tumor-ADR'.
+
+* In the fifth step, 'Normal-GT', 'Normal-GQ', 'Normal-AD', 'Normal-ADF', 'Normal-ADR', 'Tumor-GT', 'Tumor-GQ', 'Tumor-AD', 'Tumor-ADF' & 'Tumor-ADR' are dropped.
+
 ## 3. Outputs
 
-* In the plots, the output files are csv files with the selected columns and the pdfs with mathplotlib plots.
+* After splitting the format column, the output files are Updated_Miracum_0.4.csv, Updated_Miracum_0.7.csv, Updated_Somatic_0.4.csv & Updated_Somatic_0.7.csv.
 
-* In the vcftools. the output files are four ldepth files and four log files.
+* After dropping the unneeded columns, the output files are Final_Miracum_0.4.csv, Final_Miracum_0.7.csv, Final_Somatic_0.4.csv & Final_Somatic_0.7.csv
