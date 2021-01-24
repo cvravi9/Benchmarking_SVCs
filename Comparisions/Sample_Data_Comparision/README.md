@@ -60,19 +60,6 @@ planemo run workflow_name yaml_name --galaxy_url https://usegalaxy.eu/ --galaxy_
 vcftoolz compare first-vcf-file second-vcf-file > Output.txt
 ```
 
-* Getting allele frequency command
-
-```
-vcftools --vcf input.vcf --freq --out output
-```
-
-* Getting sequencing depth information
-
-```
-vcftools --vcf input.vcf --depth -c > depth_summary.txt
-vcftools --vcf input.vcf --site-depth --max-missing 1.0 --out
-```
-
 ### 2.1. Purity Sample Values
 
 * The first vcf file is created with the Normal Sample Purity of 1.0 and Tumor Sample Purity of 0.7.
