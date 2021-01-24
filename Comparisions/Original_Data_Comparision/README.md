@@ -42,19 +42,6 @@ planemo run workflow_name yaml_name --galaxy_url https://usegalaxy.eu/ --galaxy_
 vcftoolz compare first-vcf-file second-vcf-file > Output.txt
 ```
 
-* Getting allele frequency command
-
-```
-vcftools --vcf input.vcf --freq --out output
-```
-
-* Getting sequencing depth information
-
-```
-vcftools --vcf input.vcf --depth -c > depth_summary.txt
-vcftools --vcf input.vcf --site-depth --max-missing 1.0 --out
-```
-
 ### 2.1. Alternate Workflow
 
 * Generating the entire workflow with the original data has consumed a lot of time and space.
