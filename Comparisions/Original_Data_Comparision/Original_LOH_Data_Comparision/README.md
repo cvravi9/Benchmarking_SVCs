@@ -28,19 +28,6 @@ bcftools view -i 'SS ~"3"' First-Original.vcf > First-LOH.vcf
 vcftoolz compare First-LOH.vcf Second-LOH.vcf > Output.txt
 ```
 
-* Getting allele frequency command
-
-```
-vcftools --vcf input.vcf --freq --out output
-```
-
-* Getting sequencing depth information
-
-```
-vcftools --vcf input.vcf --depth -c > depth_summary.txt
-vcftools --vcf input.vcf --site-depth --max-missing 1.0 --out
-```
-
 ## 3. Outputs
 
 * After the vcftoolz comparision, an output text file along with two pdfs are obtained.
