@@ -1,6 +1,6 @@
 # Sub-Sampled Data Comparision
 
-In this comparision, the vcf files created with the original data is compared with the vcf files created with the sub-sampled data. Given below is the detailed information.
+In this comparision, the vcf files created with the original data are compared with the vcf files created with the sub-sampled data.
 
 ## 1. Inputs
 
