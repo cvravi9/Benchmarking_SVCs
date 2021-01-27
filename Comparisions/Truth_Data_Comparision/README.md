@@ -1,12 +1,10 @@
 # Truth Data Comparision
 
-## Inputs
+## 1. Inputs
 
-## Constrains
+## 2. Procedure
 
-## Procedure
-
-## Outputs
+## 3. Outputs
 
 
 The following steps are taken in preparing Somatic Truth data:
