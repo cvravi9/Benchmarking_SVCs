@@ -1,5 +1,7 @@
 # Insertions and Deletions in each VCF File
 
+In this task, the number of insertions and deletions are calculated per VCF file.
+
 ## 1. Input
 
 * The first vcf is with the tumor purity estimate of 0.4 with MIRACUM Capture Regions named *Miracum_0.4.vcf*.
