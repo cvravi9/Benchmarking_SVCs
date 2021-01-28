@@ -16,4 +16,10 @@ vcf2bed --insertions < example.vcf | wc -l
 vcf2bed --deletions < example.vcf | wc -l
 ```
 
+* Number of snvs in VCF File
+
+```
+vcf2bed --snvs < example.vcf | wc -l
+```
+
 ## 3. Outputs
