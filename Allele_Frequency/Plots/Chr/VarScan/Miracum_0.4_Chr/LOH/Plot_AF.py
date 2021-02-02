@@ -5,7 +5,7 @@ import csv
 
 # Mentioning the column names and inputing the csv file.
 column_names = ["POS", "ALLELE"]
-df = pd.read_csv("Miracum_0.4_Chr17_LOH.frq", sep= "\t", names=column_names)
+df = pd.read_csv("Miracum_0.4_Chr17_LOH.csv", sep= "\t", names=column_names)
 
 # Converting the column into a list.
 POS_List = df.POS.to_list()
