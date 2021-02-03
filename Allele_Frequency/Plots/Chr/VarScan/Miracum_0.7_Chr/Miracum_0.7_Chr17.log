@@ -1,0 +1,13 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf Miracum_0.7_Chr17.vcf
+	--freq
+	--out Miracum_0.7_Chr17
+
+After filtering, kept 2 out of 2 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 10102 out of a possible 10102 Sites
+Run Time = 0.00 seconds
