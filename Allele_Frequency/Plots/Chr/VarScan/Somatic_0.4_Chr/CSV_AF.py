@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 # Importing frq files and assigning columns.
-dff = pd.read_csv("Somatic_0.7_AF.frq", sep = '\t', index_col= False)
+dff = pd.read_csv("Somatic_0.4_Chr17.frq", sep = '\t', index_col= False)
 dff.columns = ['CHROM', 'POS', 'N_ALLELES', 'N_CHR', 'ALLELE:FREQ']
 
 # Deleting the unneeded columns.
@@ -11,4 +11,4 @@ dff = dff.drop(['N_ALLELES', 'N_CHR', 'CHROM'], axis=1)
 print(dff)
 
 # Saving the outcome to csv file.
-dff.to_csv('Somatic_0.7_AF_Plot.csv', sep='\t', index = None)
+dff.to_csv('Somatic_0.4_Chr17.csv', sep='\t', index = None)
