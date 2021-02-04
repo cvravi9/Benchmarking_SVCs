@@ -5,7 +5,7 @@ import csv
 
 # Mentioning the column names and inputing the csv file.
 column_names = ["POS", "ALLELE"]
-df = pd.read_csv("Somatic_0.4_AF_Plot.csv", sep= "\t", names=column_names)
+df = pd.read_csv("Somatic_0.7_Chr17.csv", sep= "\t", names=column_names)
 
 # Converting the column into a list.
 POS_List = df.POS.to_list()
@@ -17,5 +17,8 @@ print(FREQ_List)
 
 # Showing the output and saving it into a PDF.
 plt.plot(POS_List, FREQ_List, label='Postions vs Allele Frequency')
+plt.legend()
+plt.xticks([])
+plt.yticks([])
 plt.show()
-plt.savefig('Somatic_0.4_Plot.pdf')
+plt.savefig('Somatic_0.7_Chr17_Plot.pdf')
