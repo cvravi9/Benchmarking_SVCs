@@ -5,7 +5,7 @@ import csv
 
 # Mentioning the column names and inputing the csv file.
 column_names = ["POS", "ALLELE"]
-df = pd.read_csv("Miracum_0.7_Chr5.csv", sep= "\t", names=column_names)
+df = pd.read_csv("Miracum_0.4_Chr17_Somatic.csv", sep= "\t", names=column_names)
 
 # Converting the column into a list.
 POS_List = df.POS.to_list()
@@ -21,4 +21,4 @@ plt.legend()
 plt.xticks([])
 plt.yticks([])
 plt.show()
-plt.savefig('Miracum_0.7_Chrom5.pdf')
+plt.savefig('Miracum_0.4_Chr17_Somatic_Plot.pdf')
