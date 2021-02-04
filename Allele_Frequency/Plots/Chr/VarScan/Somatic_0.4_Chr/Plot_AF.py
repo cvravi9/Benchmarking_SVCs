@@ -17,5 +17,8 @@ print(FREQ_List)
 
 # Showing the output and saving it into a PDF.
 plt.plot(POS_List, FREQ_List, label='Postions vs Allele Frequency')
+plt.legend()
+plt.xticks([])
+plt.yticks([])
 plt.show()
 plt.savefig('Somatic_0.4_Chr17_Plot.pdf')
