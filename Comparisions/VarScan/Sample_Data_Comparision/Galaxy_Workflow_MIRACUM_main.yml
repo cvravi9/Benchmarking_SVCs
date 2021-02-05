@@ -1,0 +1,24 @@
+Normal sample name: "Normal sample name"
+Normal purity estimate: 1.0
+Tumor sample name: "Tumor sample name"
+Tumor purity estimate: 0.7
+
+NORMAL forward reads:
+  class: File
+  location: https://zenodo.org/record/2582555/files/SLGFSK-N_231335_r1_chr5_12_17.fastq.gz
+
+NORMAL reverse reads:
+  class: File
+  location: https://zenodo.org/record/2582555/files/SLGFSK-N_231335_r2_chr5_12_17.fastq.gz
+
+TUMOR forward reads:
+  class: File
+  location: https://zenodo.org/record/2582555/files/SLGFSK-T_231336_r1_chr5_12_17.fastq.gz
+
+TUMOR reverse reads:
+  class: File
+  location: https://zenodo.org/record/2582555/files/SLGFSK-T_231336_r2_chr5_12_17.fastq.gz
+
+Capture regions:
+  class: File
+  location: https://usegalaxy.eu/datasets/11ac94870d0bb33a95805d5640ce736f/display?to_ext=bed
