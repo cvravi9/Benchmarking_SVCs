@@ -6,7 +6,7 @@ import csv
 
 # Mentioning the column names and inputing the csv file.
 column_names = ["CHROM_POS", "VarScan", "Strelka", "Equal"]
-df = pd.read_csv("Chr12_Values.csv", sep= "\t", names=column_names, nrows = 3)
+df = pd.read_csv("Chr12_Values.csv", sep= "\t", names=column_names)
 
 # Splitting values.
 df[['VarScan_Chr','VarScan_Value']] = df['VarScan'].str.split(':',expand=True)
@@ -37,4 +37,4 @@ ax.set_xticklabels(CHROM_POS_List)
 ax.legend()
 
 plt.show()
-plt.savefig('Test.pdf')
+plt.savefig('Test_12.pdf')
