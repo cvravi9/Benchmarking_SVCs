@@ -6,7 +6,7 @@ import csv
 
 # Mentioning the column names and inputing the csv file.
 column_names = ["CHROM_POS", "VarScan", "Strelka", "Equal", "VarScan_Chr", "VarScan_Value", "Strelka_Chr", "Strelka_Value", "Difference"]
-df = pd.read_csv("Chr5.csv", sep= "\t", names=column_names)
+df = pd.read_csv("Chr17.csv", sep= "\t", names=column_names)
 
 # Converting the column into a list.
 CHROM_POS_List = df.CHROM_POS.to_list()
@@ -18,7 +18,7 @@ width = 0.35  # the width of the bars
 
 fig, ax = plt.subplots()
 rects1 = ax.barh(x, VarScan_List, width, color='red', label='VarScan')
-rects2 = ax.barh(x + width, Strelka_List, width, color='green', label='Strelka')
+rects2 = ax.barh(x + width, Strelka_List, width, color='yellow', label='Strelka')
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_xlabel('Score Scale')
@@ -28,4 +28,4 @@ ax.set_yticklabels(CHROM_POS_List)
 ax.legend()
 
 plt.show()
-plt.savefig('Test_Chr5.pdf')
+plt.savefig('Test_Chr17.pdf')
