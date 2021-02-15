@@ -21,10 +21,10 @@ rects1 = ax.barh(x, VarScan_List, width, color='red', label='VarScan')
 rects2 = ax.barh(x + width, Strelka_List, width, color='yellow', label='Strelka')
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_ylabel('Score Scale')
+ax.set_xlabel('Score Scale')
 ax.set_title('Allele Frequency Value')
-ax.set_xticks(x)
-ax.set_xticklabels(CHROM_POS_List)
+ax.set_yticks(x)
+ax.set_yticklabels(CHROM_POS_List)
 ax.legend()
 
 plt.show()
