@@ -18,7 +18,7 @@ width = 0.35  # the width of the bars
 
 fig, ax = plt.subplots()
 rects1 = ax.barh(x, VarScan_List, width, color='red', label='VarScan')
-rects2 = ax.barh(x + width, Strelka_List, width, color='yellow', label='Strelka')
+rects2 = ax.barh(x + width, Strelka_List, width, color='green', label='Strelka')
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_xlabel('Score Scale')
