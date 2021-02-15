@@ -17,8 +17,8 @@ x = np.arange(len(CHROM_POS_List))  # the label locations
 width = 0.35  # the width of the bars
 
 fig, ax = plt.subplots()
-rects1 = ax.bar(x - width/2, VarScan_List, width, label='VarScan')
-rects2 = ax.bar(x + width/2, Strelka_List, width, label='Strelka')
+rects1 = ax.barh(x, VarScan_List, width, color='red', label='VarScan')
+rects2 = ax.barh(x + width, Strelka_List, width, color='yellow', label='Strelka')
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel('Score Scale')
