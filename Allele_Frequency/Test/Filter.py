@@ -17,11 +17,17 @@ dff[['VarScan_Chr','VarScan_Value']] = dff['VarScan'].str.split(':',expand=True)
 dff[['Strelka_Chr','Strelka_Value']] = dff['Strelka'].str.split(':',expand=True)
 print(dff)
 
-VarScan_Value_List = dff.VarScan_Value.to_list()
-Strelka_Value_List = dff.Strelka_Value.to_list()
+# Converting columsn from string to float
+dff['VarScan_Value'] = dff['VarScan_Value'].astype(float)
+dff['Strelka_Value'] = dff['Strelka_Value'].astype(float)
 
-dff[['Difference']] = dff["VarScan_Value"] - dff["Strelka_Value"]
+# Calculating the difference between the values.
+dff['Difference'] = dff['VarScan_Value'] - dff['Strelka_Value']
 print(dff)
 
+# selecting rows based on condition
+Final = dff.loc[(dff['Difference'] >= 0.5) | (dff['Difference'] <= -0.5)]
+print(Final)
+
 # Saving the results in csv.
-dff.to_csv('Final_Miracum_AF_Values.csv', sep='\t', index = None)
+Final.to_csv('Final_Miracum_AF_Values.csv', sep='\t', index = None)
