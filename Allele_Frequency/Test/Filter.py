@@ -26,8 +26,8 @@ dff['Difference'] = dff['VarScan_Value'] - dff['Strelka_Value']
 print(dff)
 
 # selecting rows based on condition
-Final = dff.loc[(dff['Difference'] >= 0.5) | (dff['Difference'] <= -0.5)]
-print(Final)
+# Final = dff.loc[(dff['Difference'] >= 0.5) | (dff['Difference'] <= -0.5)]
+# print(Final)
 
 # Saving the results in csv.
-Final.to_csv('Final_Miracum_AF_Values.csv', sep='\t', index = None)
+dff.to_csv('Final_Miracum_AF_Values.csv', sep='\t', index = None)
