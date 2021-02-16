@@ -25,9 +25,16 @@ dff['Strelka_Value'] = dff['Strelka_Value'].astype(float)
 dff['Difference'] = dff['VarScan_Value'] - dff['Strelka_Value']
 print(dff)
 
+# Correcting the negative values to positive for plotting.
+dff['Difference'] = dff['Difference'].abs()
+print(dff)
+
+dff['Difference'] = dff['Difference'].astype(float)
+print(dff)
+
 # selecting rows based on condition
 # Final = dff.loc[(dff['Difference'] >= 0.5) | (dff['Difference'] <= -0.5)]
 # print(Final)
 
 # Saving the results in csv.
-dff.to_csv('Final_Miracum_AF_Values.csv', sep='\t', index = None)
+# dff.to_csv('Final_Miracum_AF_Values.csv', sep='\t', index = None)
