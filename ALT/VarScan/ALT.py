@@ -3,12 +3,12 @@ import numpy as np
 import pandas as pd
 
 # Reading the csv input file that is obtained after performing the following operations on the vcf file.
-# Step 1 - 'cut -f 1-2, 9-11 Input-VCF-File > Output-VCF-File'
+# Step 1 - 'cut -f 1-2,4-5 Input-VCF-File > Output-VCF-File'
 # Step 2 - 'sed '/^#/d' Output-VCF-File > Updated_Output-VCF-File'
 
 # The first step is to selected the needed columns in the vcf file.
 # The second step if to eliminate all lines that start with a '#'
-dff = pd.read_csv("Updated_Somatic_0.4_Selected.vcf", sep = '\t', index_col= False)
+dff = pd.read_csv("Updated_Somatic_0.4_SNPs.vcf", sep = '\t', index_col= False)
 
 # Naming the columns after importing the csv file.
 dff.columns = ['CHROM', 'POS', 'REF', 'ALT']
@@ -24,4 +24,4 @@ dff = dff[cols]
 print(dff)
 
 # Saving the result into a csv file for plotting.
-dff.to_csv('Miracum_0.7.csv', sep='\t', index = None)
+dff.to_csv('Somatic_0.4.csv', sep='\t', index = None)
