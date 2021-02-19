@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 # Importing the csv file.
-dff = pd.read_csv("Somatic_0.7.csv", sep = '\t', index_col= False)
+dff = pd.read_csv("Somatic_0.4.csv", sep = '\t', index_col= False)
 
 # Mentioning the column names and inputing the csv file.
 dff.columns = ['CHROM_POS', 'REF', 'ALT']
@@ -93,11 +93,11 @@ print(CG)
 df = []
 
 # Taking all combinations as a list.
-data = {'REF': ['A', 'A', 'A', 'A', 'T', 'T', 'T', 'T', 'G', 'G', 'G', 'G', 'C', 'C', 'C', 'C'], 'ALT': ['A', 'T', 'G', 'C', 'T', 'A', 'G', 'C', 'G', 'A', 'T', 'C', 'C', 'A', 'T', 'G'], 'Somatic_0.7': [AA, AT, AG, AC, TT, TA, TG, TC, GG, GA, GT, GC, CC, CA, CT, CG]}
+data = {'REF': ['A', 'A', 'A', 'A', 'T', 'T', 'T', 'T', 'G', 'G', 'G', 'G', 'C', 'C', 'C', 'C'], 'ALT': ['A', 'T', 'G', 'C', 'T', 'A', 'G', 'C', 'G', 'A', 'T', 'C', 'C', 'A', 'T', 'G'], 'Somatic_0.4': [AA, AT, AG, AC, TT, TA, TG, TC, GG, GA, GT, GC, CC, CA, CT, CG]}
 
 # Collecting it into a dataframe.
 df = pd.DataFrame(data)
 print(df)
 
 # Exporting the outcome into CSV.
-df.to_csv('Somatic_0.7_Count.csv', sep='\t', index = None)
+df.to_csv('Somatic_0.4_Count.csv', sep='\t', index = None)
