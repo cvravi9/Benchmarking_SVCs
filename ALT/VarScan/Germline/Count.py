@@ -93,11 +93,11 @@ print(CG)
 df = []
 
 # Taking all combinations as a list.
-data = {'REF': ['A', 'A', 'A', 'A', 'T', 'T', 'T', 'T', 'G', 'G', 'G', 'G', 'C', 'C', 'C', 'C'], 'ALT': ['A', 'T', 'G', 'C', 'T', 'A', 'G', 'C', 'G', 'A', 'T', 'C', 'C', 'A', 'T', 'G'], 'Miracum_0.4': [AA, AT, AG, AC, TT, TA, TG, TC, GG, GA, GT, GC, CC, CA, CT, CG]}
+data = {'REF': ['A', 'A', 'A', 'A', 'T', 'T', 'T', 'T', 'G', 'G', 'G', 'G', 'C', 'C', 'C', 'C'], 'ALT': ['A', 'T', 'G', 'C', 'T', 'A', 'G', 'C', 'G', 'A', 'T', 'C', 'C', 'A', 'T', 'G'], 'Somatic_0.7': [AA, AT, AG, AC, TT, TA, TG, TC, GG, GA, GT, GC, CC, CA, CT, CG]}
 
 # Collecting it into a dataframe.
 df = pd.DataFrame(data)
 print(df)
 
 # Exporting the outcome into CSV.
-df.to_csv('Miracum_0.4_Count.csv', index=False, encoding='utf-8')
+df.to_csv('Somatic_0.7_Count.csv', index=False, encoding='utf-8')
