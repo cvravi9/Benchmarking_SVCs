@@ -15,4 +15,4 @@ Third = pd.merge(Second, df3, on=['ALT', 'REF'])
 print(Third)
 
 # Saving the results in csv.
-Third.to_csv('Combinations_Count_Values.csv', sep='\t', index = None)
+Third.to_csv('All_Counts.csv', index=False, encoding='utf-8')
