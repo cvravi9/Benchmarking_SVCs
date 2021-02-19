@@ -8,7 +8,7 @@ import pandas as pd
 
 # The first step is to selected the needed columns in the vcf file.
 # The second step if to eliminate all lines that start with a '#'
-dff = pd.read_csv("Updated_Somatic_0.4_SNPs.vcf", sep = '\t', index_col= False)
+dff = pd.read_csv("Updated_VarScan_Somatic_0.4.vcf", sep = '\t', index_col= False)
 
 # Naming the columns after importing the csv file.
 dff.columns = ['CHROM', 'POS', 'REF', 'ALT']
