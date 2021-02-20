@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 # Reading csv files and concatinating "CHROM" and "POS"
-df = pd.read_csv("Freebayes_Deletions_Counts.csv", sep = '\t', index_col= False)
+df = pd.read_csv("FreeBayes_Deletions_Counts.csv", sep = '\t', index_col= False)
 df1 = pd.read_csv("Strelka_Germline_Deletions_Counts.csv", sep = '\t', index_col= False)
 df2 = pd.read_csv("VarScan_Germline_Deletions_Counts.csv", sep = '\t', index_col= False)
 
