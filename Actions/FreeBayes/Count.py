@@ -6,11 +6,11 @@ import pandas as pd
 df = []
 
 # Taking all combinations as a list.
-data = {'Type': ['Miracum-0.4', 'Miracum_0.7', 'Somatic_0.4', 'Somatic_0.7'], 'Deletion_Count': ['4382', '4382', '4385', '4382']}
+data = {'Type': ['Miracum_0.4', 'Miracum_0.7', 'Somatic_0.4', 'Somatic_0.7'], 'SNVs_Count': ['1011639', '1011639', '1011640', '1011639']}
 
 # Collecting it into a dataframe.
 df = pd.DataFrame(data)
 print(df)
 
 # Saving the results in csv.
-df.to_csv('Deletions_Counts.csv', index=False, encoding='utf-8')
+df.to_csv('SNVs_Counts.csv', sep='\t', index = None)
