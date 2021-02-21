@@ -22,9 +22,9 @@ r2 = [x + width for x in r1]
 r3 = [x + width for x in r2]
 
 # Make the plot
-plt.bar(r1, a1, color='#7f6d5f', width=width, edgecolor='white', label='var1')
-plt.bar(r2, a2, color='#557f2d', width=width, edgecolor='white', label='var2')
-plt.bar(r3, a3, color='#2d7f5e', width=width, edgecolor='white', label='var3')
+plt.bar(r1, a1, color='#FFD700', width=width, edgecolor='white', label='FreeBayes_Miracum_0.4')
+plt.bar(r2, a2, color='#FFA500', width=width, edgecolor='white', label='Strelka_Miracum_0.4')
+plt.bar(r3, a3, color='#DC143C', width=width, edgecolor='white', label='VarScan_Miracum_0.4')
 
 # Add xticks on the middle of the group bars
 plt.xlabel('Combinations')
