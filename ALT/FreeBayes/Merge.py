@@ -15,4 +15,5 @@ Third = pd.merge(Second, df3, on=['ALT', 'REF'])
 print(Third)
 
 # Saving the results in csv.
-Third.to_csv('All_Counts.csv', index=False, encoding='utf-8')
+# Third.to_csv('All_Counts.csv', index=False, encoding='utf-8')
+Third.to_csv('Indexed_Counts.csv', sep='\t', index = None)
