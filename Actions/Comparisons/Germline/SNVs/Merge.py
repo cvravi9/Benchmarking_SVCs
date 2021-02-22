@@ -14,3 +14,4 @@ print(Second)
 
 # Saving the results in csv.
 Second.to_csv('SNVs_Comparision.csv', index=False, encoding='utf-8')
+Second.to_csv('Indexed_SNVs_Comparisions.csv', sep='\t', index = None)
