@@ -1,0 +1,15 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf FreeBayes_Somatic_0.7.vcf
+	--recode-INFO-all
+	--out FreeBayes_Somatic_0.7_SNPs
+	--recode
+	--remove-indels
+
+After filtering, kept 2 out of 2 Individuals
+Outputting VCF file...
+After filtering, kept 945199 out of a possible 972565 Sites
+Run Time = 35.00 seconds
