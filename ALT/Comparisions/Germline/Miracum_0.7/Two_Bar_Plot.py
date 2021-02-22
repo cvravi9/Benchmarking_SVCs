@@ -8,8 +8,8 @@ import numpy as np
 dff = pd.read_csv("Indexed_Counts_Comparisions.csv", sep = '\t', index_col= False, error_bad_lines=False)
 dff.columns = ['REF', 'ALT', 'FreeBayes', 'Strelka', 'VarScan']
 
-# set width of bar
-width = 0.35
+# Set width of bar
+width = 0.25
 
 # Columns from the file
 a1 = dff.Strelka.to_list()
