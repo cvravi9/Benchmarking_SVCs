@@ -14,4 +14,5 @@ First.columns = ['REF', 'ALT', 'Strelka_Somatic_0.4', 'VarScan_Somatic_0.4']
 print(First)
 
 # Saving the results in csv.
-First.to_csv('All_Counts.csv', index=False, encoding='utf-8')
+# First.to_csv('All_Counts.csv', index=False, encoding='utf-8')
+First.to_csv('Indexed_Counts_Comparisions.csv', sep='\t', index = None)
