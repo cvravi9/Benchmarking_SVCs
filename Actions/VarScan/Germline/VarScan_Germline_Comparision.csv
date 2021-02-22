@@ -1,0 +1,5 @@
+Type,VarScan_Germline_Insertions_Count,VarScan_Germline_Deletions_Count,VarScan_Germline_SNVs_Count
+Miracum_0.4,1354,1650,26311
+Miracum_0.7,1352,1634,26185
+Somatic_0.4,1354,1650,26311
+Somatic_0.7,1352,1634,26185
