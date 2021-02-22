@@ -16,4 +16,5 @@ Second.columns = ['REF', 'ALT', 'FreeBayes_Miracum_0.7', 'Strelka_Miracum_0.7', 
 print(Second)
 
 # Saving the results in csv.
-Second.to_csv('Counts_Comparisions.csv', index=False, encoding='utf-8')
+# Second.to_csv('Counts_Comparisions.csv', index=False, encoding='utf-8')
+Second.to_csv('Indexed_Counts_Comparisions.csv', sep='\t', index = None)

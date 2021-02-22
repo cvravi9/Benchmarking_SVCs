@@ -9,7 +9,7 @@ dff = pd.read_csv("Indexed_Counts_Comparisions.csv", sep = '\t', index_col= Fals
 dff.columns = ['REF', 'ALT', 'FreeBayes', 'Strelka', 'VarScan']
 
 # set width of bar
-width = 0.25
+width = 0.35
 
 # Columns from the file
 a1 = dff.Strelka.to_list()
@@ -21,8 +21,8 @@ r2 = [x + width for x in r1]
 
 # Make the plot
 # plt.bar(r1, a1, color='#FFD700', width=width, edgecolor='white', label='FreeBayes_Miracum_0.4')
-plt.bar(r1, a1, color='#FFA500', width=width, edgecolor='white', label='Strelka_Miracum_0.4')
-plt.bar(r2, a2, color='#DC143C', width=width, edgecolor='white', label='VarScan_Miracum_0.4')
+plt.bar(r1, a1, color='#FFA500', width=width, edgecolor='white', label='Strelka_Miracum_0.7')
+plt.bar(r2, a2, color='#DC143C', width=width, edgecolor='white', label='VarScan_Miracum_0.7')
 
 # Add xticks on the middle of the group bars
 plt.xlabel('Combinations')
