@@ -27,8 +27,8 @@ plt.bar(r2, a2, color='#FFA500', width=width, edgecolor='white', label='Strelka_
 plt.bar(r3, a3, color='#DC143C', width=width, edgecolor='white', label='VarScan_Germline_Deletions')
 
 # Add xticks on the middle of the group bars
-# plt.xlabel('Combinati')
-plt.xticks([r + width for r in range(len(a1))], [])
+plt.xlabel('Types')
+plt.xticks([r + width for r in range(len(a1))], ['Miracum_0.4', 'Miracum_0.7', 'Somatic_0.4', 'Somatic_0.7'])
 
 # Create legend & Show graphic
 plt.legend()
