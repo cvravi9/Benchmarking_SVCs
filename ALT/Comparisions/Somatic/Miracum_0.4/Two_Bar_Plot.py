@@ -6,7 +6,7 @@ import numpy as np
 
 # Reading csv files and concatinating "CHROM" and "POS"
 dff = pd.read_csv("Indexed_Counts_Comparisions.csv", sep = '\t', index_col= False, error_bad_lines=False)
-dff.columns = ['REF', 'ALT', 'FreeBayes', 'Strelka', 'VarScan']
+dff.columns = ['REF', 'ALT', 'Strelka', 'VarScan']
 
 # set width of bar
 width = 0.25
