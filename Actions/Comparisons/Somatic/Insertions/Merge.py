@@ -12,3 +12,4 @@ print(First)
 
 # Saving the results in csv.
 First.to_csv('Somatic_Insertions_Comparision.csv', index=False, encoding='utf-8')
+First.to_csv('Indexed_Insertions_Comparisions.csv', sep='\t', index = None)
