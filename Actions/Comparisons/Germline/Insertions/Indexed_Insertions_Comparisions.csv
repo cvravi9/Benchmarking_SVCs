@@ -1,0 +1,5 @@
+Type	FreeBayes_Insertions_Count	Strelka_Germline_Insertions_Count	VarScan_Germline_Insertions_Count
+Miracum_0.4	3181	2711	1354
+Miracum_0.7	3181	2711	1352
+Somatic_0.4	3179	2711	1354
+Somatic_0.7	3181	2711	1352
