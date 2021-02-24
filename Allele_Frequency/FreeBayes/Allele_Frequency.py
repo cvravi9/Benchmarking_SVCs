@@ -59,4 +59,4 @@ print(Second_Result)
 
 # Saving the results in csv.
 Second_Result.to_csv('FreeBayes_AF_Values.csv', index=False, encoding='utf-8')
-Second_Result.to_csv('FreeBayes_AF_Plot_Values.csv', sep='\t', index = None)
+Second_Result.to_csv('FreeBayes_AF_Plot_Values.csv', sep='\t', index =False)
