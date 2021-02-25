@@ -58,5 +58,5 @@ Second_Result.columns = ['CHROM-POS', 'Miracum_0.4_AF', 'Miracum_0.7_AF', 'Somat
 print(Second_Result)
 
 # Saving the results in csv.
-Second_Result.to_csv('Strelka_Somatic_AF_Values.csv', index=False, encoding='utf-8')
+Second_Result.to_csv('Strelka_Somatic_AF_Values.csv', sep='\t', index=False, encoding='utf-8')
 Second_Result.to_csv('Strelka_Somatic_AF_Plot_Values.csv', sep='\t', index =False)
