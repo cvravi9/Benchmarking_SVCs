@@ -54,7 +54,7 @@ print(dff3)
 Result = pd.merge(dff, dff1, on="CHROM-POS")
 First_Result = pd.merge(Result, dff2, on="CHROM-POS")
 Second_Result = pd.merge(First_Result, dff3, on="CHROM-POS")
-Second_Result.columns = ['CHROM-POS', 'Miracum_0.4_AF', 'Miracum_0.7_AF', 'Somatic_0.4_AF', 'Somatic_0.7_AF']
+Second_Result.columns = ['CHROM_POS', 'Miracum_0.4_AF', 'Miracum_0.7_AF', 'Somatic_0.4_AF', 'Somatic_0.7_AF']
 print(Second_Result)
 
 # Saving the results in csv.
