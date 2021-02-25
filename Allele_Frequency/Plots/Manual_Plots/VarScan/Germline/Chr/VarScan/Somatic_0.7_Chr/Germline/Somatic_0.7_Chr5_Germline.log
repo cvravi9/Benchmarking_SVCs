@@ -1,0 +1,13 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf Somatic_0.7_Chr5_Germline.vcf
+	--freq
+	--out Somatic_0.7_Chr5_Germline
+
+After filtering, kept 2 out of 2 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 7105 out of a possible 7105 Sites
+Run Time = 0.00 seconds
