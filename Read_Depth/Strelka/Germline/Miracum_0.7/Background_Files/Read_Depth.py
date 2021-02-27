@@ -32,5 +32,5 @@ dff = dff.drop(['NORMAL', 'TUMOR', 'NORMAL-GT', 'NORMAL-GQ', 'NORMAL-GQX', 'NORM
 print(dff)
 
 # Saving the result into a csv file for plotting.
-dff.to_csv('VarScan_Germline_Miracum_0.7.csv', sep='\t', index=False, encoding='utf-8')
-dff.to_csv('VarScan_Germline_Miracum_0.7_Plot.csv', sep='\t', index = None)
+dff.to_csv('Strelka_Germline_Miracum_0.7.csv', sep='\t', index=False, encoding='utf-8')
+dff.to_csv('Strelka_Germline_Miracum_0.7_Plot.csv', sep='\t', index = None)
