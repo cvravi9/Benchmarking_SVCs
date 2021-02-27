@@ -14,5 +14,5 @@ First.columns = ['CHROM_POS', 'Strelka_Normal_Read_Depth', 'Strelka_Tumor_Read_D
 print(First)
 
 # Saving the results in csv.
-First.to_csv('All_Somatic_Somatic_0.4_Read_Depths.csv', sep='\t', index=False, encoding='utf-8')
+First.to_csv('All_Somatic_Somatic_0.4_Read_Depths.csv', sep=',', index=False, encoding='utf-8')
 First.to_csv('All_Somatic_Somatic_0.4_Plot_Read_Depths.csv', sep='\t', index = None)
