@@ -34,5 +34,5 @@ dff = dff.drop(['NORMAL', 'TUMOR', 'NORMAL1', 'TUMOR1', 'NORMAL-FDP', 'NORMAL-SD
 print(dff)
 
 # Saving the result into a csv file for plotting.
-dff.to_csv('VarScan_Somatic_Miracum_0.4.csv', sep='\t', index=False, encoding='utf-8')
-dff.to_csv('VarScan_Somatic_Miracum_0.4_Plot.csv', sep='\t', index = None)
+dff.to_csv('Strelka_Somatic_Miracum_0.4.csv', sep='\t', index=False, encoding='utf-8')
+dff.to_csv('Strelka_Somatic_Miracum_0.4_Plot.csv', sep='\t', index = None)
