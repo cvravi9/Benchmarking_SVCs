@@ -4,9 +4,7 @@ In this section, Allele Frequency for the vcf files are filtered and then visual
 
 ## 1. Inputs
 
-* The four input vcf files namely Miracum_0.4.vcf, Miracum_0.7.vcf, Somatic_0.4.vcf & Somatic_0.7.vcf.
-
-* The files with 0.4.vcf are with Tumor Sample Purity of 0.4 and the ones with 0.7.vcf are with Tumor Sample Purity of 0.7.
+* There are three variant callers
 
 ## 2. Procedure
 
