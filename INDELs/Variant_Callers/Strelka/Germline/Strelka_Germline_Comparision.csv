@@ -1,0 +1,5 @@
+Type,Strelka_Germline_Insertions_Count,Strelka_Germline_Deletions_Count,Strelka_Germline_SNVs_Count
+Miracum_0.4,2711,3527,97738
+Miracum_0.7,2711,3527,97738
+Somatic_0.4,2711,3527,97738
+Somatic_0.7,2711,3527,97738
