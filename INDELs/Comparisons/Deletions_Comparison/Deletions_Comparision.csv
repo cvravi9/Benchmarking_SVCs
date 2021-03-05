@@ -1,0 +1,4 @@
+Type,Strelka_Deletions_Count,VarScan_Deletions_Count
+Tumor_Purity_0.3,296,1650
+Tumor_Purity_0.5,296,1650
+Tumor_Purity_0.7,296,1634
