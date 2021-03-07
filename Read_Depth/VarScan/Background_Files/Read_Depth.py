@@ -8,7 +8,7 @@ import pandas as pd
 
 # The first step is to selected the needed columns in the vcf file.
 # The second step if to eliminate all lines that start with a '#'
-dff = pd.read_csv("Updated_VarScan_0.3.vcf", sep = '\t', index_col= False)
+dff = pd.read_csv("Updated_VarScan_0.7.vcf", sep = '\t', index_col= False)
 
 # Naming the columns after importing the csv file.
 dff.columns = ['CHROM', 'POS', 'FORMAT', 'NORMAL', 'TUMOR']
@@ -32,5 +32,5 @@ dff = dff.drop(['NORMAL', 'TUMOR', 'NORMAL-GT', 'NORMAL-GQ', 'NORMAL-AD', 'NORMA
 print(dff)
 
 # Saving the result into a csv file for plotting.
-dff.to_csv('VarScan_0.3.csv', sep=',', index=False, encoding='utf-8')
-dff.to_csv('VarScan_0.3_Plot.csv', sep='\t', index = None)
+dff.to_csv('VarScan_0.7.csv', sep='\t', index=False, encoding='utf-8')
+dff.to_csv('VarScan_0.7_Plot.csv', sep='\t', index = None)
