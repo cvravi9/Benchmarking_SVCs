@@ -1,3 +1,4 @@
+
 # Importing the needed packages.
 import numpy as np
 import pandas as pd
@@ -8,7 +9,7 @@ import pandas as pd
 
 # The first step is to selected the needed columns in the vcf file.
 # The second step if to eliminate all lines that start with a '#'
-dff = pd.read_csv("Updated_Strelka_0.3.vcf", sep = '\t', index_col= False)
+dff = pd.read_csv("Updated_Strelka_0.7.vcf", sep = '\t', index_col= False)
 
 # Naming the columns after importing the csv file.
 dff.columns = ['CHROM', 'POS', 'NORMAL', 'TUMOR', '2:NORMAL', '2:TUMOR']
@@ -31,8 +32,25 @@ dff[['2:Tumor_Read_Depth', 'TUMOR1-FDP', 'TUMOR1-SDP', 'TUMOR1-SUBDP', 'TUMOR1-A
 
 # Dropping of the unnecessary columns and only choosing the "NORMAL Depth" i.e. "NORMAL-DP" and "TUMOR Depth" i.e. "TUMOR-DP"
 dff = dff.drop(['NORMAL', 'TUMOR', '2:NORMAL', '2:TUMOR', 'NORMAL-FDP', 'NORMAL-SDP', 'NORMAL-SUBDP', 'NORMAL-AU', 'NORMAL-CU', 'NORMAL-GU', 'NORMAL-TU', 'NORMAL-Last', 'TUMOR-FDP', 'TUMOR-SDP', 'TUMOR-SUBDP', 'TUMOR-AU', 'TUMOR-CU', 'TUMOR-GU', 'TUMOR-TU', 'TUMOR-Last', 'NORMAL1-FDP', 'NORMAL1-SDP', 'NORMAL1-SUBDP', 'NORMAL1-AU', 'NORMAL1-CU', 'NORMAL1-GU', 'NORMAL1-TU', 'NORMAL1-Last', 'TUMOR1-FDP', 'TUMOR1-SDP', 'TUMOR1-SUBDP', 'TUMOR1-AU', 'TUMOR1-CU', 'TUMOR1-GU', 'TUMOR1-TU', 'TUMOR1-Last'], axis=1)
+
+# Replacing '.' values with '0'
+dff.replace('.', '0', inplace=True)
+
+# Converting string values columans to int.
+dff['Normal_Read_Depth'] = dff['Normal_Read_Depth'].astype(int)
+dff['2:Normal_Read_Depth'] = dff['2:Normal_Read_Depth'].astype(int)
+dff['Tumor_Read_Depth'] = dff['Tumor_Read_Depth'].astype(int)
+dff['2:Tumor_Read_Depth'] = dff['2:Tumor_Read_Depth'].astype(int)
+
+# Adding columns for single read depth value.
+dff['Normal_RD'] = dff["Normal_Read_Depth"] + dff["2:Normal_Read_Depth"]
+dff['Tumor_RD'] = dff["Tumor_Read_Depth"] + dff["2:Tumor_Read_Depth"]
+
+# Dropping of the unnecessary columns and reorganising the columns.
+dff = dff.drop(['Normal_Read_Depth', 'Tumor_Read_Depth', '2:Normal_Read_Depth', '2:Tumor_Read_Depth'], axis=1)
+dff.columns = ['CHROM_POS', 'Normal_Read_Depth', 'Tumor_Read_Depth']
 print(dff)
 
 # Saving the result into a csv file for plotting.
-dff.to_csv('Strelka_0.3.csv', sep=',', index=False, encoding='utf-8')
-dff.to_csv('Strelka_0.3_Plot.csv', sep='\t', index = None)
+dff.to_csv('Strelka_0.7.csv', sep=',', index=False, encoding='utf-8')
+dff.to_csv('Strelka_0.7_Plot.csv', sep='\t', index = None)
