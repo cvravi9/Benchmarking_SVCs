@@ -10,7 +10,7 @@ df1 = pd.read_csv("VarScan_0.3.csv", sep = '\t', index_col= False)
 First = pd.merge(df, df1, on=['CHROM_POS'])
 
 # Assigning column names.
-First.columns = ['CHROM_POS', 'Strelka_Normal_Read_Depth', 'Strelka_Tumor_Read_Depth', 'Strelka_2:Normal_Read_Depth', 'Strelka_2:Tumor_Read_Depth', 'VarScan_Normal_Read_Depth', 'VarScan_Tumor_Read_Depth']
+First.columns = ['CHROM_POS', 'Strelka_Normal_Read_Depth', 'Strelka_Tumor_Read_Depth', 'VarScan_Normal_Read_Depth', 'VarScan_Tumor_Read_Depth']
 print(First)
 
 # Saving the results in csv.
