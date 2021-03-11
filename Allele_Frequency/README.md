@@ -4,7 +4,7 @@ Allele frequency, or gene frequency is defined as the relative frequency of an a
 
 ## 1. Inputs
 
-For the comparison, three vcf files from the Strelka variant caller with the tumor purity of 0.3, 0.5 and 0.7 are considered alongside three vcf files from the VarScan variant caller with the tumor purity of 0.3, 0.5 and 0.7 are considered.
+For the comparison, three vcf files from the Strelka somatic variant caller with the tumor purity of 0.3, 0.5 and 0.7 respectively are considered alongside three vcf files from the VarScan variant caller with the tumor purity of 0.3, 0.5 and 0.7 respectively are considered.
 
 ## 2. Procedure
 
