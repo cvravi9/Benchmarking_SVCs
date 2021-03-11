@@ -1,6 +1,6 @@
 # Allele Frequency
 
-In this section, Allele Frequency for the vcf files are filtered and then visualized through three tools.
+Allele frequency, or gene frequency is defined as the relative frequency of an allele at a particular locus in a population, expressed as a fraction or percentage. In this section, allele frequencies from different somatic variant callers are compared with the artifical truth data obtained from https://ftp-trace.ncbi.nlm.nih.gov/
 
 ## 1. Inputs
 
