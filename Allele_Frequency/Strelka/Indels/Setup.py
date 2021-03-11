@@ -8,7 +8,7 @@ import pandas as pd
 
 # The first step is to selected the needed columns in the vcf file.
 # The second step if to eliminate all lines that start with a '#'
-dff = pd.read_csv("Selected_Strelka_0.3_Indels.vcf", sep = '\t', index_col= False)
+dff = pd.read_csv("Selected_Strelka_0.7_Indels.vcf", sep = '\t', index_col= False)
 
 # Naming the columns after importing the csv file.
 dff.columns = ['CHROM', 'POS', 'REF', 'ALT', 'FORMAT', 'NORMAL', 'TUMOR']
@@ -43,14 +43,19 @@ dff = dff.drop(['Normal_TAR_Second', 'Normal_TIR_Second', 'Tumor_TAR_Second', 'T
 print(dff)
 
 # Converting string values columns to int.
-dff['Normal_TAR'] = dff['Normal_TAR'].astype(int)
-dff['Normal_TIR'] = dff['Normal_TIR'].astype(int)
-dff['Tumor_TAR'] = dff['Tumor_TAR'].astype(int)
-dff['Tumor_TIR'] = dff['Tumor_TIR'].astype(int)
+dff['Normal_TAR_First'] = dff['Normal_TAR_First'].astype(int)
+dff['Normal_TIR_First'] = dff['Normal_TIR_First'].astype(int)
+dff['Tumor_TAR_First'] = dff['Tumor_TAR_First'].astype(int)
+dff['Tumor_TIR_First'] = dff['Tumor_TIR_First'].astype(int)
+
+# Adding the values for formula.
+dff['SUM'] = dff["Normal_TAR_First"] + dff["Normal_TIR_First"]
+dff['COMMON'] = dff["Tumor_TAR_First"] + dff["Tumor_TIR_First"]
+print(dff)
 
 # Getting Allele Frequency
-dff['Normal_Allele_Frequency'] = dff['Normal_TAR']/dff['Normal_TIR']
-dff['Tumor_Allele_Frequency'] = dff['Tumor_TAR']/dff['Tumor_TIR']
+dff['Normal_Allele_Frequency'] = dff['Normal_TIR_First']/dff['SUM']
+dff['Tumor_Allele_Frequency'] = dff['Tumor_TIR_First']/dff['COMMON']
 
 # Converting string values columans to int.
 dff['Normal_Allele_Frequency'] = dff['Normal_Allele_Frequency'].astype(float).round(2)
@@ -61,9 +66,9 @@ dff["Normal_Allele_Frequency"] = dff['REF'].astype(str) + ':' + dff['Normal_Alle
 dff["Tumor_Allele_Frequency"] = dff['REF'].astype(str) + ':' + dff['Tumor_Allele_Frequency'].astype(str)
 
 # Dropping of the unnecessary columns and reorganising the columns.
-# dff = dff.drop(['REF', 'ALT', 'NORMAL', 'TUMOR', 'SUM'], axis=1)
+dff = dff.drop(['REF', 'ALT', 'Normal_TAR', 'Normal_TIR', 'Tumor_TAR', 'Tumor_TAR', 'Normal_TAR_First', 'Normal_TIR_First', 'Tumor_TAR_First', 'Tumor_TIR_First', 'SUM', 'COMMON'], axis=1)
 print(dff)
 
 # Saving the result into a csv file for plotting.
-dff.to_csv('Strelka_0.3_Indels.csv', sep=',', index=False, encoding='utf-8')
-dff.to_csv('Strelka_0.3_Plot_Indels.csv', sep='\t', index = None)
+dff.to_csv('Strelka_0.7_Indels.csv', sep=',', index=False, encoding='utf-8')
+dff.to_csv('Strelka_0.7_Plot_Indels.csv', sep='\t', index = None)
