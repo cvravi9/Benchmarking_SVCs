@@ -2,21 +2,22 @@
 import numpy as np
 import pandas as pd
 
-# Reading the csv input file that is obtained after performing the following operations on the vcf file.
-# Step 1 - 'cut -f 1-2,4-5,9-11 Input-VCF-File > Output-VCF-File'
-# Step 2 - 'sed '/^#/d' Output-VCF-File > Updated_Output-VCF-File'
+# The first step is to selected the neccessary columns.
+# Step 1 - 'cut -f 1-2,4-5,9-11 Input.vcf > Output.vcf'
 
-# The first step is to selected the needed columns in the vcf file.
-# The second step if to eliminate all lines that start with a '#'
+# Removing all the rows starting with a #
+# Step 2 - 'sed '/^#/d' Output.vcf > Updated_Output.vcf'
+
+# Consider the Updated_Output.vcf as input.
 dff = pd.read_csv("Selected_Strelka_0.7_Indels.vcf", sep = '\t', index_col= False)
 
-# Naming the columns after importing the csv file.
+# Renaming the columns after importing the input.
 dff.columns = ['CHROM', 'POS', 'REF', 'ALT', 'FORMAT', 'NORMAL', 'TUMOR']
 
 # Concatinating the "CHROM" and "POS"
 dff["CHROM_POS"] = dff['CHROM'].astype(str) + '-' + dff['POS'].astype(str)
 
-# Dropping of the unnecessary columns and reorganising the columns.
+# Dropping of the unnecessary columns and reorganising them.
 dff = dff.drop(['CHROM', 'POS'], axis=1)
 cols = dff.columns.tolist()
 cols = cols[-1:] + cols[:-1]
@@ -35,20 +36,20 @@ dff[['Normal_TIR_First', 'Normal_TIR_Second']] = dff['Normal_TIR'].str.split(','
 dff[['Tumor_TAR_First', 'Tumor_TAR_Second']] = dff['Tumor_TAR'].str.split(',',expand=True)
 dff[['Tumor_TIR_First', 'Tumor_TIR_Second']] = dff['Tumor_TIR'].str.split(',',expand=True)
 
-# Naming the columns after importing the csv file.
+# Renaming the new table with column names.
 dff.columns = ['CHROM_POS', 'REF', 'ALT', 'Normal_TAR', 'Normal_TIR', 'Tumor_TAR', 'Tumor_TAR', 'Normal_TAR_First', 'Normal_TAR_Second', 'Normal_TIR_First', 'Normal_TIR_Second', 'Tumor_TAR_First', 'Tumor_TAR_Second', 'Tumor_TIR_First', 'Tumor_TIR_Second']
 
-# Dropping of the unnecessary columns and reorganising the columns.
+# Dropping of the unnecessary columns and reorganising them.
 dff = dff.drop(['Normal_TAR_Second', 'Normal_TIR_Second', 'Tumor_TAR_Second', 'Tumor_TIR_Second'], axis=1)
 print(dff)
 
-# Converting string values columns to int.
+# Converting string values columns to int for calculations.
 dff['Normal_TAR_First'] = dff['Normal_TAR_First'].astype(int)
 dff['Normal_TIR_First'] = dff['Normal_TIR_First'].astype(int)
 dff['Tumor_TAR_First'] = dff['Tumor_TAR_First'].astype(int)
 dff['Tumor_TIR_First'] = dff['Tumor_TIR_First'].astype(int)
 
-# Adding the values for formula.
+# Adding the values for the formula.
 dff['SUM'] = dff["Normal_TAR_First"] + dff["Normal_TIR_First"]
 dff['COMMON'] = dff["Tumor_TAR_First"] + dff["Tumor_TIR_First"]
 print(dff)
@@ -65,7 +66,7 @@ dff['Tumor_Allele_Frequency'] = dff['Tumor_Allele_Frequency'].astype(float).roun
 dff["Normal_Allele_Frequency"] = dff['REF'].astype(str) + ':' + dff['Normal_Allele_Frequency'].astype(str)
 dff["Tumor_Allele_Frequency"] = dff['REF'].astype(str) + ':' + dff['Tumor_Allele_Frequency'].astype(str)
 
-# Dropping of the unnecessary columns and reorganising the columns.
+# Dropping of the unnecessary columns and reorganising them.
 dff = dff.drop(['REF', 'ALT', 'Normal_TAR', 'Normal_TIR', 'Tumor_TAR', 'Tumor_TAR', 'Normal_TAR_First', 'Normal_TIR_First', 'Tumor_TAR_First', 'Tumor_TIR_First', 'SUM', 'COMMON'], axis=1)
 print(dff)
 
