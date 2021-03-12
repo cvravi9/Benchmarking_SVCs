@@ -17,4 +17,4 @@ print(Second)
 
 # Saving the results in csv.
 Second.to_csv('Tumor_Purity_0.5.csv', sep=',', index=False, encoding='utf-8')
-# Second.to_csv('Tumor_Purity_0.5_Plot.csv', sep='\t', index = None)
+Second.to_csv('Tumor_Purity_0.5_Plot.csv', sep='\t', index = None)
