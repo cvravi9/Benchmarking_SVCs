@@ -1,4 +1,4 @@
-Type,Strelka_Insertions_Count,VarScan_Insertions_Count
-Tumor_Purity_0.3,122,1354
-Tumor_Purity_0.5,122,1354
-Tumor_Purity_0.7,122,1352
+Type,Strelka_Insertions_Count,VarScan_Insertions_Count,Truth_Data_Deletions
+Tumor_Purity_0.3,122,1354,44592
+Tumor_Purity_0.5,122,1354,44592
+Tumor_Purity_0.7,122,1352,44592
