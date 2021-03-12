@@ -5,14 +5,16 @@ import pandas as pd
 # Reading csv files and concatinating "CHROM" and "POS"
 df = pd.read_csv("Strelka_0.5.csv", sep = '\t', index_col= False)
 df1 = pd.read_csv("VarScan_0.5.csv", sep = '\t', index_col= False)
+df2 = pd.read_csv("Somatic_Truth.csv", sep = '\t', index_col= False)
 
 # Merging columns based on "CHROM-POS"
 First = pd.merge(df, df1, on=['CHROM_POS'])
+Second = pd.merge(First, df2, on=['CHROM_POS'])
 
 # Renaming Columns
-First.columns = ['CHROM_POS', 'Strelka_Normal', 'Strelka_Tumor', 'VarScan']
-print(First)
+Second.columns = ['CHROM_POS', 'Strelka_Normal', 'Strelka_Tumor', 'VarScan', 'Truth_Data']
+print(Second)
 
 # Saving the results in csv.
-First.to_csv('Tumor_Purity_0.5.csv', sep='\t', index=False, encoding='utf-8')
-First.to_csv('Tumor_Purity_0.5_Plot.csv', sep='\t', index = None)
+Second.to_csv('Tumor_Purity_0.5.csv', sep='\t', index=False, encoding='utf-8')
+# Second.to_csv('Tumor_Purity_0.5_Plot.csv', sep='\t', index = None)
