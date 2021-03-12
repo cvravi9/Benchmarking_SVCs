@@ -8,11 +8,7 @@ For the comparison, three vcf files from the Strelka somatic variant caller with
 
 ## 2. Procedure
 
-For the Strelka somatic variant caller vcf outcomes, allele frequencies are obtained for tumor and normal values using the formulas provided at https://github.com/Illumina/strelka/blob/v2.9.x/docs/userGuide/README.md#somatic while for VarScan variant caller, allele frequencies are obtained using the command 
-
-```
-vcftools --vcf input.vcf --freq --out output
-```
+For the Strelka somatic variant caller vcf outcomes, allele frequencies are obtained for tumor and normal values using the formulas provided at https://github.com/Illumina/strelka/blob/v2.9.x/docs/userGuide/README.md#somatic while for VarScan variant caller, allele frequencies are obtained using the command **vcftools --vcf input.vcf --freq --out output**
 
 ## 3. Outputs
 
