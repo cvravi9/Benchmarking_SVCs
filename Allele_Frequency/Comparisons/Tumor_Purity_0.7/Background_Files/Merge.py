@@ -16,5 +16,5 @@ Second.columns = ['CHROM_POS', 'Strelka_Normal', 'Strelka_Tumor', 'VarScan', 'Tr
 print(Second)
 
 # Saving the results in csv.
-Second.to_csv('Tumor_Purity_0.7.csv', sep='\t', index=False, encoding='utf-8')
+Second.to_csv('Tumor_Purity_0.7.csv', sep=',', index=False, encoding='utf-8')
 # Second.to_csv('Tumor_Purity_0.7_Plot.csv', sep='\t', index = None)
