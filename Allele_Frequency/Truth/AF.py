@@ -16,4 +16,4 @@ print(dff)
 
 # Saving the results in csv.
 dff.to_csv('Somatic_Truth.csv', sep='\t', index=False, encoding='utf-8')
-dff.to_csv('Somatic_Truth.csv', sep=',', index = None)
+dff.to_csv('Somatic_Truth_Case.csv', sep='\t', index = None)
