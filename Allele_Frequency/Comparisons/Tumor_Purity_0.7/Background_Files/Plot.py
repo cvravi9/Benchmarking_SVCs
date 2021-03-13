@@ -21,8 +21,8 @@ r4 = [x + width for x in r3]
 
 # Make the plot
 plt.bar(r1, a1, color='#FFD700', width=width, edgecolor='white', label='Strelka_Normal')
-plt.bar(r2, a2, color='#FFA500', width=width, edgecolor='white', label='Strelka_Tumor')
-plt.bar(r3, a3, color='#FF1493', width=width, edgecolor='white', label='VarScan')
+plt.bar(r2, a2, color='#FFAA1C', width=width, edgecolor='white', label='Strelka_Tumor')
+plt.bar(r3, a3, color='#FF8C01', width=width, edgecolor='white', label='VarScan')
 plt.bar(r4, a4, color='#FF0000', width=width, edgecolor='white', label='Truth_Data')
 
 # Add xticks on the middle of the group bars
@@ -32,4 +32,4 @@ plt.xticks([r + width for r in range(len(a1))], ['<= 0.25', '<= 0.50', '<= 0.75'
 # Create legend & Show graphic
 plt.legend()
 plt.show()
-plt.savefig('Tumor_0.7_AF_Plot.pdf')
+plt.savefig('Tumor_Purity_0.7_AF_Plot.pdf')
