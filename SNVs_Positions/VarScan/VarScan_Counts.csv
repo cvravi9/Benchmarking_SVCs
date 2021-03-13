@@ -1,0 +1,4 @@
+Type,Strelka_Positions,Strelka_SNPs
+VarScan_Tumor_Purity_0.3,29316,26312
+VarScan_Tumor_Purity_0.5,29294,26290
+VarScan_Tumor_Purity_0.7,29171,26185
