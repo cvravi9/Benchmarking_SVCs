@@ -8,8 +8,8 @@ As input, three vcf files from the Strelka somatic variant caller with the tumor
 
 ## 2. Procedure
 
-For the Strelka somatic variant caller vcf outcomes, allele frequencies are obtained for tumor and normal values using the formulas provided at https://github.com/Illumina/strelka/blob/v2.9.x/docs/userGuide/README.md#somatic while for VarScan variant caller, allele frequencies are obtained using the command **vcftools --vcf input.vcf --freq --out output**
+From the vcf files, positions could be obtained by using the command **cut -f 2,4-5 Input.vcf > Output.vcf** and then calculating the length of the **POS** column. The SNPs can be obtained from the vcf files using the command **vcftools --vcf input_file.vcf --remove-indels --recode --recode-INFO-all --out SNPs_only** and then calculate the SNPs as mentioned in the Code_SNPs.py.
 
 ## 3. Outputs
 
-The outcomes for both the cases are csv files that are used for comparisons and plottings.
+The outcomes for both the cases are csv files that give the number of positions and SNPs in Strelka, VarScan and Truth_Data alongside venn diagrams visualizing the outcome.
