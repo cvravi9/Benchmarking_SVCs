@@ -6,7 +6,7 @@ import pandas as pd
 df = []
 
 # Taking all combinations as a list.
-data = {'Type': ['VarScan_Tumor_Purity_0.3', 'VarScan_Tumor_Purity_0.5', 'VarScan_Tumor_Purity_0.7'], 'Strelka_Positions': ['29316', '29294', '29171'], 'Strelka_SNPs': ['26312', '26290', '26185']}
+data = {'Type': ['VarScan_Tumor_Purity_0.3', 'VarScan_Tumor_Purity_0.5', 'VarScan_Tumor_Purity_0.7'], 'VarScan_Positions': ['29316', '29294', '29171'], 'VarScan_SNPs': ['26312', '26290', '26185']}
 
 # Collecting it into a dataframe.
 df = pd.DataFrame(data)
