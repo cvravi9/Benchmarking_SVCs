@@ -34,16 +34,32 @@ Third = pd.merge(df2, df1, on=['POS'])
 Fourth = pd.merge(First, df2, on=['POS'])
 
 # Dropping of the unnecessary columns and only choosing the "NORMAL Depth" i.e. "NORMAL-DP" and "TUMOR Depth" i.e. "TUMOR-DP"
-# First = First.drop(['REF', 'ALT'], axis=1)
-# Second = Second.drop(['REF', 'ALT'], axis=1)
-# Third = Third.drop(['REF', 'ALT'], axis=1)
-# Fourth = Fourth.drop(['REF', 'ALT'], axis=1)
+First = First.drop(['REF_x', 'ALT_x', 'REF_y', 'ALT_y'], axis=1)
+Second = Second.drop(['REF_x', 'ALT_x', 'REF_y', 'ALT_y'], axis=1)
+Third = Third.drop(['REF_x', 'ALT_x', 'REF_y', 'ALT_y'], axis=1)
+Fourth = Fourth.drop(['REF_x', 'ALT_x', 'REF_y', 'ALT_y', 'REF', 'ALT'], axis=1)
 print(First)
 print(Second)
 print(Third)
 print(Fourth)
 
-# Adding comparisons.
+# Conditional replacement.
+First['Result'] = np.where(First["REF_ALT_x"] == First["REF_ALT_y"], 0, 1)
+First = First[First["Result"] == 0]
+print(First)
+
+Second['Result'] = np.where(Second["REF_ALT_x"] == Second["REF_ALT_y"], 0, 1)
+Second = Second[Second["Result"] == 0]
+print(Second)
+
+Third['Result'] = np.where(Third["REF_ALT_x"] == Third["REF_ALT_y"], 0, 1)
+Third = Third[Third["Result"] == 0]
+print(Third)
+
+Fourth['Result'] = np.where(((Fourth["REF_ALT_x"] == Fourth["REF_ALT_y"]) & (Fourth["REF_ALT_x"] == Fourth["REF_ALT"]) & (Fourth["REF_ALT_y"] == Fourth["REF_ALT"])), 0, 1)
+Fourth = Fourth[Fourth["Result"] == 0]
+print(Fourth)
+
 # Position outcomes.
 print("Number of SNPs in Strelka and VarScan:")
 print(len(First))
