@@ -10,7 +10,7 @@ df2 = pd.read_csv("Updated_Somatic_Truth.vcf", sep = '\t', index_col= False)
 # Merging columns based on "POS"
 First = pd.merge(df, df1, on=['POS'])
 Second = pd.merge(df1, df2, on=['POS'])
-Third = pd.merge(df2, df1, on=['POS'])
+Third = pd.merge(df2, df, on=['POS'])
 Fourth = pd.merge(First, df2, on=['POS'])
 
 # Position outcomes.
