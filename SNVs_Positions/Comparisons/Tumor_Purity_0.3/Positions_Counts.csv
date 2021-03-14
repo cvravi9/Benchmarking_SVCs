@@ -1,0 +1,8 @@
+Type,Positions
+Strelka_Positions,13315
+VarScan_Positions,29316
+Truth_Data_Positions,1104786
+Strelka_and_VarScan_Positions,3104
+VarScan_and_Truth_Data_Positions,2843
+Truth_Data_and_Strelka_Positions,2843
+Strelka_VarScan_Truth_Data_Positions,1052
