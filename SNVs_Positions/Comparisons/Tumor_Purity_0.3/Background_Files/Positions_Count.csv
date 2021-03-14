@@ -1,8 +1,0 @@
-Type,Positions
-Strelka,13315
-VarScan,29316
-Truth_Data,1104786
-Strelka_and_VarScan,3104
-VarScan_and_Truth_Data,2843
-Truth_Data_and_Strelka,3791
-Strelka_and_VarScan_and_Truth_Data,1052
