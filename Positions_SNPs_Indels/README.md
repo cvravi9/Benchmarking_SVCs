@@ -8,8 +8,8 @@ As input, three vcf files from the Strelka somatic variant caller with the tumor
 
 ## 2. Procedure
 
-From the vcf files, positions could be obtained by using the command **cut -f 2,4-5 Input.vcf > Output.vcf** and then calculating the length of the **POS** column. The SNPs can be obtained from the vcf files using the command **vcftools --vcf input_file.vcf --remove-indels --recode --recode-INFO-all --out SNPs_only** and then calculate the SNPs as mentioned in the Code_SNPs.py.
+From the vcf files, positions could be obtained by using the command **cut -f 2,4-5 Input.vcf > Output.vcf** and then calculating the length of the **POS** column. The SNPs can be obtained from the vcf files using the command **vcftools --vcf input_file.vcf --remove-indels --recode --recode-INFO-all --out SNPs_only** and then calculate the SNPs as mentioned in the Code_SNPs.py. The INDELs can be obtained from the vcf files using the command **vcftools --vcf input_file.vcf --keep-only-indels --recode --recode-INFO-all --out INDELs_only** and then calculate the INDELs as mentioned in the Code_INDELs.py.
 
 ## 3. Outputs
 
-The outcomes for both the cases are csv files that give the number of positions and SNPs in Strelka, VarScan and Truth_Data alongside venn diagrams visualizing the outcome.
+The outcomes for both the cases are csv files that give the number of positions, SNPs, and INDELs in Strelka, VarScan and Truth_Data alongside venn diagrams visualizing the outcome.
