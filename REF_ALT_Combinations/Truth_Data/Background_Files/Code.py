@@ -111,7 +111,7 @@ print(CG)
 df = []
 
 # Taking all combinations as a list.
-data = {'REF': ['A', 'A', 'A', 'A', 'T', 'T', 'T', 'T', 'G', 'G', 'G', 'G', 'C', 'C', 'C', 'C'], 'ALT': ['A', 'T', 'G', 'C', 'T', 'A', 'G', 'C', 'G', 'A', 'T', 'C', 'C', 'A', 'T', 'G'], 'Strelka_0.7': [AA, AT, AG, AC, TT, TA, TG, TC, GG, GA, GT, GC, CC, CA, CT, CG]}
+data = {'REF': ['A', 'A', 'A', 'A', 'T', 'T', 'T', 'T', 'G', 'G', 'G', 'G', 'C', 'C', 'C', 'C'], 'ALT': ['A', 'T', 'G', 'C', 'T', 'A', 'G', 'C', 'G', 'A', 'T', 'C', 'C', 'A', 'T', 'G'], 'Truth_Data': [AA, AT, AG, AC, TT, TA, TG, TC, GG, GA, GT, GC, CC, CA, CT, CG]}
 
 # Collecting it into a dataframe.
 df = pd.DataFrame(data)
