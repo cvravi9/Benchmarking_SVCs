@@ -1,6 +1,6 @@
 # Variants
 
-Allele frequency, or gene frequency is defined as the relative frequency of an allele at a particular locus in a population, expressed as a fraction or percentage. In this section, allele frequencies from different somatic variant callers are compared with the artifical truth data obtained from https://ftp-trace.ncbi.nlm.nih.gov/
+A variant is an alteration in the most common DNA sequence. In this section, variants from different somatic variant callers are compared with the artifical truth data obtained from https://ftp-trace.ncbi.nlm.nih.gov/
 
 ## 1. Inputs
 
@@ -8,7 +8,7 @@ As input, three vcf files from the Strelka somatic variant caller with the tumor
 
 ## 2. Procedure
 
-For the Strelka somatic variant caller vcf outcomes, allele frequencies are obtained for tumor and normal values using the formulas provided at https://github.com/Illumina/strelka/blob/v2.9.x/docs/userGuide/README.md#somatic while for VarScan variant caller, allele frequencies are obtained using the command **vcftools --vcf input.vcf --freq --out output**
+The occurance of each variant is calculated from the vcf outcomes using Code.py and they are normalised with the number of SNPs from each vcf file before being checking out if a variant caller has a bias towards a specific set of variants.
 
 ## 3. Outputs
 
