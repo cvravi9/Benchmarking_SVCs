@@ -1,4 +1,4 @@
-# Positions and SNPs
+# Positions, SNPs and INDELs
 
 A single-nucleotide polymorphism is a substitution of a single nucleotide at a specific position in the genome that is present in a sufficiently large fraction of the population. In this section, snps from different somatic variant callers are compared with the artifical truth data obtained from https://ftp-trace.ncbi.nlm.nih.gov/ 
 
