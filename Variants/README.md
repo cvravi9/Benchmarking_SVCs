@@ -8,7 +8,7 @@ As input, three vcf files from the Strelka somatic variant caller with the tumor
 
 ## 2. Procedure
 
-The occurance of each variant is calculated from the vcf outcomes using Code.py and then they are normalised with the number of SNPs from each vcf file before being checking out if a variant caller has a bias towards a specific set of variants.
+The occurance of each variant is calculated from the vcf outcomes using Code.py and then they are normalised with the number of SNPs from each vcf file before checking for bias towards a specific set of variants in different variant callers.
 
 ## 3. Outputs
 
