@@ -1,4 +1,4 @@
-Type,SNPs
+Type,INDELs
 Strelka,418
 VarScan,3004
 Truth_Data,96993

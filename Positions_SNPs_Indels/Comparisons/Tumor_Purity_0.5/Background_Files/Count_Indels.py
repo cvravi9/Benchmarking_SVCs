@@ -79,7 +79,7 @@ print(Strelka_VarScan_Truth_Indels)
 df3 = []
 
 # Taking all combinations as a list.
-data = {'Type': ['Strelka', 'VarScan', 'Truth_Data', 'Strelka_and_VarScan', 'VarScan_and_Truth_Data', 'Truth_Data_and_Strelka', 'Strelka_and_VarScan_and_Truth_Data'], 'SNPs': [Strelka_Indels, VarScan_Indels, Truth_Indels, Strelka_VarScan_Indels, VarScan_Truth_Indels, Strelka_Truth_Indels, Strelka_VarScan_Truth_Indels]}
+data = {'Type': ['Strelka', 'VarScan', 'Truth_Data', 'Strelka_and_VarScan', 'VarScan_and_Truth_Data', 'Truth_Data_and_Strelka', 'Strelka_and_VarScan_and_Truth_Data'], 'INDELs': [Strelka_Indels, VarScan_Indels, Truth_Indels, Strelka_VarScan_Indels, VarScan_Truth_Indels, Strelka_Truth_Indels, Strelka_VarScan_Truth_Indels]}
 
 # Collecting it into a dataframe.
 df3 = pd.DataFrame(data)
