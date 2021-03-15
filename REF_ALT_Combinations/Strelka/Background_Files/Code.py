@@ -89,7 +89,7 @@ TT3 = len(dff18.index)
 
 dff19 = dff[(dff['REF'] == 'T') & (dff['ALT'] == 'A')]
 dff20 = dff1[(dff1['REF'] == 'T') & (dff1['ALT'] == 'A')]
-dff21 = dff1[(dff2['REF'] == 'T') & (dff2['ALT'] == 'A')]
+dff21 = dff2[(dff2['REF'] == 'T') & (dff2['ALT'] == 'A')]
 TA1 = len(dff19.index)
 TA2 = len(dff20.index)
 TA3 = len(dff21.index)
@@ -191,7 +191,7 @@ print(Second)
 Second.to_csv('Strelka_Counts.csv', sep=',', index = None)
 
 # Reading csv files and concatinating "CHROM" and "POS"
-dff = pd.read_csv("Strelka_Plot.csv", sep = ',', index_col= False, error_bad_lines=False)
+dff = pd.read_csv("Strelka_Counts.csv", sep = ',', index_col= False, error_bad_lines=False)
 dff.columns = ['REF', 'ALT', 'Strelka_One', 'Strelka_Two', 'Strelka_Three']
 
 # set width of bar
