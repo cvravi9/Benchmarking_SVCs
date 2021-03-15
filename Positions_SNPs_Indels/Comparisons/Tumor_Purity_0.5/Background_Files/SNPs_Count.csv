@@ -1,0 +1,8 @@
+Type,SNPs
+Strelka,12897
+VarScan,26290
+Truth_Data,1007793
+Strelka_and_VarScan,2770
+VarScan_and_Truth_Data,2484
+Truth_Data_and_Strelka,3150
+Strelka_and_VarScan_and_Truth_Data,875
