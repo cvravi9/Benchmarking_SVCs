@@ -60,9 +60,9 @@ print(df3)
 df3.to_csv('Positions_Count.csv', sep=',', index = None)
 
 # Formulas
-Strelka_Exclude = Strelka_Positions - Strelka_VarScan_Positions - Strelka_Truth_Positions - Strelka_VarScan_Truth_Positions
-VarScan_Exclude = VarScan_Positions - Strelka_VarScan_Positions - VarScan_Truth_Positions - Strelka_VarScan_Truth_Positions
-Truth_Exclude = Truth_Positions - VarScan_Truth_Positions - Strelka_Truth_Positions - Strelka_VarScan_Truth_Positions
+Strelka_Exclude = Strelka_Positions - (Strelka_VarScan_Positions + Strelka_Truth_Positions + Strelka_VarScan_Truth_Positions)
+VarScan_Exclude = VarScan_Positions - (Strelka_VarScan_Positions + VarScan_Truth_Positions + Strelka_VarScan_Truth_Positions)
+Truth_Exclude = Truth_Positions - (VarScan_Truth_Positions + Strelka_Truth_Positions + Strelka_VarScan_Truth_Positions)
 
 # Set of values.
 subsets = (Strelka_Exclude, VarScan_Exclude, Strelka_VarScan_Positions, Truth_Exclude, Strelka_Truth_Positions, VarScan_Truth_Positions, Strelka_VarScan_Truth_Positions)
