@@ -8,7 +8,7 @@ As input, three vcf files from the Strelka somatic variant caller with the tumor
 
 ## 2. Procedure
 
-For the Strelka somatic variant caller vcf outcomes, allele frequencies are obtained for tumor and normal values using the formulas provided at https://github.com/Illumina/strelka/blob/v2.9.x/docs/userGuide/README.md#somatic while for VarScan variant caller, allele frequencies are obtained using the command **vcftools --vcf input.vcf --freq --out output**
+For the Strelka somatic variant caller, read depth value is taken from DP in FORMAT with DP:FDP:SDP:SUBDP:AU:CU:GU:TU and it has Normal and Tumor Read Depth. For the VarScan somatic variant caller, read depth value is taken from DP in FORMAT with GT:GQ:DP:AD:ADF:ADR and it has Normal and Tumor Read Depth. For Somatic Truth Data, read depth value is taken from DP in FORMAT with GT:PS:DP:GQ and it is the only read depth.
 
 ## 3. Outputs
 
