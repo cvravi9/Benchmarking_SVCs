@@ -1,6 +1,6 @@
 # Read Depth
 
-Read Depth describes the number of times that a given nucleotide in the genome has been read in an experiment.In this section, read depths from different somatic variant callers are compared with the artifical truth data obtained from https://ftp-trace.ncbi.nlm.nih.gov/
+Read Depth describes the number of times that a given nucleotide in the genome has been read in an experiment. In this section, read depths from different somatic variant callers are compared with the artifical truth data obtained from https://ftp-trace.ncbi.nlm.nih.gov/
 
 ## 1. Inputs
 
