@@ -8,7 +8,7 @@ As input, three vcf files from the Strelka somatic variant caller with the tumor
 
 ## 2. Procedure
 
-For the Strelka somatic variant caller, read depth value is taken from DP in FORMAT with DP:FDP:SDP:SUBDP:AU:CU:GU:TU and it has Normal and Tumor Read Depth. For the VarScan somatic variant caller, read depth value is taken from DP in FORMAT with GT:GQ:DP:AD:ADF:ADR and it has Normal and Tumor Read Depth. For Somatic Truth Data, read depth value is taken from DP in FORMAT with GT:PS:DP:GQ and it is the only read depth.
+For the Strelka somatic variant caller, read depth value is taken from DP in FORMAT and it has Normal and Tumor Read Depth. For the VarScan somatic variant caller, read depth value is taken from DP in FORMAT and it has Normal and Tumor Read Depth. For Somatic Truth Data, read depth value is taken from DP in FORMAT and it has only one read depth value.
 
 ## 3. Outputs
 
