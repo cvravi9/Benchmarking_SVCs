@@ -245,8 +245,8 @@ First = pd.merge(dff, dff1, on=['CHROM_POS'])
 Second = pd.merge(First, dff2, on=['CHROM_POS'])
 
 # Renaming Columns
-Second.columns = ['CHROM_POS', 'VarScan_Normal_0.3', 'VarScan_Tumor_0.3', 'VarScan_0.5_Normal', 'VarScan_0.5_Tumor', 'VarScan_0.7_Normal', 'VarScan_0.7_Tumor']
+Second.columns = ['CHROM_POS', 'Strelka_Normal_0.3', 'Strelka_Tumor_0.3', 'Strelka_0.5_Normal', 'Strelka_0.5_Tumor', 'Strelka_0.7_Normal', 'Strelka_0.7_Tumor']
 print(Second)
 
 # Saving the results in csv.
-Second.to_csv('VarScan_Read_Depth.csv', sep=',', index = None)
+Second.to_csv('Strelka_SNPs_Read_Depth.csv', sep=',', index = None)
