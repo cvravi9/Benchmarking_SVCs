@@ -9,7 +9,6 @@ df2 = pd.read_csv("Truth_Data_Read_Depth_Counts.csv", sep = ',', index_col= Fals
 
 # Merging columns based on "CHROM-POS"
 First = pd.merge(df, df1, on=['CHROM_POS'])
-print(First)
 Second = pd.merge(First, df2, on=['CHROM_POS'])
 
 # Assigning column names.
