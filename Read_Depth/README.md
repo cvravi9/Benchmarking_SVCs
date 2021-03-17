@@ -1,26 +1,15 @@
 # Read Depth
 
-In this section, Read Depth for the vcf files are visualized through two ways.
+Read Depth describes the number of times that a given nucleotide in the genome has been read in an experiment.In this section, read depths from different somatic variant callers are compared with the artifical truth data obtained from https://ftp-trace.ncbi.nlm.nih.gov/
 
 ## 1. Inputs
 
-* The four input vcf files namely Miracum_0.4.vcf, Miracum_0.7.vcf, Somatic_0.4.vcf & Somatic_0.7.vcf.
-
-* The files with 0.4.vcf are with Tumor Sample Purity of 0.4 and the ones with 0.7.vcf are with Tumor Sample Purity of 0.7.
+As input, three vcf files from the Strelka somatic variant caller with the tumor purity of 0.3, 0.5 and 0.7 respectively are considered, three vcf files from the VarScan variant caller with the tumor purity of 0.3, 0.5 and 0.7 respectively are considered alongside the artificial truth vcf file.
 
 ## 2. Procedure
 
-* In the plots, selected columns are filtered and then plotted using mathplotlib.
-
-* In the vcftools, both the depth summary and the site depth sums are obtained using the commands: 
-
-```
-vcftools --vcf input.vcf --depth -c > depth_summary.txt
-vcftools --vcf input.vcf --site-depth --max-missing 1.0 --out
-```
+For the Strelka somatic variant caller vcf outcomes, allele frequencies are obtained for tumor and normal values using the formulas provided at https://github.com/Illumina/strelka/blob/v2.9.x/docs/userGuide/README.md#somatic while for VarScan variant caller, allele frequencies are obtained using the command **vcftools --vcf input.vcf --freq --out output**
 
 ## 3. Outputs
 
-* In the plots, the output files are csv files with the selected columns and the pdfs with mathplotlib plots.
-
-* In the vcftools. the output files are four ldepth files and four log files.
+The outcomes for both the cases are csv files that are used for comparisons and plottings.
