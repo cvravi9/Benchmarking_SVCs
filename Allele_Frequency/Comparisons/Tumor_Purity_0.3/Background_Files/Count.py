@@ -1,6 +1,9 @@
 # Importing packages.
 import numpy as np
 import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt 
+import csv
 
 # Reading csv files and concatinating "CHROM" and "POS"
 df = pd.read_csv("Strelka_0.3.csv", sep = '\t', index_col= False)
@@ -51,3 +54,53 @@ print(dff1)
 print(dff5)
 print(dff6)
 print(dff7)
+
+# Converting into list.
+First_Column = dff1.tolist()
+Second_Column = dff5.tolist()
+Third_Column = dff6.tolist()
+Fourth_Column = dff7.tolist()
+print(First_Column)
+print(Second_Column)
+print(Third_Column)
+print(Fourth_Column)
+
+# Declaring new columns.
+dff8 = pd.DataFrame(First_Column, columns = ['Less than 0.25'], index=['Strelka_Normal', 'Strelka_Tumor', 'VarScan', 'Truth_Data'])
+dff8['Between 0.25 & 0.50'] = Second_Column
+dff8['Between 0.50 & 0.75'] = Third_Column
+dff8['Between 0.75 & 1.00'] = Fourth_Column
+print(dff8)
+
+# Saving the results in csv.
+dff8.to_csv('Tumor_Purity_0.3_AF_Counts.csv', sep=',', index = None)
+
+# set width of bar
+width = 0.25
+
+# Columns from the file
+a1 = First_Column
+a2 = Second_Column
+a3 = Third_Column
+a4 = Fourth_Column
+
+# Set position of bar on X axis
+r1 = np.arange(len(a1))
+r2 = [x + width for x in r1]
+r3 = [x + width for x in r2]
+r4 = [x + width for x in r3]
+
+# Make the plot
+plt.bar(r1, a1, color='#FFD700', width=width, edgecolor='white', label='Strelka_Normal')
+plt.bar(r2, a2, color='#FFAA1C', width=width, edgecolor='white', label='Strelka_Tumor')
+plt.bar(r3, a3, color='#FF8C01', width=width, edgecolor='white', label='VarScan')
+plt.bar(r4, a4, color='#FF0000', width=width, edgecolor='white', label='Truth_Data')
+
+# Add xticks on the middle of the group bars
+plt.xlabel('Tumor_0.3_Allele_Frequencies')
+plt.xticks([r + width for r in range(len(a1))], ['<= 0.25', '<= 0.50', '<= 0.75', '<= 1.00'])
+
+# Create legend & Show graphic
+plt.legend()
+plt.show()
+plt.savefig('Tumor_Purity_0.3_AF_Plot.pdf')
