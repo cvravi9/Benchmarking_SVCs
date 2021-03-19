@@ -63,13 +63,15 @@ First_Column = dff1.tolist()
 Second_Column = dff5.tolist()
 Third_Column = dff6.tolist()
 Fourth_Column = dff7.tolist()
+Fifth_Column =['Strelka_Normal', 'Strelka_Tumor', 'VarScan', 'Truth_Data']
 print(First_Column)
 print(Second_Column)
 print(Third_Column)
 print(Fourth_Column)
 
 # Declaring new columns.
-dff8 = pd.DataFrame(First_Column, columns = ['Less than 0.25'], index=['Strelka_Normal', 'Strelka_Tumor', 'VarScan', 'Truth_Data'])
+dff8 = pd.DataFrame(Fifth_Column, columns = ['Type'])
+dff8['Less than 0.25'] = First_Column
 dff8['Between 0.25 & 0.50'] = Second_Column
 dff8['Between 0.50 & 0.75'] = Third_Column
 dff8['Between 0.75 & 1.00'] = Fourth_Column
