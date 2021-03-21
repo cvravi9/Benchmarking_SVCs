@@ -1,0 +1,11 @@
+Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value
+Strelka_Normal_0.5,20,139,70.38468992248062,64.0,"0    59
+dtype: int64"
+Strelka_Tumor_0.5,14,61,26.614341085271317,25.0,"0    19
+dtype: int64"
+VarScan_Normal_0.5,16,117,55.116279069767444,50.0,"0    41
+dtype: int64"
+VarScan_Tumor_0.5,9,52,21.186046511627907,19.0,"0    16
+dtype: int64"
+Truth_Data,274,1104,662.8304263565891,660.0,"0    730
+dtype: int64"
