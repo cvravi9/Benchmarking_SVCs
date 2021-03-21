@@ -18,7 +18,7 @@ dff = dff[cols]
 print(dff)
 
 # Saving the results in csv.
-dff.to_csv('Somatic_Truth.csv', sep=',', index = False)
+dff.to_csv('Truth_Data.csv', sep=',', index = False)
 
 # Creating new columns by splitting the "NORMAL" and "TUMOR" columns by ':' and renaming the new columns based on the format "GT:GQ:DP:AD:ADF:ADR".
 dff[['Allele', 'Freq']] = dff['ALLELE:FREQ'].str.split(':',expand=True)
@@ -71,27 +71,4 @@ dff8['Between 0.75 & 1.00'] = Fourth_Column
 print(dff8)
 
 # Saving the results in csv.
-dff8.to_csv('Truth_Data_AF_Counts.csv', sep=',', index = None)
-
-# Adding labels
-labels = ['<= 0.25', '<= 0.50', '<= 0.75', '<= 1.00']
-
-x = np.arange(len(labels))  # the label locations
-width = 0.35  # the width of the bars
-dff9 = dff8.drop(['Type'], axis=1)
-print(dff9)
-
-# Converting the values to a list
-List = dff9.values.tolist()
-print(List)
-
-fig, ax = plt.subplots()
-ax.bar(labels, List, width, label='Men')
-
-# Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_title('Truth_Data_Value_Counts')
-
-# Create legend & Show graphic
-plt.legend()
-plt.show()
-plt.savefig('Truth_Data_AF_Plot.pdf')
+dff8.to_csv('Truth_Data_Allele_Frequency_Counts.csv', sep=',', index = None)
