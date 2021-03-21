@@ -1,0 +1,3 @@
+Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value
+Truth_Data,100,999,inf,647.0,"0    640
+dtype: object"
