@@ -1,0 +1,13 @@
+Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value
+VarScan_Normal_0.3,10,99,inf,55.0,"0    38
+dtype: object"
+VarScan_Tumor_0.3,10,98,inf,19.0,"0    11
+dtype: object"
+VarScan_Normal_0.5,10,99,inf,55.0,"0    38
+dtype: object"
+VarScan_Tumor_0.5,10,98,inf,19.0,"0    11
+dtype: object"
+VarScan_Normal_0.7,10,99,inf,55.0,"0    38
+dtype: object"
+VarScan_Tumor_0.7,10,98,inf,19.0,"0    11
+dtype: object"
