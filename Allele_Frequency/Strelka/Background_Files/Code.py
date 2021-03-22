@@ -2,6 +2,9 @@
 import numpy as np
 import pandas as pd
 import matplotlib
+from matplotlib import rc
+matplotlib.rcParams['mathtext.fontset'] = 'cm'
+matplotlib.rcParams['font.family'] = 'serif'
 import matplotlib.pyplot as plt
 import csv
 
@@ -546,4 +549,4 @@ plt.xticks([r + width for r in range(len(a1))], ['<= 0.25', '<= 0.50', '<= 0.75'
 plt.legend()
 plt.show()
 plt.savefig('Strelka_Allele_Frequency_Plot.pdf')
-plt.savefig('Strelka_Allele_Frequency_Plot.eps', format='eps')
+plt.savefig('Strelka_Allele_Frequency_Plot.png', dpi = 300)
