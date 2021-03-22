@@ -5,6 +5,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 import csv
 
+matplotlib.rcParams['font.sans-serif'] = ['Computer Modern Roman', 'sans-serif']
+
 # The first step is to selected the neccessary columns.
 # Step 1 - 'cut -f 1-2,4-5,9-11 Input.vcf > Output.vcf'
 
@@ -533,6 +535,9 @@ plt.bar(r4, a4, color='#fa8072', width=width, edgecolor='white', label='Tumor_0.
 plt.bar(r5, a5, color='#b22222', width=width, edgecolor='white', label='Normal_0.7')
 plt.bar(r6, a6, color='#800000', width=width, edgecolor='white', label='Tumor_0.7')
 
+csfont = {'fontname':'Comic Sans MS'}
+hfont = {'fontname':'Helvetica'}
+
 # Add xticks on the middle of the group bars
 plt.xlabel('Strelka_Allele_Frequencies')
 plt.xticks([r + width for r in range(len(a1))], ['<= 0.25', '<= 0.50', '<= 0.75', '<= 1.00'])
@@ -541,3 +546,4 @@ plt.xticks([r + width for r in range(len(a1))], ['<= 0.25', '<= 0.50', '<= 0.75'
 plt.legend()
 plt.show()
 plt.savefig('Strelka_Allele_Frequency_Plot.pdf')
+plt.savefig('Strelka_Allele_Frequency_Plot.eps', format='eps')
