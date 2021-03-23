@@ -1,10 +1,14 @@
 # Importing packages.
 import numpy as np
 import pandas as pd
+import matplotlib
 from matplotlib import pyplot as plt
 from matplotlib_venn import venn3_circles, venn3_unweighted
 from matplotlib_venn import _common, _venn3
 from matplotlib.patches import Circle
+from matplotlib import rc
+matplotlib.rcParams['mathtext.fontset'] = 'cm'
+matplotlib.rcParams['font.family'] = 'serif'
 
 # Reading csv files and concatinating "CHROM" and "POS"
 df = pd.read_csv("Updated_Strelka_0.3.vcf", sep = '\t', index_col= False)
@@ -18,31 +22,31 @@ Third = pd.merge(df, df2, on=['POS'])
 Fourth = pd.merge(First, df2, on=['POS'])
 
 # Position outcomes.
-print("Number of positions in Strelka:")
+print("Number of Strelka Positions:")
 Strelka_Positions = len(df)
 print(Strelka_Positions)
 
-print("Number of positions in VarScan:")
+print("Number of VarScan Positions:")
 VarScan_Positions = len(df1)
 print(VarScan_Positions)
 
-print("Number of positions in Truth Data:")
+print("Number of Truth Data Positions:")
 Truth_Positions = len(df2)
 print(Truth_Positions)
 
-print("Number of positions in Strelka and VarScan:")
+print("Number of Positions in Strelka and VarScan:")
 Strelka_VarScan_Positions = len(First)
 print(Strelka_VarScan_Positions)
 
-print("Number of positions in VarScan and Truth Data:")
+print("Number of Positions in VarScan and Truth Data:")
 VarScan_Truth_Positions = len(Second)
 print(VarScan_Truth_Positions)
 
-print("Number of positions in Truth Data and Strelka:")
+print("Number of Positions in Truth Data and Strelka:")
 Strelka_Truth_Positions = len(Third)
 print(Strelka_Truth_Positions)
 
-print("Number of positions in Strelka, VarScan & Truth Data:")
+print("Number of Positions in Strelka, VarScan & Truth Data:")
 Strelka_VarScan_Truth_Positions = len(Fourth)
 print(Strelka_VarScan_Truth_Positions)
 
@@ -73,6 +77,7 @@ areas = (1, 1, 1, 1, 1, 1, 1)
 centers, radii = _venn3.solve_venn3_circles(areas)
 
 # Saving the values.
-plt.title("Positions")
+plt.title("Positions [SNPs + Indels]")
 plt.show()
 plt.savefig('Tumor_Purity_0.3_Positions_Plot.pdf')
+plt.savefig('Tumor_Purity_0.3_Positions_Plot.png', dpi = 300)

@@ -1,6 +1,10 @@
 # Importing packages.
 import numpy as np
 import pandas as pd
+import matplotlib
+from matplotlib import rc
+matplotlib.rcParams['mathtext.fontset'] = 'cm'
+matplotlib.rcParams['font.family'] = 'serif'
 from matplotlib import pyplot as plt
 from matplotlib_venn import venn3_circles, venn3_unweighted
 from matplotlib_venn import _common, _venn3
@@ -105,3 +109,4 @@ centers, radii = _venn3.solve_venn3_circles(areas)
 plt.title("Indels")
 plt.show()
 plt.savefig('Tumor_Purity_0.7_Indels_Plot.pdf')
+plt.savefig('Tumor_Purity_0.7_Indels_Plot.png', dpi = 300)
