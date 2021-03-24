@@ -86,11 +86,16 @@ dff8.to_csv('Tumor_Purity_0.3_AF_Counts.csv', sep=',', index = None)
 # set width of bar
 width = 0.25
 
+# Dropping the unneeded column.
+dff9 = dff8.drop(['Type'], axis=1)
+print(dff9)
+
 # Columns from the file
-a1 = First_Column
-a2 = Second_Column
-a3 = Third_Column
-a4 = Fourth_Column
+a1, a2, a3, a4 = dff9.values.tolist()
+print(a1)
+print(a2)
+print(a3)
+print(a4)
 
 # Set position of bar on X axis
 r1 = np.arange(len(a1))
@@ -105,7 +110,7 @@ plt.bar(r3, a3, color='#FF8C01', width=width, edgecolor='white', label='VarScan'
 plt.bar(r4, a4, color='#FF0000', width=width, edgecolor='white', label='Truth_Data')
 
 # Add xticks on the middle of the group bars
-plt.xlabel('Tumor_0.3_Allele_Frequencies')
+plt.xlabel('Allele_Frequencies')
 plt.xticks([r + width for r in range(len(a1))], ['<= 0.25', '<= 0.50', '<= 0.75', '<= 1.00'])
 
 # Create legend & Show graphic
