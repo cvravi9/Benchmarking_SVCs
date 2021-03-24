@@ -63,9 +63,9 @@ True_False_Positive = [dff16, dff17, dff18]
 
 # Adding columns
 df['Type'] = Type
-df['Total'] = Total
-df['True_True_Positive'] = True_True_Positive
-df['True_False_Positive'] = True_False_Positive
+df['Total_Common_Positions'] = Total
+df['True_True_Positive_ALTs'] = True_True_Positive
+df['True_False_Positive_ALTs'] = True_False_Positive
 
 # Collecting it into a dataframe.
 print(df)

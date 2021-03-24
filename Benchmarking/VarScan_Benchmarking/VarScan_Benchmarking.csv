@@ -1,4 +1,4 @@
-Type,Total,True_True_Positive,True_False_Positive
+Type,Total_Common_Positions,True_True_Positive_ALTs,True_False_Positive_ALTs
 VarScan_0.3,2843,2699,144
 VarScan_0.5,2843,2699,144
 VarScan_0.7,2843,2699,144

@@ -1,4 +1,4 @@
-Type,Total,True_True_Positive,True_False_Positive
+Type,Total_Common_Positions,True_True_Positive_ALTs,True_False_Positive_ALTs
 Strelka_0.3,3791,3292,499
 Strelka_0.5,3791,3292,499
 Strelka_0.7,3791,3292,499
