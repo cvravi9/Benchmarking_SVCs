@@ -15,9 +15,9 @@ df3 = pd.read_csv("Updated_VarScan_0.5.vcf", sep = '\t', index_col= False)
 df4 = pd.read_csv("Updated_VarScan_0.7.vcf", sep = '\t', index_col= False)
 
 # Merging columns based on "Positions"
-dff1 = pd.merge(df1, df2, how='outer', on=['POS'])
-dff2 = pd.merge(df1, df3, how='outer', on=['POS'])
-dff3 = pd.merge(df1, df4, how='outer', on=['POS'])
+dff1 = pd.merge(df1, df2, on=['POS'])
+dff2 = pd.merge(df1, df3, on=['POS'])
+dff3 = pd.merge(df1, df4, on=['POS'])
 print(dff1)
 print(dff2)
 print(dff3)
@@ -27,10 +27,15 @@ dff1["Comparison"] = np.where(dff1["ALT_x"] == dff1["ALT_y"], 0, 1)
 dff2["Comparison"] = np.where(dff2["ALT_x"] == dff2["ALT_y"], 0, 1)
 dff3["Comparison"] = np.where(dff3["ALT_x"] == dff3["ALT_y"], 0, 1)
 
+# Merging columns based on "Positions"
+dff111 = pd.merge(df1, df2, how='outer', on=['POS'])
+dff222 = pd.merge(df1, df3, how='outer', on=['POS'])
+dff333 = pd.merge(df1, df4, how='outer', on=['POS'])
+
 # Total numbers of Comparisons
-dff4 = len(dff1)
-dff5 = len(dff2)
-dff6 = len(dff3)
+dff4 = len(dff111)
+dff5 = len(dff222)
+dff6 = len(dff333)
 
 # Selecting True-True Positive Comparison
 dff7 = dff1.loc[dff1['Comparison'] == 0]
