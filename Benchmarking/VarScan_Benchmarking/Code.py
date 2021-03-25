@@ -13,92 +13,102 @@ df1 = pd.read_csv("Updated_Truth.vcf", sep = '\t', index_col= False)
 df2 = pd.read_csv("Updated_VarScan_0.3.vcf", sep = '\t', index_col= False)
 df3 = pd.read_csv("Updated_VarScan_0.5.vcf", sep = '\t', index_col= False)
 df4 = pd.read_csv("Updated_VarScan_0.7.vcf", sep = '\t', index_col= False)
+print(len(df1))
+print(len(df2))
 
 # Merging columns based on "Positions"
-dff1 = pd.merge(df1, df2, on=['POS'])
-dff2 = pd.merge(df1, df3, on=['POS'])
-dff3 = pd.merge(df1, df4, on=['POS'])
-print(dff1)
-print(dff2)
-print(dff3)
+dff1 = pd.merge(df1, df2, how="outer", on=['POS'])
+dff2 = pd.merge(df1, df3, how="outer", on=['POS'])
+dff3 = pd.merge(df1, df4, how="outer", on=['POS'])
 
-# Comparison column
+# Calculating the length
+dff4 = len(dff1)
+dff5 = len(dff2)
+dff6 = len(dff3)
+
+# Printing the outcome
+print('Total number of positions in 0.3 & Truth Data')
+print(dff4)
+print('Total number of positions in 0.5 & Truth Data')
+print(dff5)
+print('Total number of positions in 0.7 & Truth Data')
+print(dff6)
+
+# Finding the True Positive Values
 dff1["Comparison"] = np.where(dff1["ALT_x"] == dff1["ALT_y"], 0, 1)
 dff2["Comparison"] = np.where(dff2["ALT_x"] == dff2["ALT_y"], 0, 1)
 dff3["Comparison"] = np.where(dff3["ALT_x"] == dff3["ALT_y"], 0, 1)
-
-# Merging columns based on "Positions"
-dff111 = pd.merge(df1, df2, how='outer', on=['POS'])
-dff222 = pd.merge(df1, df3, how='outer', on=['POS'])
-dff333 = pd.merge(df1, df4, how='outer', on=['POS'])
-
-# Total numbers of Comparisons
-dff4 = len(dff111)
-dff5 = len(dff222)
-dff6 = len(dff333)
 
 # Selecting True-True Positive Comparison
 dff7 = dff1.loc[dff1['Comparison'] == 0]
 dff8 = dff2.loc[dff1['Comparison'] == 0]
 dff9 = dff3.loc[dff1['Comparison'] == 0]
 
-# Total number of Positive Comparison
+# Calculating the length
 dff10 = len(dff7)
 dff11 = len(dff8)
 dff12 = len(dff9)
 
-# Selecting True-False Positive Comparison
-dff13 = dff1.loc[dff1['Comparison'] == 1]
-dff14 = dff2.loc[dff1['Comparison'] == 1]
-dff15 = dff3.loc[dff1['Comparison'] == 1]
+# Priting the outcome
+print('True Positives in 0.3 & Truth Data')
+print(dff10)
+print('True Positives in 0.5 & Truth Data')
+print(dff11)
+print('True Positives in 0.7 & Truth Data')
+print(dff12)
 
-# Total number of Negative Comparison
+# Dropping an unneeded column
+dff1 = dff1.drop(['Comparison'], axis=1)
+dff2 = dff2.drop(['Comparison'], axis=1)
+dff3 = dff3.drop(['Comparison'], axis=1)
+
+# Obtaining the True Negative
+dff1["Comparison"] = np.where(((dff1["ALT_x"] == 'NaN') & (dff1["ALT_y"] == 'NaN')), 0, 1)
+dff2["Comparison"] = np.where(((dff2["ALT_x"] == 'NaN') & (dff2["ALT_y"] == 'NaN')), 0, 1)
+dff3["Comparison"] = np.where(((dff3["ALT_x"] == 'NaN') & (dff3["ALT_y"] == 'NaN')), 0, 1)
+
+# Selecting True-True Positive Comparison
+dff13 = dff13.loc[dff13['Comparison'] == 0]
+dff14 = dff14.loc[dff14['Comparison'] == 0]
+dff15 = dff15.loc[dff15['Comparison'] == 0]
+
+# Total number of Positive Comparison
 dff16 = len(dff13)
 dff17 = len(dff14)
 dff18 = len(dff15)
 
-# Merging True Negative Values
-dff19 = df1.merge(df2, how='outer', on=['POS'])
-dff20 = df1.merge(df3, how='outer', on=['POS'])
-dff21 = df1.merge(df4, how='outer', on=['POS'])
-
-# Selecting True Negative Value
-dff19["Comparison"] = np.where((dff19['ALT_x'] == 'NaN') & (dff19['ALT_y'] == 'NaN'), 0, 1)
-dff20["Comparison"] = np.where((dff20['ALT_x'] == 'NaN') & (dff20['ALT_y'] == 'NaN'), 0, 1)
-dff21["Comparison"] = np.where((dff21['ALT_x'] == 'NaN') & (dff21['ALT_y'] == 'NaN'), 0, 1)
-
-# Selecting True Negative Comparison
-dff22 = dff19.loc[dff19['Comparison'] == 0]
-dff23 = dff20.loc[dff20['Comparison'] == 0]
-dff24 = dff21.loc[dff21['Comparison'] == 0]
-
-# Total number of True Negative Comparison
-dff25 = len(dff22)
-dff26 = len(dff23)
-dff27 = len(dff24)
-
-# Obtaining False Positives.
-dff28 = df2.merge(df1, how='left', on='POS')
-dff29 = df3.merge(df1, how='left', on='POS')
-dff30 = df4.merge(df1, how='left', on='POS')
+# Priting the outcome
+print('True Negative in 0.3 & Truth Data')
+print(dff16)
+print('True Negative in 0.5 & Truth Data')
+print(dff17)
+print('True Negative in 0.7 & Truth Data')
+print(dff18)
 
 # Selecting False Positives Value
-dff28["Comparison"] = np.where((dff28['ALT_x'] != 'NaN') & (dff28['ALT_y'] == 'NaN'), 0, 1)
-dff29["Comparison"] = np.where((dff29['ALT_x'] != 'NaN') & (dff29['ALT_y'] == 'NaN'), 0, 1)
-dff30["Comparison"] = np.where((dff30['ALT_x'] != 'NaN') & (dff30['ALT_y'] == 'NaN'), 0, 1)
+dff1["Comparison"] = np.where((dff1['ALT_x'] == 'NaN') & (dff1['ALT_y'] != 'NaN'), 0, 1)
+dff2["Comparison"] = np.where((dff2['ALT_x'] == 'NaN') & (dff2['ALT_y'] != 'NaN'), 0, 1)
+dff3["Comparison"] = np.where((dff3['ALT_x'] == 'NaN') & (dff3['ALT_y'] != 'NaN'), 0, 1)
+
+# Selecting True Negative Comparison
+dff19 = dff1.loc[dff1['Comparison'] == 0]
+dff20 = dff2.loc[dff2['Comparison'] == 0]
+dff21 = dff3.loc[dff3['Comparison'] == 0]
 
 # Total number of False Positives
-dff31 = len(dff28)
-dff32 = len(dff29)
-dff33 = len(dff30)
+dff22 = len(dff19)
+dff23 = len(dff20)
+dff24 = len(dff21)
 
-# Obtaining False Negatives.
-dff34 = df1.merge(df2, how='left', on='POS')
-dff35 = df1.merge(df3, how='left', on='POS')
-dff36 = df1.merge(df4, how='left', on='POS')
-print(dff34)
+# Priting the outcome
+print('False Positive in 0.3 & Truth Data')
+print(dff22)
+print('False Positive in 0.5 & Truth Data')
+print(dff23)
+print('False Positive in 0.7 & Truth Data')
+print(dff24)
 
-# Selecting False Negitive Value
+# Obtaining False Negitive Value
 dff34["Comparison"] = np.where((dff34['ALT_x'] != 'NaN') & (dff34['ALT_y'] == 'NaN'), 0, 1)
 dff35["Comparison"] = np.where((dff35['ALT_x'] != 'NaN') & (dff35['ALT_y'] == 'NaN'), 0, 1)
 dff36["Comparison"] = np.where((dff36['ALT_x'] != 'NaN') & (dff36['ALT_y'] == 'NaN'), 0, 1)
