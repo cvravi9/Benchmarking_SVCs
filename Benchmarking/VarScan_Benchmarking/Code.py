@@ -37,110 +37,117 @@ print(dff5)
 print('Total number of positions in 0.7 & Truth Data')
 print(dff6)
 
+# Merging columns based on "Positions"
+dff7 = pd.merge(df1, df2, how="outer", on=['POS'])
+dff8 = pd.merge(df1, df3, how="outer", on=['POS'])
+dff9 = pd.merge(df1, df4, how="outer", on=['POS'])
+
 # Finding the True Positive Values
-dff1["Comparison"] = np.where(dff1["ALT_x"] == dff1["ALT_y"], 0, 1)
-dff2["Comparison"] = np.where(dff2["ALT_x"] == dff2["ALT_y"], 0, 1)
-dff3["Comparison"] = np.where(dff3["ALT_x"] == dff3["ALT_y"], 0, 1)
+dff7["Comparison"] = np.where(dff7["ALT_x"] == dff7["ALT_y"], 0, 1)
+dff8["Comparison"] = np.where(dff8["ALT_x"] == dff8["ALT_y"], 0, 1)
+dff9["Comparison"] = np.where(dff9["ALT_x"] == dff9["ALT_y"], 0, 1)
 
 # Selecting True-True Positive Comparison
-dff7 = dff1.loc[dff1['Comparison'] == 0]
-dff8 = dff2.loc[dff1['Comparison'] == 0]
-dff9 = dff3.loc[dff1['Comparison'] == 0]
+dff10 = dff7.loc[dff7['Comparison'] == 0]
+dff11 = dff8.loc[dff8['Comparison'] == 0]
+dff12 = dff9.loc[dff9['Comparison'] == 0]
 
 # Calculating the length
-dff10 = len(dff7)
-dff11 = len(dff8)
-dff12 = len(dff9)
+dff13 = len(dff10)
+dff14 = len(dff11)
+dff15 = len(dff12)
 
 # Priting the outcome
 print('True Positives in 0.3 & Truth Data')
-print(dff10)
+print(dff13)
 print('True Positives in 0.5 & Truth Data')
-print(dff11)
+print(dff14)
 print('True Positives in 0.7 & Truth Data')
-print(dff12)
+print(dff15)
 
-# Dropping an unneeded column
-dff1 = dff1.drop(['Comparison'], axis=1)
-dff2 = dff2.drop(['Comparison'], axis=1)
-dff3 = dff3.drop(['Comparison'], axis=1)
+# Merging columns based on "Positions"
+dff16 = pd.merge(df1, df2, how="outer", on=['POS'])
+dff17 = pd.merge(df1, df3, how="outer", on=['POS'])
+dff18 = pd.merge(df1, df4, how="outer", on=['POS'])
 
 # Obtaining the True Negative
-dff1["Comparison"] = np.where(((dff1["ALT_x"] == 'NaN') & (dff1["ALT_y"] == 'NaN')), 0, 1)
-dff2["Comparison"] = np.where(((dff2["ALT_x"] == 'NaN') & (dff2["ALT_y"] == 'NaN')), 0, 1)
-dff3["Comparison"] = np.where(((dff3["ALT_x"] == 'NaN') & (dff3["ALT_y"] == 'NaN')), 0, 1)
+dff16["Comparison"] = np.where(((dff16["ALT_x"] == 'NaN') & (dff16["ALT_y"] == 'NaN')), 0, 1)
+dff17["Comparison"] = np.where(((dff17["ALT_x"] == 'NaN') & (dff17["ALT_y"] == 'NaN')), 0, 1)
+dff18["Comparison"] = np.where(((dff18["ALT_x"] == 'NaN') & (dff18["ALT_y"] == 'NaN')), 0, 1)
 
 # Selecting True-True Positive Comparison
-dff1 = dff1.loc[dff1['Comparison'] == 0]
-dff2 = dff2.loc[dff2['Comparison'] == 0]
-dff3 = dff3.loc[dff3['Comparison'] == 0]
+dff19 = dff16.loc[dff16['Comparison'] == 0]
+dff20 = dff17.loc[dff17['Comparison'] == 0]
+dff21 = dff18.loc[dff18['Comparison'] == 0]
 
 # Total number of Positive Comparison
-dff16 = len(dff1)
-dff17 = len(dff2)
-dff18 = len(dff3)
-
-# Priting the outcome
-print('True Negative in 0.3 & Truth Data')
-print(dff16)
-print('True Negative in 0.5 & Truth Data')
-print(dff17)
-print('True Negative in 0.7 & Truth Data')
-print(dff18)
-
-print(dff1)
-print(dff2)
-
-# Selecting False Positives Value
-dff1["Comparison"] = np.where((dff1['ALT_x'] == 'NaN') & (dff1['ALT_y'] != 'NaN'), 0, 1)
-dff2["Comparison"] = np.where((dff2['ALT_x'] == 'NaN') & (dff2['ALT_y'] != 'NaN'), 0, 1)
-dff3["Comparison"] = np.where((dff3['ALT_x'] == 'NaN') & (dff3['ALT_y'] != 'NaN'), 0, 1)
-
-# Selecting True Negative Comparison
-dff19 = dff1.loc[dff1['Comparison'] == 0]
-dff20 = dff2.loc[dff2['Comparison'] == 0]
-dff21 = dff3.loc[dff3['Comparison'] == 0]
-
-# Total number of False Positives
 dff22 = len(dff19)
 dff23 = len(dff20)
 dff24 = len(dff21)
 
 # Priting the outcome
-print('False Positive in 0.3 & Truth Data')
+print('True Negative in 0.3 & Truth Data')
 print(dff22)
-print('False Positive in 0.5 & Truth Data')
+print('True Negative in 0.5 & Truth Data')
 print(dff23)
-print('False Positive in 0.7 & Truth Data')
+print('True Negative in 0.7 & Truth Data')
 print(dff24)
 
-# Dropping an unneeded column
-dff1 = dff1.drop(['Comparison'], axis=1)
-dff2 = dff2.drop(['Comparison'], axis=1)
-dff3 = dff3.drop(['Comparison'], axis=1)
+# Merging columns based on "Positions"
+dff25 = pd.merge(df1, df2, how="outer", on=['POS'])
+dff26 = pd.merge(df1, df3, how="outer", on=['POS'])
+dff27 = pd.merge(df1, df4, how="outer", on=['POS'])
 
-# Obtaining False Negitive Value
-dff1["Comparison"] = np.where((dff1['ALT_x'] != 'NaN') & (dff1['ALT_y'] == 'NaN'), 0, 1)
-dff2["Comparison"] = np.where((dff2['ALT_x'] != 'NaN') & (dff2['ALT_y'] == 'NaN'), 0, 1)
-dff3["Comparison"] = np.where((dff3['ALT_x'] != 'NaN') & (dff3['ALT_y'] == 'NaN'), 0, 1)
+# Selecting False Positives Value
+dff25["Comparison"] = np.where((dff25['ALT_x'] == 'NaN') & (dff25['ALT_y'] != 'NaN'), 0, 1)
+dff26["Comparison"] = np.where((dff26['ALT_x'] == 'NaN') & (dff26['ALT_y'] != 'NaN'), 0, 1)
+dff27["Comparison"] = np.where((dff27['ALT_x'] == 'NaN') & (dff27['ALT_y'] != 'NaN'), 0, 1)
 
 # Selecting True Negative Comparison
-dff25 = dff1.loc[dff1['Comparison'] == 0]
-dff26 = dff2.loc[dff2['Comparison'] == 0]
-dff27 = dff3.loc[dff3['Comparison'] == 0]
+dff28 = dff25.loc[dff25['Comparison'] == 0]
+dff29 = dff26.loc[dff26['Comparison'] == 0]
+dff30 = dff27.loc[dff27['Comparison'] == 0]
+
+# Total number of False Positives
+dff31 = len(dff28)
+dff32 = len(dff29)
+dff33 = len(dff30)
+
+# Priting the outcome
+print('False Positive in 0.3 & Truth Data')
+print(dff31)
+print('False Positive in 0.5 & Truth Data')
+print(dff32)
+print('False Positive in 0.7 & Truth Data')
+print(dff33)
+
+# Merging columns based on "Positions"
+dff34 = pd.merge(df1, df2, how="outer", on=['POS'])
+dff35 = pd.merge(df1, df3, how="outer", on=['POS'])
+dff36 = pd.merge(df1, df4, how="outer", on=['POS'])
+
+# Obtaining False Negitive Value
+dff34["Comparison"] = np.where((dff34['ALT_x'] != 'NaN') & (dff34['ALT_y'] == 'NaN'), 0, 1)
+dff35["Comparison"] = np.where((dff35['ALT_x'] != 'NaN') & (dff35['ALT_y'] == 'NaN'), 0, 1)
+dff36["Comparison"] = np.where((dff36['ALT_x'] != 'NaN') & (dff36['ALT_y'] == 'NaN'), 0, 1)
+
+# Selecting True Negative Comparison
+dff37 = dff34.loc[dff34['Comparison'] == 0]
+dff38 = dff35.loc[dff35['Comparison'] == 0]
+dff39 = dff36.loc[dff36['Comparison'] == 0]
 
 # Total number of False Negatives
-dff28 = len(dff25)
-dff29 = len(dff26)
-dff30 = len(dff27)
+dff40 = len(dff37)
+dff41 = len(dff38)
+dff42 = len(dff39)
 
 # Priting the outcome
 print('False Negatives in 0.3 & Truth Data')
-print(dff28)
+print(dff40)
 print('False Negatives in 0.5 & Truth Data')
-print(dff29)
+print(dff41)
 print('False Negatives in 0.7 & Truth Data')
-print(dff30)
+print(dff42)
 
 # Delcaring a new dataframe.
 df = pd.DataFrame()
@@ -151,7 +158,7 @@ Total = [dff4, dff5, dff6]
 True_Positives = [dff10, dff11, dff12]
 True_Negatives = [dff16, dff17, dff18]
 False_Positives = [dff22, dff23, dff24]
-False_Negatives = [dff28, dff29, dff30]
+False_Negatives = [dff40, dff41, dff42]
 
 # Adding columns
 df['Type'] = Type
