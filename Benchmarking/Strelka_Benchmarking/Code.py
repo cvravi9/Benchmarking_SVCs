@@ -75,7 +75,16 @@ df.to_csv('Strelka_Benchmarking.csv', sep=',', index = False)
 
 # Concatinating two files.
 dff19 = df1.merge(df2, how='left', on='POS')
-print(dff19)
+dff22 = len(dff19)
+dff23 = len(df1)
+dff24 = len(df2)
+print(dff22)
+print(dff23)
+print(dff24)
+
+dff25 = df1.merge(df2, how='outer', on='POS')
+dff26 = len(dff25)
+print(dff26)
 
 dff20 = df2.merge(df1, how='left', on='POS')
 print(dff20)
