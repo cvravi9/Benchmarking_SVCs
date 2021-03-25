@@ -94,19 +94,22 @@ print('True Negative in 0.7 & Truth Data')
 print(dff24)
 
 # Merging columns based on "Positions"
-dff25 = pd.merge(df1, df2, how="outer", on=['POS'])
-dff26 = pd.merge(df1, df3, how="outer", on=['POS'])
-dff27 = pd.merge(df1, df4, how="outer", on=['POS'])
+dff25 = pd.merge(df1, df2, how="right", on=['POS'])
+dff26 = pd.merge(df1, df3, how="right", on=['POS'])
+dff27 = pd.merge(df1, df4, how="right", on=['POS'])
+print(dff25)
 
 # Selecting False Positives Value
 dff25["Comparison"] = np.where((dff25['ALT_x'] == 'NaN') & (dff25['ALT_y'] != 'NaN'), 0, 1)
 dff26["Comparison"] = np.where((dff26['ALT_x'] == 'NaN') & (dff26['ALT_y'] != 'NaN'), 0, 1)
 dff27["Comparison"] = np.where((dff27['ALT_x'] == 'NaN') & (dff27['ALT_y'] != 'NaN'), 0, 1)
+print(dff25)
 
 # Selecting True Negative Comparison
-dff28 = dff25.loc[dff25['Comparison'] == 0]
-dff29 = dff26.loc[dff26['Comparison'] == 0]
-dff30 = dff27.loc[dff27['Comparison'] == 0]
+dff28 = dff25.loc[dff25['Comparison'] == 1]
+dff29 = dff26.loc[dff26['Comparison'] == 1]
+dff30 = dff27.loc[dff27['Comparison'] == 1]
+print(dff28)
 
 # Total number of False Positives
 dff31 = len(dff28)
@@ -125,16 +128,19 @@ print(dff33)
 dff34 = pd.merge(df1, df2, how="outer", on=['POS'])
 dff35 = pd.merge(df1, df3, how="outer", on=['POS'])
 dff36 = pd.merge(df1, df4, how="outer", on=['POS'])
+print(dff34)
 
 # Obtaining False Negitive Value
 dff34["Comparison"] = np.where((dff34['ALT_x'] != 'NaN') & (dff34['ALT_y'] == 'NaN'), 0, 1)
 dff35["Comparison"] = np.where((dff35['ALT_x'] != 'NaN') & (dff35['ALT_y'] == 'NaN'), 0, 1)
 dff36["Comparison"] = np.where((dff36['ALT_x'] != 'NaN') & (dff36['ALT_y'] == 'NaN'), 0, 1)
+print(dff34)
 
 # Selecting True Negative Comparison
-dff37 = dff34.loc[dff34['Comparison'] == 0]
-dff38 = dff35.loc[dff35['Comparison'] == 0]
-dff39 = dff36.loc[dff36['Comparison'] == 0]
+dff37 = dff34.loc[dff34['Comparison'] == 1]
+dff38 = dff35.loc[dff35['Comparison'] == 1]
+dff39 = dff36.loc[dff36['Comparison'] == 1]
+print(dff37)
 
 # Total number of False Negatives
 dff40 = len(dff37)
@@ -155,9 +161,9 @@ df = pd.DataFrame()
 # Taking all combinations as a list.
 Type = ['VarScan_0.3', 'VarScan_0.5', 'VarScan_0.7']
 Total = [dff4, dff5, dff6]
-True_Positives = [dff10, dff11, dff12]
-True_Negatives = [dff16, dff17, dff18]
-False_Positives = [dff22, dff23, dff24]
+True_Positives = [dff13, dff14, dff15]
+True_Negatives = [dff22, dff23, dff24]
+False_Positives = [dff31, dff32, dff33]
 False_Negatives = [dff40, dff41, dff42]
 
 # Adding columns
