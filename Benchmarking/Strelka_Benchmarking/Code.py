@@ -52,37 +52,37 @@ dff16 = len(dff13)
 dff17 = len(dff14)
 dff18 = len(dff15)
 
-# Merging True Negitive Values
+# Merging True Negative Values
 dff19 = df1.merge(df2, how='outer', on=['POS'])
 dff20 = df1.merge(df3, how='outer', on=['POS'])
 dff21 = df1.merge(df4, how='outer', on=['POS'])
 
-# Selecting True Negitive Value
+# Selecting True Negative Value
 dff19["Comparison"] = np.where((dff19['ALT_x'] == 'NaN') & (dff19['ALT_y'] == 'NaN'), 0, 1)
 dff20["Comparison"] = np.where((dff20['ALT_x'] == 'NaN') & (dff20['ALT_y'] == 'NaN'), 0, 1)
 dff21["Comparison"] = np.where((dff21['ALT_x'] == 'NaN') & (dff21['ALT_y'] == 'NaN'), 0, 1)
 
-# Selecting True Negitive Comparison
+# Selecting True Negative Comparison
 dff22 = dff19.loc[dff19['Comparison'] == 0]
 dff23 = dff20.loc[dff20['Comparison'] == 0]
 dff24 = dff21.loc[dff21['Comparison'] == 0]
 
-# Total number of Positive Comparison
+# Total number of True Negative Comparison
 dff25 = len(dff22)
 dff26 = len(dff23)
 dff27 = len(dff24)
 
-# Obtaining False Postives.
+# Obtaining False Positives.
 dff28 = df2.merge(df1, how='left', on='POS')
 dff29 = df3.merge(df1, how='left', on='POS')
 dff30 = df4.merge(df1, how='left', on='POS')
 
-# Selecting False Postives Value
+# Selecting False Positives Value
 dff28["Comparison"] = np.where((dff28['ALT_x'] != 'NaN') & (dff28['ALT_y'] == 'NaN'), 0, 1)
 dff29["Comparison"] = np.where((dff29['ALT_x'] != 'NaN') & (dff29['ALT_y'] == 'NaN'), 0, 1)
 dff30["Comparison"] = np.where((dff30['ALT_x'] != 'NaN') & (dff30['ALT_y'] == 'NaN'), 0, 1)
 
-# Total number of False Postives
+# Total number of False Positives
 dff31 = len(dff28)
 dff32 = len(dff29)
 dff33 = len(dff30)
@@ -93,54 +93,41 @@ dff35 = df1.merge(df3, how='left', on='POS')
 dff36 = df1.merge(df4, how='left', on='POS')
 print(dff34)
 
-# Selecting True Negitive Value
+# Selecting False Negitive Value
 dff34["Comparison"] = np.where((dff34['ALT_x'] != 'NaN') & (dff34['ALT_y'] == 'NaN'), 0, 1)
 dff35["Comparison"] = np.where((dff35['ALT_x'] != 'NaN') & (dff35['ALT_y'] == 'NaN'), 0, 1)
 dff36["Comparison"] = np.where((dff36['ALT_x'] != 'NaN') & (dff36['ALT_y'] == 'NaN'), 0, 1)
 print(dff34)
 
-# Total number of False Postives
+# Total number of False Negatives
 dff37 = len(dff34)
 dff38 = len(dff35)
 dff39 = len(dff36)
 print(dff37)
 
 # Delcaring a new dataframe.
-# df = pd.DataFrame()
+df = pd.DataFrame()
 
 # Taking all combinations as a list.
-# Type = ['Strelka_0.3', 'Strelka_0.5', 'Strelka_0.7']
-# Total = [dff4, dff5, dff6]
-# True_True_Positive = [dff10, dff11, dff12]
-# True_False_Positive = [dff16, dff17, dff18]
+Type = ['Strelka_0.3', 'Strelka_0.5', 'Strelka_0.7']
+Total = [dff4, dff5, dff6]
+True_True_Positive = [dff10, dff11, dff12]
+True_False_Positive = [dff16, dff17, dff18]
+True_Negative = [dff25, dff26, dff27]
+False_Positives = [dff31, dff32, dff33]
+False_Negatives = [dff37, dff38, dff39]
 
 # Adding columns
-# df['Type'] = Type
-# df['Total_Common_Positions'] = Total
-# df['True_True_Positive_ALTs'] = True_True_Positive
-# df['True_False_Positive_ALTs'] = True_False_Positive
+df['Type'] = Type
+df['Total_Common_Positions'] = Total
+df['True_True_Positive_ALTs'] = True_True_Positive
+df['True_False_Positive_ALTs'] = True_False_Positive
+df['True_Negatives'] = True_Negative
+df['False_Positives'] = False_Positives
+df['False_Negatives'] = False_Negatives
 
 # Collecting it into a dataframe.
-# print(df)
+print(df)
 
 # Saving the results in csv.
-# df.to_csv('Strelka_Benchmarking.csv', sep=',', index = False)
-
-# Concatinating two files.
-# dff19 = df1.merge(df2, how='left', on='POS')
-# dff22 = len(dff19)
-# dff23 = len(df1)
-# dff24 = len(df2)
-# print(dff22)
-# print(dff23)
-# print(dff24)
-
-# dff25 = df1.merge(df2, how='outer', on='POS')
-# dff26 = len(dff25)
-# print(dff26)
-
-# dff20 = df2.merge(df1, how='left', on='POS')
-# print(dff20)
-
-# dff21 = dff20["ALT_y"].isna().sum()
-# print(dff21)
+df.to_csv('Strelka_Benchmarking.csv', sep=',', index = False)
