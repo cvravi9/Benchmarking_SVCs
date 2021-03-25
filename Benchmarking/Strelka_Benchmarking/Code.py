@@ -57,12 +57,38 @@ dff19 = df1.merge(df2, how='outer', on=['POS'])
 dff20 = df1.merge(df3, how='outer', on=['POS'])
 dff21 = df1.merge(df4, how='outer', on=['POS'])
 
-print(len(dff19))
-
 # Selecting True Negitive Value
 dff19["Comparison"] = np.where((dff19['ALT_x'] == 'NaN') & (dff19['ALT_y'] == 'NaN'), 0, 1)
-print(dff19)
-#print(len(dff22))
+dff20["Comparison"] = np.where((dff20['ALT_x'] == 'NaN') & (dff20['ALT_y'] == 'NaN'), 0, 1)
+dff21["Comparison"] = np.where((dff21['ALT_x'] == 'NaN') & (dff21['ALT_y'] == 'NaN'), 0, 1)
+
+# Selecting True Negitive Comparison
+dff22 = dff19.loc[dff19['Comparison'] == 0]
+dff23 = dff20.loc[dff20['Comparison'] == 0]
+dff24 = dff21.loc[dff21['Comparison'] == 0]
+
+# Total number of Positive Comparison
+dff25 = len(dff22)
+dff26 = len(dff23)
+dff27 = len(dff24)
+
+# Obtaining False Postives.
+dff28 = df2.merge(df1, how='left', on='POS')
+dff29 = df3.merge(df1, how='left', on='POS')
+dff30 = df4.merge(df1, how='left', on='POS')
+print(dff28)
+
+# Selecting True Negitive Value
+dff28["Comparison"] = np.where((dff28['ALT_x'] != 'NaN') & (dff28['ALT_y'] == 'NaN'), 0, 1)
+dff29["Comparison"] = np.where((dff29['ALT_x'] != 'NaN') & (dff29['ALT_y'] == 'NaN'), 0, 1)
+dff30["Comparison"] = np.where((dff30['ALT_x'] != 'NaN') & (dff30['ALT_y'] == 'NaN'), 0, 1)
+print(dff28)
+
+# Total number of False Postives
+dff31 = len(dff28)
+dff32 = len(dff29)
+dff33 = len(dff30)
+print(dff31)
 
 # Delcaring a new dataframe.
 # df = pd.DataFrame()
