@@ -72,3 +72,13 @@ print(df)
 
 # Saving the results in csv.
 df.to_csv('Strelka_Benchmarking.csv', sep=',', index = False)
+
+# Concatinating two files.
+dff19 = df1.merge(df2, how='left', on='POS')
+print(dff19)
+
+dff20 = df2.merge(df1, how='left', on='POS')
+print(dff20)
+
+dff21 = dff20["ALT_y"].isna().sum()
+print(dff21)
