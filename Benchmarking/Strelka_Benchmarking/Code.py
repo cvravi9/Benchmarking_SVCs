@@ -110,7 +110,7 @@ df = pd.DataFrame()
 
 # Taking all combinations as a list.
 Type = ['Strelka_0.3', 'Strelka_0.5', 'Strelka_0.7']
-Total = [dff4, dff5, dff6]
+# Total = [dff4, dff5, dff6]
 True_True_Positive = [dff10, dff11, dff12]
 True_False_Positive = [dff16, dff17, dff18]
 True_Negative = [dff25, dff26, dff27]
@@ -119,12 +119,12 @@ False_Negatives = [dff37, dff38, dff39]
 
 # Adding columns
 df['Type'] = Type
-df['Total_Common_Positions'] = Total
+# df['Total_Common_Positions'] = Total
 df['True_True_Positive_ALTs'] = True_True_Positive
 df['True_False_Positive_ALTs'] = True_False_Positive
-df['True_Negatives'] = True_Negative
-df['False_Positives'] = False_Positives
-df['False_Negatives'] = False_Negatives
+df['True_Negatives_ALTs'] = True_Negative
+df['False_Positives_ALTs'] = False_Positives
+df['False_Negatives_ALTs'] = False_Negatives
 
 # Collecting it into a dataframe.
 print(df)
