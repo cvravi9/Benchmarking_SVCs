@@ -20,6 +20,9 @@ print(len(df2))
 dff1 = pd.merge(df1, df2, how="outer", on=['POS'])
 dff2 = pd.merge(df1, df3, how="outer", on=['POS'])
 dff3 = pd.merge(df1, df4, how="outer", on=['POS'])
+print(dff1)
+print(dff2)
+print(dff3)
 
 # Calculating the length
 dff4 = len(dff1)
@@ -68,14 +71,14 @@ dff2["Comparison"] = np.where(((dff2["ALT_x"] == 'NaN') & (dff2["ALT_y"] == 'NaN
 dff3["Comparison"] = np.where(((dff3["ALT_x"] == 'NaN') & (dff3["ALT_y"] == 'NaN')), 0, 1)
 
 # Selecting True-True Positive Comparison
-dff13 = dff13.loc[dff13['Comparison'] == 0]
-dff14 = dff14.loc[dff14['Comparison'] == 0]
-dff15 = dff15.loc[dff15['Comparison'] == 0]
+dff1 = dff1.loc[dff1['Comparison'] == 0]
+dff2 = dff2.loc[dff2['Comparison'] == 0]
+dff3 = dff3.loc[dff3['Comparison'] == 0]
 
 # Total number of Positive Comparison
-dff16 = len(dff13)
-dff17 = len(dff14)
-dff18 = len(dff15)
+dff16 = len(dff1)
+dff17 = len(dff2)
+dff18 = len(dff3)
 
 # Priting the outcome
 print('True Negative in 0.3 & Truth Data')
@@ -84,6 +87,9 @@ print('True Negative in 0.5 & Truth Data')
 print(dff17)
 print('True Negative in 0.7 & Truth Data')
 print(dff18)
+
+print(dff1)
+print(dff2)
 
 # Selecting False Positives Value
 dff1["Comparison"] = np.where((dff1['ALT_x'] == 'NaN') & (dff1['ALT_y'] != 'NaN'), 0, 1)
@@ -142,19 +148,18 @@ df = pd.DataFrame()
 # Taking all combinations as a list.
 Type = ['VarScan_0.3', 'VarScan_0.5', 'VarScan_0.7']
 Total = [dff4, dff5, dff6]
-True_Positives = [dff16, dff17, dff18]
-True_Negatives = [dff25, dff26, dff27]
-False_Positives = [dff31, dff32, dff33]
-False_Negatives = [dff37, dff38, dff39]
+True_Positives = [dff10, dff11, dff12]
+True_Negatives = [dff16, dff17, dff18]
+False_Positives = [dff22, dff23, dff24]
+False_Negatives = [dff28, dff29, dff30]
 
 # Adding columns
 df['Type'] = Type
-df['Total_Common_Positions'] = Total
-df['True_True_Positive_ALTs'] = True_True_Positive
-df['True_False_Positive_ALTs'] = True_False_Positive
-df['True_Negatives_ALTs'] = True_Negative
-df['False_Positives_ALTs'] = False_Positives
-df['False_Negatives_ALTs'] = False_Negatives
+df['Total_Positions'] = Total
+df['True_Positive_Variants'] = True_Positives
+df['True_Negative_Variants'] = True_Negatives
+df['False_Positive_Variants'] = False_Positives
+df['False_Negative_Variants'] = False_Negatives
 
 # Collecting it into a dataframe.
 print(df)
