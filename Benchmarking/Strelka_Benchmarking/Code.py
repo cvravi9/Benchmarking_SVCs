@@ -76,19 +76,34 @@ dff27 = len(dff24)
 dff28 = df2.merge(df1, how='left', on='POS')
 dff29 = df3.merge(df1, how='left', on='POS')
 dff30 = df4.merge(df1, how='left', on='POS')
-print(dff28)
 
-# Selecting True Negitive Value
+# Selecting False Postives Value
 dff28["Comparison"] = np.where((dff28['ALT_x'] != 'NaN') & (dff28['ALT_y'] == 'NaN'), 0, 1)
 dff29["Comparison"] = np.where((dff29['ALT_x'] != 'NaN') & (dff29['ALT_y'] == 'NaN'), 0, 1)
 dff30["Comparison"] = np.where((dff30['ALT_x'] != 'NaN') & (dff30['ALT_y'] == 'NaN'), 0, 1)
-print(dff28)
 
 # Total number of False Postives
 dff31 = len(dff28)
 dff32 = len(dff29)
 dff33 = len(dff30)
-print(dff31)
+
+# Obtaining False Negatives.
+dff34 = df1.merge(df2, how='left', on='POS')
+dff35 = df1.merge(df3, how='left', on='POS')
+dff36 = df1.merge(df4, how='left', on='POS')
+print(dff34)
+
+# Selecting True Negitive Value
+dff34["Comparison"] = np.where((dff34['ALT_x'] != 'NaN') & (dff34['ALT_y'] == 'NaN'), 0, 1)
+dff35["Comparison"] = np.where((dff35['ALT_x'] != 'NaN') & (dff35['ALT_y'] == 'NaN'), 0, 1)
+dff36["Comparison"] = np.where((dff36['ALT_x'] != 'NaN') & (dff36['ALT_y'] == 'NaN'), 0, 1)
+print(dff34)
+
+# Total number of False Postives
+dff37 = len(dff34)
+dff38 = len(dff35)
+dff39 = len(dff36)
+print(dff37)
 
 # Delcaring a new dataframe.
 # df = pd.DataFrame()
