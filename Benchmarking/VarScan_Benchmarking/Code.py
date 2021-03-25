@@ -108,17 +108,33 @@ print(dff23)
 print('False Positive in 0.7 & Truth Data')
 print(dff24)
 
+# Dropping an unneeded column
+dff1 = dff1.drop(['Comparison'], axis=1)
+dff2 = dff2.drop(['Comparison'], axis=1)
+dff3 = dff3.drop(['Comparison'], axis=1)
+
 # Obtaining False Negitive Value
-dff34["Comparison"] = np.where((dff34['ALT_x'] != 'NaN') & (dff34['ALT_y'] == 'NaN'), 0, 1)
-dff35["Comparison"] = np.where((dff35['ALT_x'] != 'NaN') & (dff35['ALT_y'] == 'NaN'), 0, 1)
-dff36["Comparison"] = np.where((dff36['ALT_x'] != 'NaN') & (dff36['ALT_y'] == 'NaN'), 0, 1)
-print(dff34)
+dff1["Comparison"] = np.where((dff1['ALT_x'] != 'NaN') & (dff1['ALT_y'] == 'NaN'), 0, 1)
+dff2["Comparison"] = np.where((dff2['ALT_x'] != 'NaN') & (dff2['ALT_y'] == 'NaN'), 0, 1)
+dff3["Comparison"] = np.where((dff3['ALT_x'] != 'NaN') & (dff3['ALT_y'] == 'NaN'), 0, 1)
+
+# Selecting True Negative Comparison
+dff25 = dff1.loc[dff1['Comparison'] == 0]
+dff26 = dff2.loc[dff2['Comparison'] == 0]
+dff27 = dff3.loc[dff3['Comparison'] == 0]
 
 # Total number of False Negatives
-dff37 = len(dff34)
-dff38 = len(dff35)
-dff39 = len(dff36)
-print(dff37)
+dff28 = len(dff25)
+dff29 = len(dff26)
+dff30 = len(dff27)
+
+# Priting the outcome
+print('False Negatives in 0.3 & Truth Data')
+print(dff28)
+print('False Negatives in 0.5 & Truth Data')
+print(dff29)
+print('False Negatives in 0.7 & Truth Data')
+print(dff30)
 
 # Delcaring a new dataframe.
 df = pd.DataFrame()
@@ -126,9 +142,8 @@ df = pd.DataFrame()
 # Taking all combinations as a list.
 Type = ['VarScan_0.3', 'VarScan_0.5', 'VarScan_0.7']
 Total = [dff4, dff5, dff6]
-True_True_Positive = [dff10, dff11, dff12]
-True_False_Positive = [dff16, dff17, dff18]
-True_Negative = [dff25, dff26, dff27]
+True_Positives = [dff16, dff17, dff18]
+True_Negatives = [dff25, dff26, dff27]
 False_Positives = [dff31, dff32, dff33]
 False_Negatives = [dff37, dff38, dff39]
 
