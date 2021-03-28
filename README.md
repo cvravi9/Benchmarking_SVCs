@@ -20,6 +20,11 @@
 
 # Meeting Notes
 
+## 27th January 2021
+
+* Match the indels and SNPs count in the VCF Toolz comparisons.
+* Rename the plots.
+
 ## 13th January 2021
 
 * Extracting the DP from the VCF File for Normal and Tumor Samples.
