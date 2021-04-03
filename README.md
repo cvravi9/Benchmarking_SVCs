@@ -16,7 +16,6 @@
 * Comparision of alternate read with 1000 genome project.
 * All possible variants and comparisions.
 * Common variants comparision.
-* Insertions and deletions ratio per variant caller.
 
 # Meeting Notes
 
