@@ -64,4 +64,4 @@ df = pd.DataFrame(data)
 print(df)
 
 # Saving the results in csv.
-df.to_csv('Positions_SNPs_Indels_Counts.csv', sep=',', index = None)
+df.to_csv('Positions_SNPs_Indels_Strelka_Counts.csv', sep=',', index = None)
