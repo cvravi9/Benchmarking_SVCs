@@ -77,7 +77,7 @@ areas = (1, 1, 1, 1, 1, 1, 1)
 centers, radii = _venn3.solve_venn3_circles(areas)
 
 # Saving the values.
-plt.title("Positions")
+plt.title("Positions [SNPs + Indels]")
 plt.show()
 plt.savefig('Tumor_Purity_0.7_Positions_Plot.pdf')
 plt.savefig('Tumor_Purity_0.7_Positions_Plot.png', dpi = 300)
