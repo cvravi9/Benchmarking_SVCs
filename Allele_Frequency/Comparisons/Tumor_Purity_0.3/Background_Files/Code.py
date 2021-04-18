@@ -97,6 +97,7 @@ print(a2)
 print(a3)
 print(a4)
 
+
 # Set position of bar on X axis
 r1 = np.arange(len(a1))
 r2 = [x + width for x in r1]
