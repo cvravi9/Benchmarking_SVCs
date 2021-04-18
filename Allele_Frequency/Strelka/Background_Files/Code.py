@@ -527,7 +527,7 @@ ax = fig.add_axes([0,0,1,1])
 ax.axis('equal')
 langs = ['<= 0.25', '0.26 to 0.50', '0.51 to 0.75', '> 0.75']
 explode = (0.1, 0, 0, 0)
-colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+colors = ['#FFD700','#FFAA1C','#FF8C01','#FF0000']
 ax.pie(a1, explode=explode, labels = langs, colors=colors, autopct='%1.2f%%')
 ax.set_title('Normal Allele Frequency Counts Percentage')
 plt.savefig('Strelka_Normal_Allele_Frequency.png', dpi = 300)
@@ -537,7 +537,7 @@ ax1 = fig1.add_axes([0,0,1,1])
 ax1.axis('equal')
 langs = ['<= 0.25', '0.26 to 0.50', '0.51 to 0.75', '> 0.75']
 explode = (0.1, 0, 0, 0)
-colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+colors = ['#FFD700','#FFAA1C','#FF8C01','#FF0000']
 ax1.pie(a2, explode=explode, labels = langs, colors=colors, autopct='%1.2f%%')
 ax1.set_title('Normal Allele Frequency Counts Percentage')
 plt.savefig('Strelka_Tumor_Allele_Frequency.png', dpi = 300)

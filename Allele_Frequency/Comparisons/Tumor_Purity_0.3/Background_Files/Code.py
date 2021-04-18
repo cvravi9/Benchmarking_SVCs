@@ -96,7 +96,10 @@ print(a1)
 print(a2)
 print(a3)
 print(a4)
-
+print(a1)
+print(a2)
+print(a3)
+print(a4)
 
 # Set position of bar on X axis
 r1 = np.arange(len(a1))

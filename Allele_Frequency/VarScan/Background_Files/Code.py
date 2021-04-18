@@ -119,40 +119,27 @@ ax = fig.add_axes([0,0,1,1])
 ax.axis('equal')
 langs = ['<= 0.25', '0.26 to 0.50', '0.51 to 0.75', '> 0.75']
 explode = (0.1, 0, 0, 0)
-colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+colors = ['#FFD700','#FFAA1C','#FF8C01','#FF0000']
 ax.pie(a1, explode=explode, labels = langs, colors=colors, autopct='%1.2f%%')
 ax.set_title('Normal Allele Frequency Counts Percentage')
-plt.savefig('VarScan_Normal_Allele_Frequency.png', dpi = 300)
+plt.savefig('VarScan_0.3_Allele_Frequency.png', dpi = 300)
 
 fig1 = plt.figure()
 ax1 = fig1.add_axes([0,0,1,1])
 ax1.axis('equal')
 langs = ['<= 0.25', '0.26 to 0.50', '0.51 to 0.75', '> 0.75']
 explode = (0.1, 0, 0, 0)
-colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+colors = ['#FFD700','#FFAA1C','#FF8C01','#FF0000']
 ax1.pie(a2, explode=explode, labels = langs, colors=colors, autopct='%1.2f%%')
 ax1.set_title('Normal Allele Frequency Counts Percentage')
-plt.savefig('VarScan_Tumor_Allele_Frequency.png', dpi = 300)
+plt.savefig('VarScan_0.5_Allele_Frequency.png', dpi = 300)
 
-# set width of bar
-width = 0.15
-
-# Set position of bar on X axis
-r1 = np.arange(len(a1))
-r2 = [x + width for x in r1]
-r3 = [x + width for x in r2]
-
-# Make the plot
-plt.bar(r1, a1, color='#ff0000', width=width, edgecolor='white', label='VarScan_0.3')
-plt.bar(r2, a2, color='#ffa07a', width=width, edgecolor='white', label='VarScan_0.5')
-plt.bar(r3, a3, color='#f08080', width=width, edgecolor='white', label='VarScan_0.7')
-
-# Add xticks on the middle of the group bars
-plt.xlabel('VarScan_Allele_Frequencies')
-plt.xticks([r + width for r in range(len(a1))], ['<= 0.25', '<= 0.50', '<= 0.75', '<= 1.00'])
-
-# Create legend & Show graphic
-plt.legend()
-plt.show()
-plt.savefig('VarScan_Allele_Frequency_Plot.pdf')
-plt.savefig('VarScan_Allele_Frequency_Plot.png', dpi = 300)
+fig2 = plt.figure()
+ax2 = fig2.add_axes([0,0,1,1])
+ax2.axis('equal')
+langs = ['<= 0.25', '0.26 to 0.50', '0.51 to 0.75', '> 0.75']
+explode = (0.1, 0, 0, 0)
+colors = ['#FFD700','#FFAA1C','#FF8C01','#FF0000']
+ax2.pie(a3, explode=explode, labels = langs, colors=colors, autopct='%1.2f%%')
+ax2.set_title('Normal Allele Frequency Counts Percentage')
+plt.savefig('VarScan_0.7_Allele_Frequency.png', dpi = 300)
