@@ -156,10 +156,25 @@ df['Maximum_Value'] = Maximum_Value
 df['Mean_Value'] = Mean_Value
 df['Median_Value'] = Median_Value
 df['Mode_Value'] = Mode_Value
-df['Standard_Deviation'] = Std_Value
+df['SD_Value'] = Std_Value
 
 # Collecting it into a dataframe.
 print(df)
 
 # Saving the results in csv.
 df.to_csv('VarScan_Read_Depth_Statistics.csv', sep=',', index = False)
+
+# Selecting the range of values
+Normal_SD_Lower = df['Mean_Value'].iloc[0] - df['SD_Value'].iloc[0]
+Normal_SD_Higher = df['Mean_Value'].iloc[0] + df['SD_Value'].iloc[0]
+Tumor_SD_Lower = df['Mean_Value'].iloc[1] - df['SD_Value'].iloc[1]
+Tumor_SD_Higher = df['Mean_Value'].iloc[1] + df['SD_Value'].iloc[1]
+
+# Filtering the data
+Second = Second.loc[(Second['Third_VarScan_Normal'] >= Normal_SD_Lower) & (Second['Third_VarScan_Normal'] <= Normal_SD_Higher) & (Second['Third_VarScan_Tumor'] >= Tumor_SD_Lower) & (Second['Third_VarScan_Tumor'] <= Tumor_SD_Higher)]
+print(Second)
+
+# Final count
+Counts = len(Second['Third_VarScan_Normal'].index)
+print('Total number of selected reads')
+print(Counts)
