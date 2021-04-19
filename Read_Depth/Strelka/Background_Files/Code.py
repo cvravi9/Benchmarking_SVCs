@@ -121,61 +121,69 @@ print(Second)
 # Saving the results in csv.
 Second.to_csv('Strelka_Read_Depth.csv', sep=',', index = None)
 
-# Finding the Normalised Test
-List1 = Second['Strelka_Normal_0.3'].tolist()
-List2 = Second['Strelka_Tumor_0.3'].tolist()
-List3 = Second['Strelka_Normal_0.5'].tolist()
-List4 = Second['Strelka_Tumor_0.5'].tolist()
-List5 = Second['Strelka_Normal_0.7'].tolist()
-List6 = Second['Strelka_Tumor_0.7'].tolist()
+Second.columns = ['CHROM_POS', 'Third_Strelka_Normal', 'Third_Strelka_Tumor', 'Fifth_Strelka_Normal', 'Fifth_Strelka_Tumor', 'Seventh_Strelka_Normal', 'Seventh_Strelka_Tumor']
 
-# Turning to data
-data = np.array(List1)
+# Converting the data to Integers.
+Second = Second.drop(['CHROM_POS'], axis=1)
+Second = Second.astype('int')
+print(Second)
 
-p = shapiro(data)
-print(p)
+# Normality Test
+dk = Second['Third_Strelka_Normal']
+dkk = dk.hist()
+dkk.figure.savefig('Strelka_Normal_Histogram.png', dpi = 300)
+
+dk1 = Second['Third_Strelka_Tumor']
+dkk1 = dk1.hist()
+dkk1.figure.savefig('Strelka_Tumor_Histogram.png', dpi = 300)
 
 # Finding the minimum values
-min1 = Second['Strelka_Normal_0.3'].min()
-min2 = Second['Strelka_Tumor_0.3'].min()
-min3 = Second['Strelka_Normal_0.5'].min()
-min4 = Second['Strelka_Tumor_0.5'].min()
-min5 = Second['Strelka_Normal_0.7'].min()
-min6 = Second['Strelka_Tumor_0.7'].min()
+min1 = Second['Third_Strelka_Normal'].min()
+min2 = Second['Third_Strelka_Tumor'].min()
+min3 = Second['Fifth_Strelka_Normal'].min()
+min4 = Second['Fifth_Strelka_Tumor'].min()
+min5 = Second['Seventh_Strelka_Normal'].min()
+min6 = Second['Seventh_Strelka_Tumor'].min()
 
 # Finding the maximum values
-max1 = Second['Strelka_Normal_0.3'].max()
-max2 = Second['Strelka_Tumor_0.3'].max()
-max3 = Second['Strelka_Normal_0.5'].max()
-max4 = Second['Strelka_Tumor_0.5'].max()
-max5 = Second['Strelka_Normal_0.7'].max()
-max6 = Second['Strelka_Tumor_0.7'].max()
+max1 = Second['Third_Strelka_Normal'].max()
+max2 = Second['Third_Strelka_Tumor'].max()
+max3 = Second['Fifth_Strelka_Normal'].max()
+max4 = Second['Fifth_Strelka_Tumor'].max()
+max5 = Second['Seventh_Strelka_Normal'].max()
+max6 = Second['Seventh_Strelka_Tumor'].max()
 
 # Finding the mean values
-mean1 = Second['Strelka_Normal_0.3'].mean()
-mean2 = Second['Strelka_Tumor_0.3'].mean()
-mean3 = Second['Strelka_Normal_0.5'].mean()
-mean4 = Second['Strelka_Tumor_0.5'].mean()
-mean5 = Second['Strelka_Normal_0.7'].mean()
-mean6 = Second['Strelka_Tumor_0.7'].mean()
+mean1 = Second['Third_Strelka_Normal'].mean()
+mean2 = Second['Third_Strelka_Tumor'].mean()
+mean3 = Second['Fifth_Strelka_Normal'].mean()
+mean4 = Second['Fifth_Strelka_Tumor'].mean()
+mean5 = Second['Seventh_Strelka_Normal'].mean()
+mean6 = Second['Seventh_Strelka_Tumor'].mean()
 
 # Finding the minimum values
-median1 = Second['Strelka_Normal_0.3'].median()
-median2 = Second['Strelka_Tumor_0.3'].median()
-median3 = Second['Strelka_Normal_0.5'].median()
-median4 = Second['Strelka_Tumor_0.5'].median()
-median5 = Second['Strelka_Normal_0.7'].median()
-median6 = Second['Strelka_Tumor_0.7'].median()
-print(median6)
+median1 = Second['Third_Strelka_Normal'].median()
+median2 = Second['Third_Strelka_Tumor'].median()
+median3 = Second['Fifth_Strelka_Normal'].median()
+median4 = Second['Fifth_Strelka_Tumor'].median()
+median5 = Second['Seventh_Strelka_Normal'].median()
+median6 = Second['Seventh_Strelka_Tumor'].median()
 
 # Finding the minimum values
-mode1 = Second['Strelka_Normal_0.3'].mode()
-mode2 = Second['Strelka_Tumor_0.3'].mode()
-mode3 = Second['Strelka_Normal_0.5'].mode()
-mode4 = Second['Strelka_Tumor_0.5'].mode()
-mode5 = Second['Strelka_Normal_0.7'].mode()
-mode6 = Second['Strelka_Tumor_0.7'].mode()
-print(mode6)
+mode1 = Second['Third_Strelka_Normal'].mode()
+mode2 = Second['Third_Strelka_Tumor'].mode()
+mode3 = Second['Fifth_Strelka_Normal'].mode()
+mode4 = Second['Fifth_Strelka_Tumor'].mode()
+mode5 = Second['Seventh_Strelka_Normal'].mode()
+mode6 = Second['Seventh_Strelka_Tumor'].mode()
+
+# Finding the standard deviation
+std1 = Second['Third_Strelka_Normal'].std()
+std2 = Second['Third_Strelka_Tumor'].std()
+std3 = Second['Fifth_Strelka_Normal'].std()
+std4 = Second['Fifth_Strelka_Tumor'].std()
+std5 = Second['Seventh_Strelka_Normal'].std()
+std6 = Second['Seventh_Strelka_Tumor'].std()
 
 # Delcaring a new dataframe.
 df = pd.DataFrame()
@@ -187,6 +195,7 @@ Maximum_Value = [max1, max2, max3, max4, max5, max6]
 Mean_Value = [mean1, mean2, mean3, mean4, mean5, mean6]
 Median_Value = [median1, median2, median3, median4, median5, median6]
 Mode_Value = [mode1, mode2, mode3, mode4, mode5, mode6]
+Std_Value = [std1, std2, std3, std4, std5, std6]
 
 # Adding columns
 df['Type'] = Type
@@ -195,6 +204,8 @@ df['Maximum_Value'] = Maximum_Value
 df['Mean_Value'] = Mean_Value
 df['Median_Value'] = Median_Value
 df['Mode_Value'] = Mode_Value
+df['Standard_Deviation'] = Std_Value
+
 # Collecting it into a dataframe.
 print(df)
 

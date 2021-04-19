@@ -1,13 +1,13 @@
-Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value
+Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value,Standard_Deviation
 Strelka_Normal_0.3,1,299,58.32022471910113,53.0,"0    43
-dtype: int64"
+dtype: int64",32.81599925989933
 Strelka_Tumor_0.3,0,114,20.71558052434457,19.0,"0    17
-dtype: int64"
+dtype: int64",12.093516114584052
 Strelka_Normal_0.5,1,299,58.32022471910113,53.0,"0    43
-dtype: int64"
+dtype: int64",32.81599925989933
 Strelka_Tumor_0.5,0,114,20.71558052434457,19.0,"0    17
-dtype: int64"
+dtype: int64",12.093516114584052
 Strelka_Normal_0.7,1,299,58.32022471910113,53.0,"0    43
-dtype: int64"
+dtype: int64",32.81599925989933
 Strelka_Tumor_0.7,0,114,20.71558052434457,19.0,"0    17
-dtype: int64"
+dtype: int64",12.093516114584052
