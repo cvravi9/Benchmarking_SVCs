@@ -2,6 +2,7 @@
 # Importing the needed packages.
 import numpy as np
 import pandas as pd
+from scipy.stats import shapiro
 
 # Reading the csv input file that is obtained after performing the following operations on the vcf file.
 # Step 1 - 'cut -f 1-2, 9-11 Input-VCF-File > Output-VCF-File'
@@ -119,6 +120,20 @@ print(Second)
 
 # Saving the results in csv.
 Second.to_csv('Strelka_Read_Depth.csv', sep=',', index = None)
+
+# Finding the Normalised Test
+List1 = Second['Strelka_Normal_0.3'].tolist()
+List2 = Second['Strelka_Tumor_0.3'].tolist()
+List3 = Second['Strelka_Normal_0.5'].tolist()
+List4 = Second['Strelka_Tumor_0.5'].tolist()
+List5 = Second['Strelka_Normal_0.7'].tolist()
+List6 = Second['Strelka_Tumor_0.7'].tolist()
+
+# Turning to data
+data = np.array(List1)
+
+p = shapiro(data)
+print(p)
 
 # Finding the minimum values
 min1 = Second['Strelka_Normal_0.3'].min()

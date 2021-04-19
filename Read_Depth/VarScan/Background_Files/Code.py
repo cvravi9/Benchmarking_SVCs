@@ -95,6 +95,8 @@ mean3 = Second['VarScan_Normal_0.5'].mean()
 mean4 = Second['VarScan_Tumor_0.5'].mean()
 mean5 = Second['VarScan_Normal_0.7'].mean()
 mean6 = Second['VarScan_Tumor_0.7'].mean()
+print(mean1)
+print(mean2)
 
 # Finding the minimum values
 median1 = Second['VarScan_Normal_0.3'].median()
