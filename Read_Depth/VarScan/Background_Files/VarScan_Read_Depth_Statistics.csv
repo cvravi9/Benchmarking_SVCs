@@ -1,0 +1,13 @@
+Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value
+VarScan_Normal_0.3,8,250,57.48974974288653,55.0,"0    38
+dtype: int64"
+VarScan_Tumor_0.3,8,98,20.74977716832362,19.0,"0    11
+dtype: int64"
+VarScan_Normal_0.5,8,250,57.48974974288653,55.0,"0    38
+dtype: int64"
+VarScan_Tumor_0.5,8,98,20.74977716832362,19.0,"0    11
+dtype: int64"
+VarScan_Normal_0.7,8,250,57.48974974288653,55.0,"0    38
+dtype: int64"
+VarScan_Tumor_0.7,8,98,20.74977716832362,19.0,"0    11
+dtype: int64"
