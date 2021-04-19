@@ -87,3 +87,16 @@ print(df)
 
 # Saving the results in csv.
 df.to_csv('Truth_Data_Read_Depth_Statistics.csv', sep=',', index = False)
+
+# Selecting the range of values
+SD_Lower = df['Mean_Value'].iloc[0] - df['SD_Value'].iloc[0]
+SD_Higher = df['Mean_Value'].iloc[0] + df['SD_Value'].iloc[0]
+
+# Filtering the data
+dff = dff.loc[(dff['Read_Depth'] >= SD_Lower) & (dff['Read_Depth'] <= SD_Higher)]
+print(dff)
+
+# Final count
+Counts = len(dff['Read_Depth'].index)
+print('Total number of selected reads')
+print(Counts)
