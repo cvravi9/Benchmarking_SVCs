@@ -33,6 +33,11 @@ print(dff)
 # Saving the result into a csv file for plotting.
 dff.to_csv('Truth_Data_Read_Depth.csv', sep=',', index = None)
 
+# Converting the data to Integers.
+dff = dff.drop(['CHROM_POS'], axis=1)
+dff = dff.astype('int')
+print(dff)
+
 # Finding the minimum values
 min1 = dff['Read_Depth'].min()
 
@@ -48,6 +53,9 @@ median1 = dff['Read_Depth'].median()
 # Finding the minimum values
 mode1 = dff['Read_Depth'].mode()
 
+# Finding the standard deviation
+std1 = dff['Read_Depth'].std()
+
 # Delcaring a new dataframe.
 df = pd.DataFrame()
 
@@ -58,6 +66,7 @@ Maximum_Value = [max1]
 Mean_Value = [mean1]
 Median_Value = [median1]
 Mode_Value = [mode1]
+SD_Value = [std1]
 
 # Adding columns
 df['Type'] = Type
@@ -66,6 +75,8 @@ df['Maximum_Value'] = Maximum_Value
 df['Mean_Value'] = Mean_Value
 df['Median_Value'] = Median_Value
 df['Mode_Value'] = Mode_Value
+df['SD_Value'] = SD_Value
+
 # Collecting it into a dataframe.
 print(df)
 
