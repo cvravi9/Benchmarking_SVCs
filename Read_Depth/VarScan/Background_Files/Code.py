@@ -1,6 +1,7 @@
 # Importing the needed packages.
 import numpy as np
 import pandas as pd
+from scipy import stats
 
 # Reading the csv input file that is obtained after performing the following operations on the vcf file.
 # Step 1 - 'cut -f 1-2,9-11 Input-VCF-File > Output-VCF-File'
@@ -78,6 +79,15 @@ Second.columns = ['CHROM_POS', 'Third_VarScan_Normal', 'Third_VarScan_Tumor', 'F
 Second = Second.drop(['CHROM_POS'], axis=1)
 Second = Second.astype('int')
 print(Second)
+
+# Normality Test
+dk = Second['Third_VarScan_Normal']
+dkk = dk.hist()
+dkk.figure.savefig('VarScan_Normal_Histogram.png', dpi = 300)
+
+dk1 = Second['Third_VarScan_Tumor']
+dkk1 = dk1.hist()
+dkk1.figure.savefig('VarScan_Tumor_Histogram.png', dpi = 300)
 
 # Finding the minimum values
 min1 = Second['Third_VarScan_Normal'].min()
