@@ -72,47 +72,56 @@ print(Second)
 # Saving the results in csv.
 Second.to_csv('VarScan_Read_Depth_Counts.csv', sep=',', index = None)
 
+Second.columns = ['CHROM_POS', 'Third_VarScan_Normal', 'Third_VarScan_Tumor', 'Fifth_VarScan_Normal', 'Fifth_VarScan_Tumor', 'Seventh_VarScan_Normal', 'Seventh_VarScan_Tumor']
+
+# Second = Second[~Second.Third_VarScan_Normal.str.contains("^a-zA-Z")]
+Second = Second.drop(['CHROM_POS'], axis=1)
+Second = Second.astype('int')
+print(Second)
+
+Second.to_csv('Test.csv', sep=',', index = None)
+
 # Finding the minimum values
-min1 = Second['VarScan_Normal_0.3'].min()
-min2 = Second['VarScan_Tumor_0.3'].min()
-min3 = Second['VarScan_Normal_0.5'].min()
-min4 = Second['VarScan_Tumor_0.5'].min()
-min5 = Second['VarScan_Normal_0.7'].min()
-min6 = Second['VarScan_Tumor_0.7'].min()
+min1 = Second['Third_VarScan_Normal'].min()
+min2 = Second['Third_VarScan_Tumor'].min()
+min3 = Second['Fifth_VarScan_Normal'].min()
+min4 = Second['Fifth_VarScan_Tumor'].min()
+min5 = Second['Seventh_VarScan_Normal'].min()
+min6 = Second['Seventh_VarScan_Tumor'].min()
 
 # Finding the maximum values
-max1 = Second['VarScan_Normal_0.3'].max()
-max2 = Second['VarScan_Tumor_0.3'].max()
-max3 = Second['VarScan_Normal_0.5'].max()
-max4 = Second['VarScan_Tumor_0.5'].max()
-max5 = Second['VarScan_Normal_0.7'].max()
-max6 = Second['VarScan_Tumor_0.7'].max()
+max1 = Second['Third_VarScan_Normal'].max()
+max2 = Second['Third_VarScan_Tumor'].max()
+max3 = Second['Fifth_VarScan_Normal'].max()
+max4 = Second['Fifth_VarScan_Tumor'].max()
+max5 = Second['Seventh_VarScan_Normal'].max()
+max6 = Second['Seventh_VarScan_Tumor'].max()
 
 # Finding the mean values
-mean1 = Second['VarScan_Normal_0.3'].mean()
-mean2 = Second['VarScan_Tumor_0.3'].mean()
-mean3 = Second['VarScan_Normal_0.5'].mean()
-mean4 = Second['VarScan_Tumor_0.5'].mean()
-mean5 = Second['VarScan_Normal_0.7'].mean()
-mean6 = Second['VarScan_Tumor_0.7'].mean()
+mean1 = Second['Third_VarScan_Normal'].mean()
+mean2 = Second['Third_VarScan_Tumor'].mean()
+mean3 = Second['Fifth_VarScan_Normal'].mean()
+mean4 = Second['Fifth_VarScan_Tumor'].mean()
+mean5 = Second['Seventh_VarScan_Normal'].mean()
+mean6 = Second['Seventh_VarScan_Tumor'].mean()
 print(mean1)
 print(mean2)
 
 # Finding the minimum values
-median1 = Second['VarScan_Normal_0.3'].median()
-median2 = Second['VarScan_Tumor_0.3'].median()
-median3 = Second['VarScan_Normal_0.5'].median()
-median4 = Second['VarScan_Tumor_0.5'].median()
-median5 = Second['VarScan_Normal_0.7'].median()
-median6 = Second['VarScan_Tumor_0.7'].median()
+median1 = Second['Third_VarScan_Normal'].median()
+median2 = Second['Third_VarScan_Tumor'].median()
+median3 = Second['Fifth_VarScan_Normal'].median()
+median4 = Second['Fifth_VarScan_Tumor'].median()
+median5 = Second['Seventh_VarScan_Normal'].median()
+median6 = Second['Seventh_VarScan_Tumor'].median()
 
 # Finding the minimum values
-mode1 = Second['VarScan_Normal_0.3'].mode()
-mode2 = Second['VarScan_Tumor_0.3'].mode()
-mode3 = Second['VarScan_Normal_0.5'].mode()
-mode4 = Second['VarScan_Tumor_0.5'].mode()
-mode5 = Second['VarScan_Normal_0.7'].mode()
-mode6 = Second['VarScan_Tumor_0.7'].mode()
+mode1 = Second['Third_VarScan_Normal'].mode()
+mode2 = Second['Third_VarScan_Tumor'].mode()
+mode3 = Second['Fifth_VarScan_Normal'].mode()
+mode4 = Second['Fifth_VarScan_Tumor'].mode()
+mode5 = Second['Seventh_VarScan_Normal'].mode()
+mode6 = Second['Seventh_VarScan_Tumor'].mode()
 
 # Delcaring a new dataframe.
 df = pd.DataFrame()
