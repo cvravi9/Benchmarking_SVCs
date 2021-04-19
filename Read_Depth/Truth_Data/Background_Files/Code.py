@@ -38,6 +38,11 @@ dff = dff.drop(['CHROM_POS'], axis=1)
 dff = dff.astype('int')
 print(dff)
 
+# Normality Test
+dk = dff['Read_Depth']
+dkk = dk.hist()
+dkk.figure.savefig('Truth_Data_Histogram.png', dpi = 300)
+
 # Finding the minimum values
 min1 = dff['Read_Depth'].min()
 
