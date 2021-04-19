@@ -74,12 +74,10 @@ Second.to_csv('VarScan_Read_Depth_Counts.csv', sep=',', index = None)
 
 Second.columns = ['CHROM_POS', 'Third_VarScan_Normal', 'Third_VarScan_Tumor', 'Fifth_VarScan_Normal', 'Fifth_VarScan_Tumor', 'Seventh_VarScan_Normal', 'Seventh_VarScan_Tumor']
 
-# Second = Second[~Second.Third_VarScan_Normal.str.contains("^a-zA-Z")]
+# Converting the data to Integers.
 Second = Second.drop(['CHROM_POS'], axis=1)
 Second = Second.astype('int')
 print(Second)
-
-Second.to_csv('Test.csv', sep=',', index = None)
 
 # Finding the minimum values
 min1 = Second['Third_VarScan_Normal'].min()
@@ -104,10 +102,8 @@ mean3 = Second['Fifth_VarScan_Normal'].mean()
 mean4 = Second['Fifth_VarScan_Tumor'].mean()
 mean5 = Second['Seventh_VarScan_Normal'].mean()
 mean6 = Second['Seventh_VarScan_Tumor'].mean()
-print(mean1)
-print(mean2)
 
-# Finding the minimum values
+# Finding the median values
 median1 = Second['Third_VarScan_Normal'].median()
 median2 = Second['Third_VarScan_Tumor'].median()
 median3 = Second['Fifth_VarScan_Normal'].median()
@@ -115,13 +111,21 @@ median4 = Second['Fifth_VarScan_Tumor'].median()
 median5 = Second['Seventh_VarScan_Normal'].median()
 median6 = Second['Seventh_VarScan_Tumor'].median()
 
-# Finding the minimum values
+# Finding the mode values
 mode1 = Second['Third_VarScan_Normal'].mode()
 mode2 = Second['Third_VarScan_Tumor'].mode()
 mode3 = Second['Fifth_VarScan_Normal'].mode()
 mode4 = Second['Fifth_VarScan_Tumor'].mode()
 mode5 = Second['Seventh_VarScan_Normal'].mode()
 mode6 = Second['Seventh_VarScan_Tumor'].mode()
+
+# Finding the standard deviation
+std1 = Second['Third_VarScan_Normal'].std()
+std2 = Second['Third_VarScan_Tumor'].std()
+std3 = Second['Fifth_VarScan_Normal'].std()
+std4 = Second['Fifth_VarScan_Tumor'].std()
+std5 = Second['Seventh_VarScan_Normal'].std()
+std6 = Second['Seventh_VarScan_Tumor'].std()
 
 # Delcaring a new dataframe.
 df = pd.DataFrame()
@@ -133,6 +137,7 @@ Maximum_Value = [max1, max2, max3, max4, max5, max6]
 Mean_Value = [mean1, mean2, mean3, mean4, mean5, mean6]
 Median_Value = [median1, median2, median3, median4, median5, median6]
 Mode_Value = [mode1, mode2, mode3, mode4, mode5, mode6]
+Std_Value = [std1, std2, std3, std4, std5, std6]
 
 # Adding columns
 df['Type'] = Type
@@ -141,6 +146,8 @@ df['Maximum_Value'] = Maximum_Value
 df['Mean_Value'] = Mean_Value
 df['Median_Value'] = Median_Value
 df['Mode_Value'] = Mode_Value
+df['Standard_Deviation'] = Std_Value
+
 # Collecting it into a dataframe.
 print(df)
 
