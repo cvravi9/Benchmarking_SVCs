@@ -171,7 +171,7 @@ print(df)
 df.to_csv('VarScan_Read_Depth_Statistics.csv', sep=',', index = False)
 
 # Total count
-Counts = len(Second['Third_VarScan_Normal'].index)
+Counts = len(dff['CHROM_POS'].index)
 print('Total number of reads')
 print(Counts)
 
@@ -190,8 +190,11 @@ Count = len(Second['Third_VarScan_Normal'].index)
 print('Total number of selected reads')
 print(Count)
 
+# Filtered reads
+Toll = Counts - Count
+
 # Converting the values to a list
-a1 = [Counts, Count]
+a1 = [Count, Toll]
 
 # Getting plots
 fig = plt.figure()

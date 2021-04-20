@@ -1,4 +1,4 @@
-Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value,Standard_Deviation
+Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value,SD_Value
 VarScan_Normal_0.3,8,250,57.48974974288653,55.0,"0    38
 dtype: int64",25.78638970803012
 VarScan_Tumor_0.3,8,98,20.74977716832362,19.0,"0    11
