@@ -32,13 +32,13 @@ dff4 = len(dff1)
 print('Total lenght is')
 print(dff4)
 
-dff29 = len(dff2)
+dff47 = len(dff2)
 print('Total lenght is')
-print(dff29)
+print(dff47)
 
-dff30 = len(dff3)
+dff48 = len(dff3)
 print('Total lenght is')
-print(dff30)
+print(dff48)
 
 # Comparison column
 dff1["TP"] = np.where(dff1["Truth_Data"].notnull() & dff1["Strelka_Three"].notnull(), 0, 1)
@@ -162,7 +162,7 @@ df = pd.DataFrame()
 
 # Taking all combinations as a list.
 Type = ['Strelka_0.3', 'Strelka_0.5', 'Strelka_0.7']
-Total = [dff4, dff29, dff30]
+Total = [dff4, dff47, dff48]
 True_Positive = [dff9, dff17, dff25]
 True_Negative = [dff10, dff18, dff26]
 False_Positives = [dff11, dff19, dff27]
