@@ -238,8 +238,11 @@ Count = len(Second['Third_Strelka_Normal'].index)
 print('Selected number of selected reads')
 print(Count)
 
+# Filtered reads
+Toll = Counts - Count
+
 # Converting the values to a list
-a1 = [Counts, Count]
+a1 = [Count, Toll]
 
 # Getting plots
 fig = plt.figure()
