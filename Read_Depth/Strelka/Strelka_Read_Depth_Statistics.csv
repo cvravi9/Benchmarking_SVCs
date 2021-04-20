@@ -1,4 +1,4 @@
-Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value,Standard_Deviation
+Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value,SD_Value
 Strelka_Normal_0.3,1,299,58.32022471910113,53.0,"0    43
 dtype: int64",32.81599925989933
 Strelka_Tumor_0.3,0,114,20.71558052434457,19.0,"0    17

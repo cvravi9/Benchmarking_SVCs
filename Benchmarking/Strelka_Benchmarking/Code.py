@@ -32,6 +32,14 @@ dff4 = len(dff1)
 print('Total lenght is')
 print(dff4)
 
+dff29 = len(dff2)
+print('Total lenght is')
+print(dff29)
+
+dff30 = len(dff3)
+print('Total lenght is')
+print(dff30)
+
 # Comparison column
 dff1["TP"] = np.where(dff1["Truth_Data"].notnull() & dff1["Strelka_Three"].notnull(), 0, 1)
 dff1["TN"] = np.where(dff1["Truth_Data"].isnull() & dff1["Strelka_Three"].isnull(), 0, 1)
@@ -113,21 +121,61 @@ print(dff27)
 print("Total number of False Negatives:")
 print(dff28)
 
+# Merging columns based on "Positions"
+dff29 = pd.merge(df1, df2, on=['POS'])
+dff30 = pd.merge(df1, df3, on=['POS'])
+dff31 = pd.merge(df1, df4, on=['POS'])
+dff29.columns = ['POS', 'Truth_Data', 'Strelka_Three']
+dff30.columns = ['POS', 'Truth_Data', 'Strelka_Five']
+dff31.columns = ['POS', 'Truth_Data', 'Strelka_Seven']
+print(dff29)
+print(dff30)
+print(dff31)
+
+# Comparison column
+dff29["Comparison"] = np.where((dff29["Truth_Data"] == dff29["Strelka_Three"]), 0, 1)
+dff30["Comparison"] = np.where((dff30["Truth_Data"] == dff30["Strelka_Five"]), 0, 1)
+dff31["Comparison"] = np.where((dff31["Truth_Data"] == dff31["Strelka_Seven"]), 0, 1)
+
+# Selecting Positive Comparison
+dff35 = dff29.loc[dff29['Comparison'] == 0]
+dff36 = dff30.loc[dff30['Comparison'] == 0]
+dff37 = dff31.loc[dff31['Comparison'] == 0]
+
+# Total number of Positive Comparison
+dff38 = len(dff35)
+dff39 = len(dff36)
+dff40 = len(dff37)
+
+# Selecting Negative Comparison
+dff41 = dff29.loc[dff29['Comparison'] == 1]
+dff42 = dff30.loc[dff30['Comparison'] == 1]
+dff43 = dff31.loc[dff31['Comparison'] == 1]
+
+# Total number of Negative Comparison
+dff44 = len(dff41)
+dff45 = len(dff42)
+dff46 = len(dff43)
+
 # Delcaring a new dataframe.
 df = pd.DataFrame()
 
 # Taking all combinations as a list.
 Type = ['Strelka_0.3', 'Strelka_0.5', 'Strelka_0.7']
-Total = [dff4, dff5, dff6]
-True_Positive = [dff10, dff11, dff12]
-True_Negative = [dff25, dff26, dff27]
-False_Positives = [dff31, dff32, dff33]
-False_Negatives = [dff37, dff38, dff39]
+Total = [dff4, dff29, dff30]
+True_Positive = [dff9, dff17, dff25]
+True_Negative = [dff10, dff18, dff26]
+False_Positives = [dff11, dff19, dff27]
+False_Negatives = [dff12, dff20, dff28]
+True_True_Postive = [dff38, dff39, dff40]
+True_False_Postive = [dff44, dff45, dff46]
 
 # Adding columns
 df['Type'] = Type
 df['Total'] = Total
 df['True_Positives'] = True_Positive
+df['True_True_Positives'] = True_True_Postive
+df['True_False_Postives'] = True_False_Postive
 df['True_Negatives'] = True_Negative
 df['False_Positives'] = False_Positives
 df['False_Negatives'] = False_Negatives
