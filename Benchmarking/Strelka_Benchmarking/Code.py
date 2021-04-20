@@ -173,12 +173,12 @@ True_False_Postive = [dff44, dff45, dff46]
 # Adding columns
 df['Type'] = Type
 df['Total'] = Total
-df['True_Positives'] = True_Positive
-df['True_True_Positives'] = True_True_Postive
-df['True_False_Postives'] = True_False_Postive
-df['True_Negatives'] = True_Negative
-df['False_Positives'] = False_Positives
-df['False_Negatives'] = False_Negatives
+df['True_Positives_ALTs'] = True_Positive
+df['True_True_Positives_ALTs'] = True_True_Postive
+df['True_False_Positives_ALTs'] = True_False_Postive
+df['True_Negatives_ALTs'] = True_Negative
+df['False_Positives_ALTs'] = False_Positives
+df['False_Negatives_ALTs'] = False_Negatives
 
 # Collecting it into a dataframe.
 print(df)
