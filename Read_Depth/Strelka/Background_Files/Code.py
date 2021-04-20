@@ -3,6 +3,12 @@
 import numpy as np
 import pandas as pd
 from scipy.stats import shapiro
+import matplotlib
+from matplotlib import rc
+matplotlib.rcParams['mathtext.fontset'] = 'cm'
+matplotlib.rcParams['font.family'] = 'serif'
+import matplotlib.pyplot as plt
+import csv
 
 # Reading the csv input file that is obtained after performing the following operations on the vcf file.
 # Step 1 - 'cut -f 1-2, 9-11 Input-VCF-File > Output-VCF-File'
@@ -212,6 +218,11 @@ print(df)
 # Saving the results in csv.
 df.to_csv('Strelka_Read_Depth_Statistics.csv', sep=',', index = False)
 
+# Total count
+Counts = len(Second['Third_Strelka_Normal'].index)
+print('Total number of reads')
+print(Counts)
+
 # Selecting the range of values
 Normal_SD_Lower = df['Mean_Value'].iloc[0] - df['SD_Value'].iloc[0]
 Normal_SD_Higher = df['Mean_Value'].iloc[0] + df['SD_Value'].iloc[0]
@@ -223,6 +234,20 @@ Second = Second.loc[(Second['Third_Strelka_Normal'] >= Normal_SD_Lower) & (Secon
 print(Second)
 
 # Final count
-Counts = len(Second['Third_Strelka_Normal'].index)
-print('Total number of selected reads')
-print(Counts)
+Count = len(Second['Third_Strelka_Normal'].index)
+print('Selected number of selected reads')
+print(Count)
+
+# Converting the values to a list
+a1 = [Counts, Count]
+
+# Getting plots
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+ax.axis('equal')
+langs = ['Selected_Count', 'Filtered_Count']
+explode = (0.1, 0)
+colors = ['#FFD700','#FFAA1C']
+ax.pie(a1, explode=explode, labels = langs, colors=colors, autopct='%1.2f%%')
+ax.set_title('Read Depth Counts Percentage')
+plt.savefig('Strelka_Read_Depth.png', dpi = 300)
