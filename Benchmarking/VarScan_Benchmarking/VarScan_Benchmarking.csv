@@ -1,4 +1,4 @@
-Type,Total_Positions,True_Positive_Variants,True_Negative_Variants,False_Positive_Variants,False_Negative_Variants
-VarScan_0.3,1131279,2699,0,29336,1131279
-VarScan_0.5,1131257,2699,0,29314,1131257
-VarScan_0.7,1131134,2699,0,29191,1131134
+Type,Total,True_Positives_ALTs,True_True_Positives_ALTs,True_False_Positives_ALTs,True_Negatives_ALTs,False_Positives_ALTs,False_Negatives_ALTs
+VarScan_0.3,1131279,2843,2699,144,0,26493,1101943
+VarScan_0.5,1131257,2843,2699,144,0,26471,1101943
+VarScan_0.7,1131134,2843,2699,144,0,26348,1101943

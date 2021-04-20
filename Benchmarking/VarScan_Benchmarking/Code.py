@@ -11,121 +11,177 @@ import csv
 # Reading csv files and concatinating "CHROM" and "POS"
 df1 = pd.read_csv("Updated_Truth.vcf", sep = '\t', index_col= False)
 df2 = pd.read_csv("Updated_VarScan_0.3.vcf", sep = '\t', index_col= False)
-print(len(df1))
-print(len(df2))
+df3 = pd.read_csv("Updated_VarScan_0.5.vcf", sep = '\t', index_col= False)
+df4 = pd.read_csv("Updated_VarScan_0.7.vcf", sep = '\t', index_col= False)
 
 # Merging columns based on "Positions"
-dff3 = pd.merge(df1, df2, how="outer", on=['POS'])
-dff8 = pd.merge(df1, df2, how="outer", on=['POS'])
+dff1 = pd.merge(df1, df2, how="outer", on=['POS'])
+dff2 = pd.merge(df1, df3, how="outer", on=['POS'])
+dff3 = pd.merge(df1, df4, how="outer", on=['POS'])
+
+# Renaming the columns after importing the input.
+dff1.columns = ['POS', 'Truth_Data', 'VarScan_Three']
+dff2.columns = ['POS', 'Truth_Data', 'VarScan_Five']
+dff3.columns = ['POS', 'Truth_Data', 'VarScan_Seven']
+print(dff1)
+print(dff2)
 print(dff3)
 
-# Calculating the length
-dff4 = len(dff3)
-
-# Printing the outcome
-print('Total number of positions in 0.3 & Truth Data')
+# Total number of reads
+dff4 = len(dff1)
+print('Total lenght is')
 print(dff4)
 
-# Obtaining the True Negative
-dff3.dropna(subset = ["ALT_x"], inplace=True)
-dff3.dropna(subset = ["ALT_y"], inplace=True)
-dff5 = len(dff3)
-print(dff3)
+dff47 = len(dff2)
+print('Total lenght is')
+print(dff47)
 
-# Printing the outcome
-print('Total number of non-zero positions in 0.3 & Truth Data')
-print(dff5)
+dff48 = len(dff3)
+print('Total lenght is')
+print(dff48)
 
 # Comparison column
-dff3["Comparison"] = np.where(dff3["ALT_x"] == dff3["ALT_y"], 0, 1)
-print(dff3)
+dff1["TP"] = np.where(dff1["Truth_Data"].notnull() & dff1["VarScan_Three"].notnull(), 0, 1)
+dff1["TN"] = np.where(dff1["Truth_Data"].isnull() & dff1["VarScan_Three"].isnull(), 0, 1)
+dff1["FP"] = np.where(dff1["Truth_Data"].isnull() & dff1["VarScan_Three"].notnull(), 0, 1)
+dff1["FN"] = np.where(dff1["Truth_Data"].notnull() & dff1["VarScan_Three"].isnull(), 0, 1)
 
-# Selecting True-True Positive Comparison
-dff4 = dff3.loc[dff3['Comparison'] == 0]
+# Selecting the columns
+dff5 = dff1.loc[dff1['TP'] == 0]
+dff6 = dff1.loc[dff1['TN'] == 0]
+dff7 = dff1.loc[dff1['FP'] == 0]
+dff8 = dff1.loc[dff1['FN'] == 0]
 
-# Total number of Positive Comparison
-dff5 = len(dff4)
-print(dff5)
+# Total numbers of Comparisons
+dff9 = len(dff5)
+dff10 = len(dff6)
+dff11 = len(dff7)
+dff12 = len(dff8)
 
-# Selecting True-True Positive Comparison
-dff6 = dff3.loc[dff3['Comparison'] == 1]
-
-# Calculating the length
-dff7 = len(dff6)
-print(dff7)
-
-print(dff8)
-# Selecting True Negative Value
-dff8["Comparison"] = np.where((dff8['ALT_x'] != 'NaN') & (dff8['ALT_y'] == 'NaN'), 0, 1)
-print(dff8)
-
-# Selecting True Negative Comparison
-dff9 = dff8.loc[dff8['Comparison'] == 0]
+print("Total number of True Positives:")
 print(dff9)
-
-# Total number of True Negative Comparison
-dff10 = len(dff9)
+print("Total number of True Negatives:")
 print(dff10)
+print("Total number of False Postivies:")
+print(dff11)
+print("Total number of False Negatives:")
+print(dff12)
 
-# Priting the outcome
-# print('True Positives in 0.3 & Truth Data')
-# print(dff9)
+# Comparison column
+dff2["TP"] = np.where(dff2["Truth_Data"].notnull() & dff2["VarScan_Five"].notnull(), 0, 1)
+dff2["TN"] = np.where(dff2["Truth_Data"].isnull() & dff2["VarScan_Five"].isnull(), 0, 1)
+dff2["FP"] = np.where(dff2["Truth_Data"].isnull() & dff2["VarScan_Five"].notnull(), 0, 1)
+dff2["FN"] = np.where(dff2["Truth_Data"].notnull() & dff2["VarScan_Five"].isnull(), 0, 1)
+
+# Selecting the columns
+dff13 = dff2.loc[dff2['TP'] == 0]
+dff14 = dff2.loc[dff2['TN'] == 0]
+dff15 = dff2.loc[dff2['FP'] == 0]
+dff16 = dff2.loc[dff2['FN'] == 0]
+
+# Total numbers of Comparisons
+dff17 = len(dff13)
+dff18 = len(dff14)
+dff19 = len(dff15)
+dff20 = len(dff16)
+
+print("Total number of True Positives:")
+print(dff17)
+print("Total number of True Negatives:")
+print(dff18)
+print("Total number of False Postivies:")
+print(dff19)
+print("Total number of False Negatives:")
+print(dff20)
+
+# Comparison column
+dff3["TP"] = np.where(dff3["Truth_Data"].notnull() & dff3["VarScan_Seven"].notnull(), 0, 1)
+dff3["TN"] = np.where(dff3["Truth_Data"].isnull() & dff3["VarScan_Seven"].isnull(), 0, 1)
+dff3["FP"] = np.where(dff3["Truth_Data"].isnull() & dff3["VarScan_Seven"].notnull(), 0, 1)
+dff3["FN"] = np.where(dff3["Truth_Data"].notnull() & dff3["VarScan_Seven"].isnull(), 0, 1)
+
+# Selecting the columns
+dff21 = dff3.loc[dff3['TP'] == 0]
+dff22 = dff3.loc[dff3['TN'] == 0]
+dff23 = dff3.loc[dff3['FP'] == 0]
+dff24 = dff3.loc[dff3['FN'] == 0]
+
+# Total numbers of Comparisons
+dff25 = len(dff21)
+dff26 = len(dff22)
+dff27 = len(dff23)
+dff28 = len(dff24)
+
+print("Total number of True Positives:")
+print(dff25)
+print("Total number of True Negatives:")
+print(dff26)
+print("Total number of False Postivies:")
+print(dff27)
+print("Total number of False Negatives:")
+print(dff28)
 
 # Merging columns based on "Positions"
-# dff25 = pd.merge(df1, df2, how="right", on=['POS'])
-# print(dff25)
+dff29 = pd.merge(df1, df2, on=['POS'])
+dff30 = pd.merge(df1, df3, on=['POS'])
+dff31 = pd.merge(df1, df4, on=['POS'])
+dff29.columns = ['POS', 'Truth_Data', 'VarScan_Three']
+dff30.columns = ['POS', 'Truth_Data', 'VarScan_Five']
+dff31.columns = ['POS', 'Truth_Data', 'VarScan_Seven']
+print(dff29)
+print(dff30)
+print(dff31)
 
-# Selecting False Positives Value
-# dff25["Comparison"] = np.where((dff25['ALT_x'] == 'NaN') & (dff25['ALT_y'] != 'NaN'), 0, 1)
-# print(dff25)
+# Comparison column
+dff29["Comparison"] = np.where((dff29["Truth_Data"] == dff29["VarScan_Three"]), 0, 1)
+dff30["Comparison"] = np.where((dff30["Truth_Data"] == dff30["VarScan_Five"]), 0, 1)
+dff31["Comparison"] = np.where((dff31["Truth_Data"] == dff31["VarScan_Seven"]), 0, 1)
 
-# Selecting True Negative Comparison
-# dff28 = dff25.loc[dff25['Comparison'] == 1]
-# print(dff28)
+# Selecting Positive Comparison
+dff35 = dff29.loc[dff29['Comparison'] == 0]
+dff36 = dff30.loc[dff30['Comparison'] == 0]
+dff37 = dff31.loc[dff31['Comparison'] == 0]
 
-# Total number of False Positives
-# dff31 = len(dff28)
+# Total number of Positive Comparison
+dff38 = len(dff35)
+dff39 = len(dff36)
+dff40 = len(dff37)
 
-# Priting the outcome
-# print('False Positive in 0.3 & Truth Data')
-# print(dff31)
+# Selecting Negative Comparison
+dff41 = dff29.loc[dff29['Comparison'] == 1]
+dff42 = dff30.loc[dff30['Comparison'] == 1]
+dff43 = dff31.loc[dff31['Comparison'] == 1]
 
-# Obtaining False Negitive Value
-# dff34["Comparison"] = np.where((dff34['ALT_x'] != 'NaN') & (dff34['ALT_y'] == 'NaN'), 0, 1)
-# print(dff34)
-
-# Selecting True Negative Comparison
-# dff37 = dff34.loc[dff34['Comparison'] == 1]
-# print(dff37)
-
-# Total number of False Negatives
-# dff40 = len(dff37)
-
-# Priting the outcome
-# print('False Negatives in 0.3 & Truth Data')
-# print(dff40)
+# Total number of Negative Comparison
+dff44 = len(dff41)
+dff45 = len(dff42)
+dff46 = len(dff43)
 
 # Delcaring a new dataframe.
-# df = pd.DataFrame()
+df = pd.DataFrame()
 
 # Taking all combinations as a list.
-# Type = ['VarScan_0.3']
-# Total = [dff4]
-# True_Positives = [dff13]
-# True_Negatives = [dff22]
-# False_Positives = [dff31]
-# False_Negatives = [dff40]
+Type = ['VarScan_0.3', 'VarScan_0.5', 'VarScan_0.7']
+Total = [dff4, dff47, dff48]
+True_Positive = [dff9, dff17, dff25]
+True_Negative = [dff10, dff18, dff26]
+False_Positives = [dff11, dff19, dff27]
+False_Negatives = [dff12, dff20, dff28]
+True_True_Postive = [dff38, dff39, dff40]
+True_False_Postive = [dff44, dff45, dff46]
 
 # Adding columns
-# df['Type'] = Type
-# df['Total_Positions'] = Total
-# df['True_Positive_Variants'] = True_Positives
-# df['True_Negative_Variants'] = True_Negatives
-# df['False_Positive_Variants'] = False_Positives
-# df['False_Negative_Variants'] = False_Negatives
+df['Type'] = Type
+df['Total'] = Total
+df['True_Positives_ALTs'] = True_Positive
+df['True_True_Positives_ALTs'] = True_True_Postive
+df['True_False_Positives_ALTs'] = True_False_Postive
+df['True_Negatives_ALTs'] = True_Negative
+df['False_Positives_ALTs'] = False_Positives
+df['False_Negatives_ALTs'] = False_Negatives
 
 # Collecting it into a dataframe.
-# print(df)
+print(df)
 
 # Saving the results in csv.
-# df.to_csv('VarScan_Benchmarking.csv', sep=',', index = False)
+df.to_csv('VarScan_Benchmarking.csv', sep=',', index = False)
