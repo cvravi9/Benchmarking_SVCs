@@ -1,8 +1,8 @@
 Type,SNPs
-Strelka,12897
+Strelka,17703
 VarScan,26312
 Truth_Data,1007793
-Strelka_and_VarScan,2778
+Strelka_and_VarScan,3951
 VarScan_and_Truth_Data,2484
-Truth_Data_and_Strelka,3150
-Strelka_and_VarScan_and_Truth_Data,875
+Truth_Data_and_Strelka,4501
+Strelka_and_VarScan_and_Truth_Data,1605

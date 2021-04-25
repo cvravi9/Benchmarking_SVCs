@@ -11,8 +11,8 @@ from matplotlib_venn import _common, _venn3
 from matplotlib.patches import Circle
 
 # Reading csv files and concatinating "CHROM" and "POS"
-df = pd.read_csv("Updated_Strelka_0.5_SNPs.vcf", sep = '\t', index_col= False)
-df1 = pd.read_csv("Updated_VarScan_0.5_SNPs.vcf", sep = '\t', index_col= False)
+df = pd.read_csv("Updated_Strelka_0.5_SNV.vcf", sep = '\t', index_col= False)
+df1 = pd.read_csv("Updated_VarScan_0.5_SNP.vcf", sep = '\t', index_col= False)
 df2 = pd.read_csv("Updated_Somatic_Truth_SNVs.vcf", sep = '\t', index_col= False)
 print("Length of Strelka SNPs:")
 Strelka_SNPs = len(df)

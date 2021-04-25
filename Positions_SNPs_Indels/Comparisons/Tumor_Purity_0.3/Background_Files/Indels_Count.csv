@@ -1,8 +1,8 @@
 Type,INDELs
-Strelka,418
+Strelka,789
 VarScan,3004
 Truth_Data,96993
-Strelka_and_VarScan,110
+Strelka_and_VarScan,146
 VarScan_and_Truth_Data,200
-Truth_Data_and_Strelka,127
-Strelka_and_VarScan_and_Truth_Data,29
+Truth_Data_and_Strelka,327
+Strelka_and_VarScan_and_Truth_Data,52
