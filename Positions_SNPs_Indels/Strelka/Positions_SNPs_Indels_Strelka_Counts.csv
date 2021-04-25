@@ -1,4 +1,4 @@
 Type,Strelka_Positions,Strelka_SNPs,Strelka_INDELs
-Strelka_Tumor_Purity_0.3,13315,12897,418
-Strelka_Tumor_Purity_0.5,13315,12897,418
-Strelka_Tumor_Purity_0.7,13315,12897,418
+Strelka_Tumor_Purity_0.3,18492,17703,789
+Strelka_Tumor_Purity_0.5,21800,20851,949
+Strelka_Tumor_Purity_0.7,21800,20851,949
