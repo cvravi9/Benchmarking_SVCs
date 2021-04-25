@@ -8,14 +8,14 @@ df1 = pd.read_csv("Updated_VarScan_0.5.vcf", sep = '\t', index_col= False)
 df2 = pd.read_csv("Updated_VarScan_0.7.vcf", sep = '\t', index_col= False)
 
 # Inputing vcf files for SNPs.
-df3 = pd.read_csv("Updated_VarScan_0.3_SNPs.vcf", sep = '\t', index_col= False)
-df4 = pd.read_csv("Updated_VarScan_0.5_SNPs.vcf", sep = '\t', index_col= False)
-df5 = pd.read_csv("Updated_VarScan_0.7_SNPs.vcf", sep = '\t', index_col= False)
+df3 = pd.read_csv("Updated_VarScan_0.3_SNP.vcf", sep = '\t', index_col= False)
+df4 = pd.read_csv("Updated_VarScan_0.5_SNP.vcf", sep = '\t', index_col= False)
+df5 = pd.read_csv("Updated_VarScan_0.7_SNP.vcf", sep = '\t', index_col= False)
 
 # Inputing vcf files for Indels.
-df6 = pd.read_csv("Updated_VarScan_0.3_Indels.vcf", sep = '\t', index_col= False)
-df7 = pd.read_csv("Updated_VarScan_0.5_Indels.vcf", sep = '\t', index_col= False)
-df8 = pd.read_csv("Updated_VarScan_0.7_Indels.vcf", sep = '\t', index_col= False)
+df6 = pd.read_csv("Updated_VarScan_0.3_INDEL.vcf", sep = '\t', index_col= False)
+df7 = pd.read_csv("Updated_VarScan_0.5_INDEL.vcf", sep = '\t', index_col= False)
+df8 = pd.read_csv("Updated_VarScan_0.7_INDEL.vcf", sep = '\t', index_col= False)
 
 # Outcome for positions.
 VarScan3_Positions = len(df)
