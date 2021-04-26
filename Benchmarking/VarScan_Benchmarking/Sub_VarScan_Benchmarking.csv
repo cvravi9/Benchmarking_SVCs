@@ -1,0 +1,4 @@
+Type,Total,True_Positives_ALTs,True_True_Positives_ALTs,True_False_Positives_ALTs,True_Negatives_ALTs,False_Positives_ALTs,False_Negatives_ALTs
+VarScan_0.3,29499,708,708,0,0,28608,183
+VarScan_0.5,29477,708,708,0,0,28586,183
+VarScan_0.7,29354,708,708,0,0,28463,183
