@@ -68,80 +68,97 @@ print(dff1)
 dff2 = dff2.drop(['NORMAL', 'TUMOR', 'NORMAL-GT', 'NORMAL-GQ', 'NORMAL-AD', 'NORMAL-ADF', 'NORMAL-ADR', 'TUMOR-GT', 'TUMOR-GQ', 'TUMOR-AD', 'TUMOR-ADF', 'TUMOR-ADR'], axis=1)
 print(dff2)
 
+# Saving the results in csv.
+dff.to_csv('VarScan3_Read_Depth.csv', sep=',', index = None)
+dff1.to_csv('VarScan5_Read_Depth.csv', sep=',', index = None)
+dff2.to_csv('VarScan7_Read_Depth.csv', sep=',', index = None)
+
 # Merging columns based on "CHROM-POS"
-First = pd.merge(dff, dff1, on=['CHROM_POS'])
-Second = pd.merge(First, dff2, on=['CHROM_POS'])
+# First = pd.merge(dff, dff1, on=['CHROM_POS'])
+# Second = pd.merge(First, dff2, on=['CHROM_POS'])
 
 # Renaming Columns
-Second.columns = ['CHROM_POS', 'VarScan_Normal_0.3', 'VarScan_Tumor_0.3', 'VarScan_Normal_0.5', 'VarScan_Tumor_0.5', 'VarScan_Normal_0.7', 'VarScan_Tumor_0.7']
-print(Second)
+# Second.columns = ['CHROM_POS', 'VarScan_Normal_0.3', 'VarScan_Tumor_0.3', 'VarScan_Normal_0.5', 'VarScan_Tumor_0.5', 'VarScan_Normal_0.7', 'VarScan_Tumor_0.7']
+# print(Second)
 
 # Saving the results in csv.
-Second.to_csv('VarScan_Read_Depth_Counts.csv', sep=',', index = None)
+# Second.to_csv('VarScan_Read_Depth_Counts.csv', sep=',', index = None)
 
-Second.columns = ['CHROM_POS', 'Third_VarScan_Normal', 'Third_VarScan_Tumor', 'Fifth_VarScan_Normal', 'Fifth_VarScan_Tumor', 'Seventh_VarScan_Normal', 'Seventh_VarScan_Tumor']
+# Second.columns = ['CHROM_POS', 'Third_VarScan_Normal', 'Third_VarScan_Tumor', 'Fifth_VarScan_Normal', 'Fifth_VarScan_Tumor', 'Seventh_VarScan_Normal', 'Seventh_VarScan_Tumor']
 
 # Converting the data to Integers.
-Second = Second.drop(['CHROM_POS'], axis=1)
-Second = Second.astype('int')
-print(Second)
+# Second = Second.drop(['CHROM_POS'], axis=1)
+# Second = Second.astype('int')
+# print(Second)
+
+dff = dff.drop(['CHROM_POS'], axis=1)
+dff = dff.astype('int')
+print(dff)
+
+dff1 = dff1.drop(['CHROM_POS'], axis=1)
+dff1 = dff1.astype('int')
+print(dff1)
+
+dff2 = dff2.drop(['CHROM_POS'], axis=1)
+dff2 = dff2.astype('int')
+print(dff2)
 
 # Normality Test
-dk = Second['Third_VarScan_Normal']
-dkk = dk.hist()
-dkk.figure.savefig('VarScan_Normal_Histogram.png', dpi = 300)
+# dk = Second['Third_VarScan_Normal']
+# dkk = dk.hist()
+# dkk.figure.savefig('VarScan_Normal_Histogram.png', dpi = 300)
 
-dk1 = Second['Third_VarScan_Tumor']
-dkk1 = dk1.hist()
-dkk1.figure.savefig('VarScan_Tumor_Histogram.png', dpi = 300)
+# dk1 = Second['Third_VarScan_Tumor']
+# dkk1 = dk1.hist()
+# dkk1.figure.savefig('VarScan_Tumor_Histogram.png', dpi = 300)
 
 # Finding the minimum values
-min1 = Second['Third_VarScan_Normal'].min()
-min2 = Second['Third_VarScan_Tumor'].min()
-min3 = Second['Fifth_VarScan_Normal'].min()
-min4 = Second['Fifth_VarScan_Tumor'].min()
-min5 = Second['Seventh_VarScan_Normal'].min()
-min6 = Second['Seventh_VarScan_Tumor'].min()
+min1 = dff['Normal_Read_Depth'].min()
+min2 = dff['Tumor_Read_Depth'].min()
+min3 = dff1['Normal_Read_Depth'].min()
+min4 = dff1['Tumor_Read_Depth'].min()
+min5 = dff2['Normal_Read_Depth'].min()
+min6 = dff2['Tumor_Read_Depth'].min()
 
 # Finding the maximum values
-max1 = Second['Third_VarScan_Normal'].max()
-max2 = Second['Third_VarScan_Tumor'].max()
-max3 = Second['Fifth_VarScan_Normal'].max()
-max4 = Second['Fifth_VarScan_Tumor'].max()
-max5 = Second['Seventh_VarScan_Normal'].max()
-max6 = Second['Seventh_VarScan_Tumor'].max()
+max1 = dff['Normal_Read_Depth'].max()
+max2 = dff['Tumor_Read_Depth'].max()
+max3 = dff1['Normal_Read_Depth'].max()
+max4 = dff1['Tumor_Read_Depth'].max()
+max5 = dff2['Normal_Read_Depth'].max()
+max6 = dff2['Tumor_Read_Depth'].max()
 
 # Finding the mean values
-mean1 = Second['Third_VarScan_Normal'].mean()
-mean2 = Second['Third_VarScan_Tumor'].mean()
-mean3 = Second['Fifth_VarScan_Normal'].mean()
-mean4 = Second['Fifth_VarScan_Tumor'].mean()
-mean5 = Second['Seventh_VarScan_Normal'].mean()
-mean6 = Second['Seventh_VarScan_Tumor'].mean()
+mean1 = dff['Normal_Read_Depth'].mean()
+mean2 = dff['Tumor_Read_Depth'].mean()
+mean3 = dff1['Normal_Read_Depth'].mean()
+mean4 = dff1['Tumor_Read_Depth'].mean()
+mean5 = dff2['Normal_Read_Depth'].mean()
+mean6 = dff2['Tumor_Read_Depth'].mean()
 
-# Finding the median values
-median1 = Second['Third_VarScan_Normal'].median()
-median2 = Second['Third_VarScan_Tumor'].median()
-median3 = Second['Fifth_VarScan_Normal'].median()
-median4 = Second['Fifth_VarScan_Tumor'].median()
-median5 = Second['Seventh_VarScan_Normal'].median()
-median6 = Second['Seventh_VarScan_Tumor'].median()
+# Finding the minimum values
+median1 = dff['Normal_Read_Depth'].median()
+median2 = dff['Tumor_Read_Depth'].median()
+median3 = dff1['Normal_Read_Depth'].median()
+median4 = dff1['Tumor_Read_Depth'].median()
+median5 = dff2['Normal_Read_Depth'].median()
+median6 = dff2['Tumor_Read_Depth'].median()
 
-# Finding the mode values
-mode1 = Second['Third_VarScan_Normal'].mode()
-mode2 = Second['Third_VarScan_Tumor'].mode()
-mode3 = Second['Fifth_VarScan_Normal'].mode()
-mode4 = Second['Fifth_VarScan_Tumor'].mode()
-mode5 = Second['Seventh_VarScan_Normal'].mode()
-mode6 = Second['Seventh_VarScan_Tumor'].mode()
+# Finding the minimum values
+mode1 = dff['Normal_Read_Depth'].mode()
+mode2 = dff['Tumor_Read_Depth'].mode()
+mode3 = dff1['Normal_Read_Depth'].mode()
+mode4 = dff1['Tumor_Read_Depth'].mode()
+mode5 = dff2['Normal_Read_Depth'].mode()
+mode6 = dff2['Tumor_Read_Depth'].mode()
 
 # Finding the standard deviation
-std1 = Second['Third_VarScan_Normal'].std()
-std2 = Second['Third_VarScan_Tumor'].std()
-std3 = Second['Fifth_VarScan_Normal'].std()
-std4 = Second['Fifth_VarScan_Tumor'].std()
-std5 = Second['Seventh_VarScan_Normal'].std()
-std6 = Second['Seventh_VarScan_Tumor'].std()
+std1 = dff['Normal_Read_Depth'].std()
+std2 = dff['Tumor_Read_Depth'].std()
+std3 = dff1['Normal_Read_Depth'].std()
+std4 = dff1['Tumor_Read_Depth'].std()
+std5 = dff2['Normal_Read_Depth'].std()
+std6 = dff2['Tumor_Read_Depth'].std()
 
 # Delcaring a new dataframe.
 df = pd.DataFrame()
@@ -171,30 +188,48 @@ print(df)
 df.to_csv('VarScan_Read_Depth_Statistics.csv', sep=',', index = False)
 
 # Total count
-Counts = len(dff['CHROM_POS'].index)
-print('Total number of reads')
-print(Counts)
+dff_Count = len(dff['Normal_Read_Depth'].index)
+dff1_Count = len(dff1['Normal_Read_Depth'].index)
+dff2_Count = len(dff2['Normal_Read_Depth'].index)
 
 # Selecting the range of values
-Normal_SD_Lower = df['Mean_Value'].iloc[0] - df['SD_Value'].iloc[0]
-Normal_SD_Higher = df['Mean_Value'].iloc[0] + df['SD_Value'].iloc[0]
-Tumor_SD_Lower = df['Mean_Value'].iloc[1] - df['SD_Value'].iloc[1]
-Tumor_SD_Higher = df['Mean_Value'].iloc[1] + df['SD_Value'].iloc[1]
+dff_Normal_Lower = df['Mean_Value'].iloc[0] - df['SD_Value'].iloc[0]
+dff_Normal_Higher = df['Mean_Value'].iloc[0] + df['SD_Value'].iloc[0]
+dff_Tumor_Lower = df['Mean_Value'].iloc[1] - df['SD_Value'].iloc[1]
+dff_Tumor_Higher = df['Mean_Value'].iloc[1] + df['SD_Value'].iloc[1]
+
+dff1_Normal_Lower = df['Mean_Value'].iloc[2] - df['SD_Value'].iloc[2]
+dff1_Normal_Higher = df['Mean_Value'].iloc[2] + df['SD_Value'].iloc[2]
+dff1_Tumor_Lower = df['Mean_Value'].iloc[3] - df['SD_Value'].iloc[3]
+dff1_Tumor_Higher = df['Mean_Value'].iloc[3] + df['SD_Value'].iloc[3]
+
+dff2_Normal_Lower = df['Mean_Value'].iloc[4] - df['SD_Value'].iloc[4]
+dff2_Normal_Higher = df['Mean_Value'].iloc[4] + df['SD_Value'].iloc[4]
+dff2_Tumor_Lower = df['Mean_Value'].iloc[5] - df['SD_Value'].iloc[5]
+dff2_Tumor_Higher = df['Mean_Value'].iloc[5] + df['SD_Value'].iloc[5]
 
 # Filtering the data
-Second = Second.loc[(Second['Third_VarScan_Normal'] >= Normal_SD_Lower) & (Second['Third_VarScan_Normal'] <= Normal_SD_Higher) & (Second['Third_VarScan_Tumor'] >= Tumor_SD_Lower) & (Second['Third_VarScan_Tumor'] <= Tumor_SD_Higher)]
-print(Second)
+dff = dff.loc[(dff['Normal_Read_Depth'] >= dff_Normal_Lower) & (dff['Normal_Read_Depth'] <= dff_Normal_Higher) & (dff['Tumor_Read_Depth'] >= dff_Tumor_Lower) & (dff['Tumor_Read_Depth'] <= dff_Tumor_Higher)]
+dff1 = dff1.loc[(dff1['Normal_Read_Depth'] >= dff1_Normal_Lower) & (dff1['Normal_Read_Depth'] <= dff1_Normal_Higher) & (dff1['Tumor_Read_Depth'] >= dff1_Tumor_Lower) & (dff1['Tumor_Read_Depth'] <= dff1_Tumor_Higher)]
+dff2 = dff2.loc[(dff2['Normal_Read_Depth'] >= dff2_Normal_Lower) & (dff2['Normal_Read_Depth'] <= dff2_Normal_Higher) & (dff2['Tumor_Read_Depth'] >= dff2_Tumor_Lower) & (dff2['Tumor_Read_Depth'] <= dff2_Tumor_Higher)]
+print(dff)
+print(dff1)
+print(dff2)
 
-# Selected count
-Count = len(Second['Third_VarScan_Normal'].index)
-print('Total number of selected reads')
-print(Count)
+# Final counts
+dff_Counts = len(dff['Normal_Read_Depth'].index)
+dff1_Counts = len(dff1['Normal_Read_Depth'].index)
+dff2_Counts = len(dff2['Normal_Read_Depth'].index)
 
 # Filtered reads
-Toll = Counts - Count
+dff_Toll = dff_Count - dff_Counts
+dff1_Toll = dff1_Count - dff1_Counts
+dff2_Toll = dff2_Count - dff2_Counts
 
 # Converting the values to a list
-a1 = [Count, Toll]
+a1 = [dff_Counts, dff_Toll]
+a2 = [dff1_Counts, dff1_Toll]
+a3 = [dff2_Counts, dff2_Toll]
 
 # Getting plots
 fig = plt.figure()
@@ -205,5 +240,24 @@ explode = (0.1, 0)
 colors = ['#FFD700','#FFAA1C']
 ax.pie(a1, explode=explode, labels = langs, colors=colors, autopct='%1.2f%%')
 ax.set_title('Read Depth Counts Percentage')
-plt.savefig('VarScan_Read_Depth.png', dpi = 300)
+plt.savefig('VarScan3_Read_Depth.png', dpi = 300)
 
+fig1 = plt.figure()
+ax1 = fig1.add_axes([0,0,1,1])
+ax1.axis('equal')
+langs1 = ['Selected_Count', 'Filtered_Count']
+explode1 = (0.1, 0)
+colors1 = ['#FFD700','#FFAA1C']
+ax1.pie(a2, explode=explode1, labels = langs1, colors=colors1, autopct='%1.2f%%')
+ax1.set_title('Read Depth Counts Percentage')
+plt.savefig('VarScan5_Read_Depth.png', dpi = 300)
+
+fig2 = plt.figure()
+ax2 = fig2.add_axes([0,0,1,1])
+ax2.axis('equal')
+langs2 = ['Selected_Count', 'Filtered_Count']
+explode2 = (0.1, 0)
+colors2 = ['#FFD700','#FFAA1C']
+ax2.pie(a3, explode=explode2, labels = langs2, colors=colors2, autopct='%1.2f%%')
+ax2.set_title('Read Depth Counts Percentage')
+plt.savefig('VarScan7_Read_Depth.png', dpi = 300)
