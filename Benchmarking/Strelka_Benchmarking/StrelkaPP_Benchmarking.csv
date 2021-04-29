@@ -1,0 +1,4 @@
+Type,Total,True_Positives_ALTs,True_True_Positives_ALTs,True_False_Positives_ALTs,True_Negatives_ALTs,False_Positives_ALTs,False_Negatives_ALTs
+Strelka_0.3,2263239,15755,9079,6676,0,1158361,1089123
+Strelka_0.5,3096311,20959,10343,10616,0,1991351,1084001
+Strelka_0.7,4607708,30525,12627,17898,0,3502586,1074597
