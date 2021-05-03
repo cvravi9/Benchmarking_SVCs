@@ -6,17 +6,29 @@ import pandas as pd
 df = pd.read_csv("Updated_Test.vcf", sep = '\t', index_col= False)
 df1 = pd.read_csv("Updated_Test.annot.vcf", sep = '\t', index_col= False)
 
+# Renaming the columns.
+df.columns = ['CHROM', 'POS', 'ID', 'REF', 'ALT', 'QUAL', 'FILTER', 'INFO']
+df1.columns = ['CHROM', 'POS', 'ID', 'REF', 'ALT', 'QUAL', 'FILTER', 'INFO']
+
 # Inputing vcf files for SNPs.
 df3 = pd.read_csv("Updated_Test_SNPs.vcf", sep = '\t', index_col= False)
 df4 = pd.read_csv("Updated_Test.annot_SNPs.vcf", sep = '\t', index_col= False)
+
+# Renaming the columns.
+df3.columns = ['CHROM', 'POS', 'ID', 'REF', 'ALT', 'QUAL', 'FILTER', 'INFO']
+df4.columns = ['CHROM', 'POS', 'ID', 'REF', 'ALT', 'QUAL', 'FILTER', 'INFO']
 
 # Inputing vcf files for Indels.
 df6 = pd.read_csv("Updated_Test_INDELs.vcf", sep = '\t', index_col= False)
 df7 = pd.read_csv("Updated_Test.annot_INDELs.vcf", sep = '\t', index_col= False)
 
+# Renaming the columns.
+df6.columns = ['CHROM', 'POS', 'ID', 'REF', 'ALT', 'QUAL', 'FILTER', 'INFO']
+df7.columns = ['CHROM', 'POS', 'ID', 'REF', 'ALT', 'QUAL', 'FILTER', 'INFO']
+
 # Outcome for positions.
-Strelka3_Positions = len(df)
-Strelka5_Positions = len(df1)
+Strelka3_Positions = len(df['POS'])
+Strelka5_Positions = len(df1['POS'])
 
 print("Number of positions in Test:")
 print(Strelka3_Positions)
