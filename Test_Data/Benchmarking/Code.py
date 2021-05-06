@@ -77,13 +77,13 @@ df = pd.DataFrame()
 
 # Taking all combinations as a list.
 Type = ['Count']
-Total = [dff4]
-True_Positive = [dff9]
-True_Negative = [dff10]
-False_Positives = [dff11]
-False_Negatives = [dff12]
-True_True_Postive = [dff38]
-True_False_Postive = [dff44]
+Total = dff4
+True_Positive = dff9
+True_Negative = dff10
+False_Positives = dff11
+False_Negatives = dff12
+True_True_Postive = dff38
+True_False_Postive = dff44
 
 # Adding columns
 df['Benchmarking'] = ['Total', 'True_Positive_ALTs', 'True_True_Positives_ALTs', 'True_False_Positives_ALTs', 'True_Negative_ALTs', 'False_Positives_ALTs', 'False_Negative_ALTs']

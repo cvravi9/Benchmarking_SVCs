@@ -1,8 +1,8 @@
 Benchmarking,Count
-Total,[1068]
-True_Positive_ALTs,[447]
-True_True_Positives_ALTs,[436]
-True_False_Positives_ALTs,[11]
-True_Negative_ALTs,[0]
-False_Positives_ALTs,[113]
-False_Negative_ALTs,[508]
+Total,1068
+True_Positive_ALTs,447
+True_True_Positives_ALTs,436
+True_False_Positives_ALTs,11
+True_Negative_ALTs,0
+False_Positives_ALTs,113
+False_Negative_ALTs,508
