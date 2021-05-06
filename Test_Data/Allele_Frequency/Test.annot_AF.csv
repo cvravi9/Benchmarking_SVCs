@@ -1,0 +1,5 @@
+Test.annot_Allele_Frequency,Count
+Less than 0.25,503
+Between 0.25 to 0.50,0
+Between 0.50 to 0.75,0
+Above 0.75,41
