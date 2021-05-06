@@ -1,0 +1,5 @@
+Test_Allele_Frequency,Count
+Less than 0.25,908
+Between 0.25 to 0.50,0
+Between 0.50 to 0.75,5
+Above 0.75,36
