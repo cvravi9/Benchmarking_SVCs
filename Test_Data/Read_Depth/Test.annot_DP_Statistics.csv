@@ -1,3 +1,6 @@
-Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value,SD_Value
-Test_Data,876,37351,13474.94669117647,11550.5,"0    24872
-dtype: int64",7369.18818109227
+Test.annot_Read_Depth,Values
+Minimum_Value,876.0
+Maximum_Value,37351.0
+Mean_Value,13474.94669117647
+Median_Value,11550.5
+SD_Value,7369.18818109227

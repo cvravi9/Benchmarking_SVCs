@@ -1,4 +1,6 @@
-Type,Minimum_Value,Maximum_Value,Mean_Value,Median_Value,Mode_Value,SD_Value
-Test_Data,2292,61546,17776.18124341412,15578.0,"0    11794
-1    16146
-dtype: int64",8868.062457244941
+Test_Read_Depth,Values
+Minimum_Value,2292.0
+Maximum_Value,61546.0
+Mean_Value,17776.18124341412
+Median_Value,15578.0
+SD_Value,8868.062457244941

@@ -44,6 +44,7 @@ print(df3)
 
 # Saving the results in csv.
 df3.to_csv('SNPs_Count.csv', sep=',', index = None)
+df3.to_html("SNPs_Count.html")
 
 # Formulas
 Test_Exclude = Strelka_Positions - Strelka_VarScan_Positions

@@ -146,6 +146,7 @@ print(First)
 
 # Saving the results in csv.
 First.to_csv('Variant_Counts.csv', sep=',', index = None)
+First.to_html('Variant_Counts.html')
 
 # Reading csv files and concatinating "CHROM" and "POS"
 dff = pd.read_csv("Variant_Counts.csv", sep = ',', index_col= False, error_bad_lines=False)

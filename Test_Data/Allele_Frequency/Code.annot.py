@@ -74,6 +74,23 @@ print(df5)
 print(df6)
 print(df7)
 
+# Delcaring a new dataframe.
+dff = pd.DataFrame()
+
+# Adding columns
+dff['Test.annot_Allele_Frequency'] = ['Less than 0.25', 'Between 0.25 to 0.50', 'Between 0.50 to 0.75', 'Above 0.75']
+dff['Count'] = [df1, df5, df6, df7]
+
+# Converting values.
+dff['Count'] = dff['Count'].astype(int)
+
+# Collecting it into a dataframe.
+print(dff)
+
+# Saving the results in csv.
+dff.to_csv('Test.annot_AF.csv', sep=',', index = False)
+dff.to_html("Test.annot_AF.html")
+
 # Converting into list.
 First = df1.tolist()
 Second = df5.tolist()
@@ -96,5 +113,5 @@ langs = ['<= 0.25', '0.26 to 0.50', '0.51 to 0.75', '> 0.75']
 explode = (0.1, 0.3, 0.1, 0.1)
 colors = ['#FFD700','#FFAA1C','#FF8C01','#FF0000']
 ax.pie(a1, explode=explode, labels = langs, colors=colors, autopct='%1.2f%%')
-ax.set_title('Allele Frequency Counts Percentage')
-plt.savefig('Test.annot_Allele_Frequency.png', dpi = 300)
+plt.title('Allele Frequency Counts Percentage')
+plt.savefig('Test.annot_AF_Plot.pdf', dpi = 300)

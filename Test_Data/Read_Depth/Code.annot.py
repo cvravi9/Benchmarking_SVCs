@@ -83,28 +83,25 @@ std1 = dff['Read_Depth'].std()
 df = pd.DataFrame()
 
 # Taking all combinations as a list.
-Type = ['Test_Data']
-Minimum_Value = [min1]
-Maximum_Value = [max1]
-Mean_Value = [mean1]
-Median_Value = [median1]
-Mode_Value = [mode1]
-SD_Value = [std1]
+Minimum_Value = min1
+Maximum_Value = max1
+Mean_Value = mean1
+Median_Value = median1
+SD_Value = std1
 
 # Adding columns
-df['Type'] = Type
-df['Minimum_Value'] = Minimum_Value
-df['Maximum_Value'] = Maximum_Value
-df['Mean_Value'] = Mean_Value
-df['Median_Value'] = Median_Value
-df['Mode_Value'] = Mode_Value
-df['SD_Value'] = SD_Value
+df['Test.annot_Read_Depth'] = ['Minimum_Value', 'Maximum_Value', 'Mean_Value', 'Median_Value', 'SD_Value']
+df['Values'] = [Minimum_Value, Maximum_Value, Mean_Value, Median_Value, SD_Value]
+
+# Collecting it into a dataframe.
+print(df)
 
 # Collecting it into a dataframe.
 print(df)
 
 # Saving the results in csv.
 df.to_csv('Test.annot_DP_Statistics.csv', sep=',', index = False)
+df.to_html('Test.annot.DP_Statistics.html')
 
 # Total count
 Counts = len(dff['Read_Depth'].index)
@@ -112,8 +109,8 @@ print('Total number of reads')
 print(Counts)
 
 # Selecting the range of values
-SD_Lower = df['Mean_Value'].iloc[0] - df['SD_Value'].iloc[0]
-SD_Higher = df['Mean_Value'].iloc[0] + df['SD_Value'].iloc[0]
+SD_Lower = Mean_Value - SD_Value
+SD_Higher = Mean_Value + SD_Value
 
 # Filtering the data
 dff = dff.loc[(dff['Read_Depth'] >= SD_Lower) & (dff['Read_Depth'] <= SD_Higher)]
@@ -135,5 +132,5 @@ langs = ['Selected_Count', 'Filtered_Count']
 explode = (0.1, 0)
 colors = ['#FFD700','#FFAA1C']
 ax.pie(a1, explode=explode, labels = langs, colors=colors, autopct='%1.2f%%')
-ax.set_title('Read Depth Counts Percentage')
-plt.savefig('Test.annot_Read_Depth.png', dpi = 300)
+plt.title('Read Depth Counts Percentage')
+plt.savefig('Test.annot_Read_Depth.pdf', dpi = 300)
