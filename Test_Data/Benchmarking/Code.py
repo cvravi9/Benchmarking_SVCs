@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib
+import pdfkit
 from matplotlib import rc
 matplotlib.rcParams['mathtext.fontset'] = 'cm'
 matplotlib.rcParams['font.family'] = 'serif'
@@ -85,17 +86,12 @@ True_True_Postive = [dff38]
 True_False_Postive = [dff44]
 
 # Adding columns
-df['Type'] = Type
-df['Total'] = Total
-df['True_Positives_ALTs'] = True_Positive
-df['True_True_Positives_ALTs'] = True_True_Postive
-df['True_False_Positives_ALTs'] = True_False_Postive
-df['True_Negatives_ALTs'] = True_Negative
-df['False_Positives_ALTs'] = False_Positives
-df['False_Negatives_ALTs'] = False_Negatives
+df['Benchmarking'] = ['Total', 'True_Positive_ALTs', 'True_True_Positives_ALTs', 'True_False_Positives_ALTs', 'True_Negative_ALTs', 'False_Positives_ALTs', 'False_Negative_ALTs']
+df['Count'] = [Total, True_Positive, True_True_Postive, True_False_Postive, True_Negative, False_Positives, False_Negatives]
 
 # Collecting it into a dataframe.
 print(df)
 
 # Saving the results in csv.
 df.to_csv('Benchmarking.csv', sep=',', index = False)
+df.to_html("Benchmarking.html")
